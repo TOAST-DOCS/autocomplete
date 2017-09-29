@@ -39,7 +39,7 @@
 
 ### ACL
 * ACL 설정 방법
-![](http://static.toastoven.net/prod_autocomplete/acl_procedure.png??)
+![](http://static.toastoven.net/prod_autocomplete/acl_procedure.png???)
   1. "ACL" 탭을 클릭합니다.
   2. 색인 요청 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
   3. 자동완성 요청은 모든 IP 에서 가능하도록 설정한 예제입니다.
