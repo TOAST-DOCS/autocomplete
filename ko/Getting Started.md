@@ -50,6 +50,9 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
       }
     ]
     ```
+    * 최대 파일 사이즈는 160Mb 입니다.
+        * 160Mb 이상의 데이터는 여러개로 나누어서 색인해야 합니다.
+
 <br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_01.png)
