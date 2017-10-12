@@ -5,8 +5,8 @@
 ### 부가 정보 출력
 * 자동완성 출력시 부가 정보(이미지 URL, 카테고리, etc...)를 같이 출력하는 기능합니다.
 * 색인 파일 생성 (data/documents.json)
-    ```json
-    [
+    ```
+        [
       {
         "input": "나이키",
         "payload": ["http://image.nhnent.com/images/nike.jpg", "브랜드>스포츠"],
@@ -15,7 +15,7 @@
       {
         "input": "아디다스",
         "payload": ["http://image.nhnent.com/images/adidas.jpg", "브랜드>스포츠"],
-        "weight": 2
+        "weight": 1
       }
     ]
     ```
