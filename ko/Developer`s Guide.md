@@ -77,7 +77,7 @@
     2. "나이키"가 출력 됩니다.
 
 ### Multi domain
-* 2개 이상 domain 의 자동완성 결과를 한번의 자동완성 API 요청을 출력되도록 하는 기능입니다.
+* 2개 이상 domain 의 자동완성 결과를 한번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
     * 예를 들어 브랜드와 카테고리 자동완성을 한번의 API 요청으로 출력할때 사용합니다.
 * brand 도메인 생성
     ![](http://static.toastoven.net/prod_autocomplete/domain_create-brand.png)
@@ -139,15 +139,16 @@
 ## 상세 설명
 
 ### ACL
-    ![](http://static.toastoven.net/prod_autocomplete/detail-acl.png?)
-    * 입력형식
-        * IP 형식으로 입력 가능합니다.
-            * 예제) 202.179.177.21
-        * CIDR 형식으로 입력가능합니다.
-          * 예제) 202.179.177.0/24
-        * IP 또는 CIDR 을 여러개 입력 가능합니다.
-          * 예제) 202.179.177.21, 202.179.177.0/24
-        * all 일 경우 모두 매칭됩니다.
-        * 값이 비어 있을 경우 모두 매칭안됩니다.  
-        * Allow, Deny 둘다에 매칭이 될 경우 Deny 됩니다.
-        * Allow, Deny 둘다에 매칭이 안될 경우 Deny 됩니다.
+![](http://static.toastoven.net/prod_search/detail-acl.png?)
+
+* 입력형식
+    * IP 형식으로 입력 가능합니다.
+        * 예제) 202.179.177.21
+    * CIDR 형식으로 입력가능합니다.
+        * 예제) 202.179.177.0/24
+    * IP 또는 CIDR 을 여러개 입력 가능합니다.
+        * 예제) 202.179.177.21, 202.179.177.0/24
+    * all 일 경우 모두 매칭됩니다.
+    * 값이 비어 있을 경우 모두 매칭안됩니다.  
+* Allow, Deny 둘다에 매칭이 될 경우 Deny 됩니다.
+* Allow, Deny 둘다에 매칭이 안될 경우 Deny 됩니다.    
