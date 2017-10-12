@@ -6,7 +6,7 @@
 * 자동완성 출력시 부가 정보(이미지 URL, 카테고리, etc...)를 같이 출력하는 기능합니다.
 * 색인 파일 생성 (data/documents.json)
     ```
-        [
+    [
       {
         "input": "나이키",
         "payload": ["http://image.nhnent.com/images/nike.jpg", "브랜드>스포츠"],
@@ -20,7 +20,7 @@
     ]
     ```
     * payload 에 출력하고 싶은 부가 정보를 입력합니다.
-<br>    
+<br>   
 * 색인
     ![](http://static.toastoven.net/prod_autocomplete/indexing.png?)
 <br>
