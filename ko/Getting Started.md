@@ -60,11 +60,12 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
 
 ### 자동완성
 * 자동완성 방법
-    ![](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure.png?)
+    ![](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure.png)
     1. "자동완성" 탭을 클릭합니다.
     2. 검색할 단어를 입력합니다.
-    3. 자동완성 Rest API 입니다.
-    4. 자동완성 결과가 출력됩니다.   
+    3. 출력 개수를 지정합니다.
+    4. 자동완성 Rest API 입니다.
+    5. 자동완성 결과가 출력됩니다.   
 
 ### ACL
 * ACL 설정 방법
