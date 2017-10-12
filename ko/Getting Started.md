@@ -80,7 +80,7 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
     ```
-    [admin@Youngtak-Lee-MacMini:data_zbackup]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/suggest/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/suggest?count=10' --data-urlencode query='나'
+    [admin@NHNEnt:~]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/suggest/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/suggest?count=10' --data-urlencode query='나'
     {
       "collections" : [ {
         "index" : 0,
