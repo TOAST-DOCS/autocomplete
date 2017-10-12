@@ -57,6 +57,25 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
     4. "열기" 버튼을 클릭합니다.  
     5. 색인 명령어가 Rest API 로 출력됩니다.
     6. "색인" 버튼을 클릭합니다.
+<br>
+* Rest API
+    * 아래와 같이 Rest API를 사용 가능합니다.
+    ```
+    [admin@Youngtak-Lee-MacMini:data_zbackup]$ curl -XPOST -i 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@ac.json'
+    HTTP/1.1 100 Continue
+
+    HTTP/1.1 200 OK
+    Server: nginx/1.10.2
+    Date: Thu, 12 Oct 2017 01:17:40 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: 40
+    Connection: keep-alive
+
+    {
+      "result" : "success",
+      "code" : 1
+    }
+    ```
 
 ### 자동완성
 * 자동완성 방법
@@ -66,6 +85,28 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
     3. 출력 개수를 지정합니다.
     4. 자동완성 Rest API 입니다.
     5. 자동완성 결과가 출력됩니다.   
+<br>    
+* Rest API
+    * 아래와 같이 Rest API를 사용 가능합니다.
+    ```
+    [admin@Youngtak-Lee-MacMini:data_zbackup]$ curl -G -XGET -i 'http://alpha-api-autocomplete.cloud.toast.com/suggest/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/suggest?count=10' --data-urlencode query='나'
+    HTTP/1.1 200 OK
+    Server: nginx/1.10.2
+    Date: Thu, 12 Oct 2017 01:21:55 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Content-Length: 173
+    Connection: keep-alive
+
+    {
+      "collections" : [ {
+        "index" : 0,
+        "items" : [ [ "나이키" ], [ "나이키 운동화" ] ],
+        "title" : ""
+      } ],
+      "query" : [ "나", "sk" ],
+      "ver" : "1.0"
+    }
+    ```
 
 ### ACL
 * ACL 설정 방법
