@@ -61,16 +61,7 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
     ```
-    [admin@Youngtak-Lee-MacMini:data_zbackup]$ curl -XPOST -i 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@ac.json'
-    HTTP/1.1 100 Continue
-
-    HTTP/1.1 200 OK
-    Server: nginx/1.10.2
-    Date: Thu, 12 Oct 2017 01:17:40 GMT
-    Content-Type: application/json;charset=UTF-8
-    Content-Length: 40
-    Connection: keep-alive
-
+    [admin@NHNEnt:data]$ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
     {
       "result" : "success",
       "code" : 1
@@ -89,14 +80,7 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
     ```
-    [admin@Youngtak-Lee-MacMini:data_zbackup]$ curl -G -XGET -i 'http://alpha-api-autocomplete.cloud.toast.com/suggest/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/suggest?count=10' --data-urlencode query='나'
-    HTTP/1.1 200 OK
-    Server: nginx/1.10.2
-    Date: Thu, 12 Oct 2017 01:21:55 GMT
-    Content-Type: text/plain;charset=UTF-8
-    Content-Length: 173
-    Connection: keep-alive
-
+    [admin@Youngtak-Lee-MacMini:data_zbackup]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/suggest/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/suggest?count=10' --data-urlencode query='나'
     {
       "collections" : [ {
         "index" : 0,
