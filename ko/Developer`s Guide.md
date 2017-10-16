@@ -76,6 +76,29 @@
     1. "ㄴㅇㅋ"를 입력했을때
     2. "나이키"가 출력 됩니다.
 
+### 영<->한 자동 변화
+* "나이키"의 영타 "skdlzl"를 입력했을때 "나이키"가 출력되도록 하는 기능입니다.
+* 색인 파일 생성 (data/documents.json)
+  ```
+  [
+    {
+      "input": "나이키",
+      "weight": 2
+    },
+    {
+      "input": "아디다스",
+      "weight": 1
+    }
+  ]
+  ```
+* 색인
+    ![](http://static.toastoven.net/prod_autocomplete/indexing.png)
+<br>
+* 자동완성
+    ![](http://static.toastoven.net/prod_autocomplete/suggest-haneng.png)
+    1. "나이"의 영타인 ""skdl"를 입력했을때
+    2. "나이키"가 출력 됩니다.
+
 ### Multi domain
 * 2개 이상 domain 의 자동완성 결과를 한번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
     * 예를 들어 브랜드와 카테고리 자동완성을 한번의 API 요청으로 출력할때 사용합니다.
