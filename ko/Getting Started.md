@@ -55,7 +55,7 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
 <br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_01.png)
-    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_02.png??)
+    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_02.png)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
