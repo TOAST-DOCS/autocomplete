@@ -118,8 +118,12 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
 <br>
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
+    * Request
     ```
-    [admin@NHNEnt:data]$ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+    $ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+    ```
+    * Response
+    ```
     {
       "result" : "success",
       "code" : 1
@@ -137,8 +141,12 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
 <br>    
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
+    * Request    
     ```
-    [admin@NHNEnt:~]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/suggest/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/suggest?count=10' --data-urlencode query='나'
+    $ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/suggest/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/suggest?count=10' --data-urlencode query='나'
+    ```
+    * Response
+    ```
     {
       "collections" : [ {
         "index" : 0,
