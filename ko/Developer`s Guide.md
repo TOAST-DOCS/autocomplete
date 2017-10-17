@@ -182,7 +182,7 @@
     ```
 
 ### ACL
-![](http://static.toastoven.net/prod_search/detail-acl.png?)
+![](http://static.toastoven.net/prod_autocomplete/detail-acl.png?)
 
 * 입력형식
     * IP 형식으로 입력 가능합니다.
