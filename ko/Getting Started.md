@@ -31,60 +31,6 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
 * 제약 사항
     * 하나의 appKey(사용자) 당 도메인은 최대 32개 까지 생성 가능합니다.
 
-    ### 색인
-    * 색인할 파일 생성
-        * 예제에서는 data/documents.json 이름으로 생성했습니다.
-        ```
-        [
-          {
-            "action": "add",
-            "id": "633800446",
-            "fields": {
-              "title": "[무료배송]나이키 슈즈 195종!!",
-              "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??"
-            }
-          },
-          {
-            "action": "add",
-            "id": "685165462",
-            "fields": {
-              "title": "[슈퍼특가]나이키 운동화 109종",
-              "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~"
-            }
-          },
-          {
-            "action": "add",
-            "id": "610408574",
-            "fields": {
-              "title": "[아디다스]신상운동화/슬리퍼 114종",
-              "body": "[아디다스슈즈모음♥] 무/료/배/송 [아디다스]신상슬리퍼 /슈퍼스타 스탠스미스 /튜블라외 114종 득템기회!"
-            }
-          }
-        ]
-        ```
-        * 최대 파일 사이즈는 128Mb 입니다.
-            * 128Mb 이상의 데이터는 여러개로 나누어서 색인해야 합니다.
-    <br>
-    * 색인 방법
-        ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?????)
-        ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png????????)
-        1. "색인" 탭을 클릭합니다.
-        2. "파일 선택" 버튼을 클릭합니다.
-        3. 색인할 파일을 선택합니다.
-        4. "열기" 버튼을 클릭합니다.  
-        5. 색인 명령어가 Rest API 로 출력됩니다.
-        6. "색인" 버튼을 클릭합니다.
-    <br>    
-    * Rest API
-        * 아래와 같이 Rest API를 사용 가능합니다.
-        ```
-        [admin@NHNEnt:data]$ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-        {
-          "result" : "success",
-          "code" : 1
-        }
-        ```
-
 ### 색인
 * 색인할 파일 생성
     * 예제에서는 data/documents.json 이름으로 생성했습니다.
