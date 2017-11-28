@@ -17,11 +17,11 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
     ![](http://static.toastoven.net/prod_autocomplete/domain_create_procedure_01.png?)
     1. "도메인 생성" 버튼을 클릭합니다.
     2. 도메인 이름을 입력합니다.
-        * 영문, 숫자 및 특수문자만 가능합니다.
-        * 사용 불가 문자
+        * 영문, 숫자 및 일부 특수문자만 가능합니다.
+        * 사용 가능한 특수 문자
         ```
-        "\", "/", "*", "?", "\"", "<", ">", "|", " ", ",", "#", "^", "!"
-        ```
+        '~' '@' '$' '&' '(' ')' ':' '_' '-' '.'
+        ```        
     3. "저장" 버튼을 클릭합니다.    
 <br>
 * 도메인 생성 결과
@@ -54,19 +54,21 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
 <br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_01.png)
-    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_02.png)
+    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_02.png??????????????????)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
     4. "열기" 버튼을 클릭합니다.  
     5. 색인 명령어가 Rest API 로 출력됩니다.
     6. "색인" 버튼을 클릭합니다.
+    7. "Refresh" 버튼을 클릭합니다.
+    8. 색인 결과를 확인합니다.
 <br>
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
     * Request
     ```
-    $ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+    $ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/SKYgXLbmLmHkzwQz/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
     ```
     * Response
     ```
@@ -78,7 +80,7 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
 
 ### 자동완성
 * 자동완성 방법
-    ![](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure.png)
+    ![](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure.png?)
     1. "자동완성" 탭을 클릭합니다.
     2. 검색할 단어를 입력합니다.
     3. 출력 개수를 지정합니다.
@@ -89,7 +91,7 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
     * 아래와 같이 Rest API를 사용 가능합니다.
     * Request    
     ```
-    $ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/suggest/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/suggest?count=10' --data-urlencode query='나'
+    $ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/SKYgXLbmLmHkzwQz/domains/test/autocomplete?count=10' --data-urlencode query='나'
     ```
     * Response
     ```

@@ -25,7 +25,7 @@
     ![](http://static.toastoven.net/prod_autocomplete/indexing.png?)
 <br>
 * 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/suggest-extra_info.png)
+    ![](http://static.toastoven.net/prod_autocomplete/suggest-extra_info.png?)
     1. 이미지 URL과 카테고리 정보가 출력됩니다.
 
 ### Input/Output을 다르게 설정
@@ -49,7 +49,7 @@
     ![](http://static.toastoven.net/prod_autocomplete/indexing.png)
 <br>
 * 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/input-ouput.png)
+    ![](http://static.toastoven.net/prod_autocomplete/input-output.png?)
     1. "나"를 입력했을때
     2. "Nike"가 출력됩니다.
 
@@ -72,7 +72,7 @@
     ![](http://static.toastoven.net/prod_autocomplete/indexing.png)
 <br>
 * 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png)
+    ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png???)
     1. "ㄴㅇㅋ"를 입력했을때
     2. "나이키"가 출력 됩니다.
 
@@ -95,7 +95,7 @@
     ![](http://static.toastoven.net/prod_autocomplete/indexing.png)
 <br>
 * 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/suggest-haneng.png)
+    ![](http://static.toastoven.net/prod_autocomplete/suggest-haneng.png?)
     1. "나이"의 영타인 ""skdl"를 입력했을때
     2. "나이키"가 출력 됩니다.
 
@@ -141,7 +141,7 @@
     ![](http://static.toastoven.net/prod_autocomplete/indexing-category.png)
 * 자동완성
     ```
-    [admin@NHNEnt:~]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/suggest/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/brand,category/suggest?count=10' --data-urlencode query='나'
+    [admin@NHNEnt:~]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/SKYgXLbmLmHkzwQz/domains/brand,category/autocomplete?count=10' --data-urlencode query='나'
     {
       "collections" : [ {
         "index" : 0,
