@@ -33,6 +33,8 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
 
 ### 색인
 * 색인할 파일 생성
+    * <span style="color:red">색인할 파일은 UTF-8 로 생성해야 합니다.</span>
+        * Windows 메모장에서 파일 저장시 인코딩을 UTF-8 로 지정해서 저장합니다.
     * 예제에서는 data/documents.json 이름으로 생성했습니다.
     ```
     [
