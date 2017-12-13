@@ -2,8 +2,7 @@
 
 ## 서비스 활성화
 Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] > [Autocomplete] 을 선택한 후 [상품이용] 버튼을 클릭하여 서비스를 활성화시킵니다.
-![](http://static.toastoven.net/prod_autocomplete/product-use-01.png)
-![](http://static.toastoven.net/prod_autocomplete/product-use-02.png?)
+![](http://static.toastoven.net/prod_autocomplete/product-use-02.png??????)
 
 1. "Upcoming Proucts"를 클릭합니다.
 2. "Autocomplete"를 클릭합니다.
