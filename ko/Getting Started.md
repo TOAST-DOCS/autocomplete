@@ -66,18 +66,38 @@ Autocomplete 서비스를 사용하기 위해서는 Console에서 [Upcoming Prod
     8. 색인 결과를 확인합니다.
 <br>
 * Rest API
-    * 아래와 같이 Rest API를 사용 가능합니다.
-    * Request
-    ```
-    $ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/SKYgXLbmLmHkzwQz/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-    ```
-    * Response
-    ```
-    {
-      "result" : "success",
-      "code" : 1
-    }
-    ```
+    * 색인 API
+       * Request
+          ```
+          $ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/SKYgXLbmLmHkzwQz/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+          ```
+       * Response
+          ```
+          {
+            "id" : 1
+          }
+          ```    
+    * 색인 결과 확인 API
+        * Request
+            ```
+            curl -i -XGET 'https://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/SKYgXLbmLmHkzwQz/domains/test/indexing_log?id=1'
+            ```
+            * id 1은 위의 색인 API Response 의 id 입니다.
+        * Response
+            ```
+            {
+              "request_time" : "2017-10-23T12:36:43",
+              "file_name" : "documents.json",
+              "file_size" : "114",
+              "status" : "4"
+            }
+            ```
+            * status
+                * 1 : 준비중
+                * 2 : 무시됨 (필드 설정 변경 이전의 색인 요청은 무시됨, 색인 요청 이후에 필드 설정 변경을 했어도 시스템 내부 스케쥴링에 의해 필드 설정 변경 이후에 색인 요청이 수행될 수 있음)
+                * 3 : 진행중
+                * 4 : 성공
+                * 5 : 실패
 
 ### 자동완성
 * 자동완성 방법
