@@ -1,14 +1,15 @@
 ## Upcomming Products > Autocomplete > Getting Started
 
 ## 서비스 활성화
-Autocomplete 서비스를 사용하기 위해서는 Console로 이동합니다.
-![](http://static.toastoven.net/prod_autocomplete/product-use-02.png)
-  1. "서비스 선택"을 클릭합니다.
-  2. "Autocomplete"을 클릭해서 서비스를 활성화 합니다.
-
-![](http://static.toastoven.net/prod_autocomplete/product-use-03.png)
-  1. "Search" 클릭합니다.
-  2. "Autocomplete"를 클릭합니다.
+* 활성화 방법
+    ![](http://static.toastoven.net/prod_autocomplete/product-use-02.png)
+    1. "서비스 선택"을 클릭합니다.
+    2. "Autocomplete"을 클릭해서 서비스를 활성화 합니다.
+<br>
+* 활성화 확인
+    ![](http://static.toastoven.net/prod_autocomplete/product-use-03.png)
+    1. "Search" 클릭합니다.
+    2. "Autocomplete"가 노출되면 활성화된 것입니다.
 <br>
 
 ## 기본 사용법
@@ -29,8 +30,6 @@ Autocomplete 서비스를 사용하기 위해서는 Console로 이동합니다.
     ![](http://static.toastoven.net/prod_autocomplete/domain_create_result.png?)
     1. 생성된 도메인(test)를 클릭합니다.
 <br>
-* 제약 사항
-    * 하나의 appKey(사용자) 당 도메인은 최대 32개 까지 생성 가능합니다.
 
 ### 색인
 * 색인할 파일 생성
