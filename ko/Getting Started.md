@@ -1,7 +1,7 @@
 ## Upcomming Products > Autocomplete > Getting Started
 
 ## 서비스 활성화
-* Autocomplete 상품을 활성화 하기 위해서 Console로 이동합니다.
+* Autocomplete 서비스를 활성화 하기 위해서 Console로 이동합니다.
 * 활성화 방법
     ![](http://static.toastoven.net/prod_autocomplete/product-use-02.png)
     1. "서비스 선택"을 클릭합니다.
@@ -17,7 +17,7 @@
 
 ### 도메인 생성
 * 도메인 생성 방법
-    ![](http://static.toastoven.net/prod_autocomplete/domain_create_procedure_01.png?)
+    ![](http://static.toastoven.net/prod_autocomplete/domain_create_procedure.png?)
     1. "도메인 생성" 버튼을 클릭합니다.
     2. 도메인 이름을 입력합니다.
         * 영문, 숫자 및 일부 특수문자만 가능합니다.
