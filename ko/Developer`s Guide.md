@@ -141,7 +141,7 @@
     ![](http://static.toastoven.net/prod_autocomplete/indexing-category.png)
 * 자동완성
     ```
-    [admin@NHNEnt:~]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/SKYgXLbmLmHkzwQz/domains/brand,category/autocomplete?count=10' --data-urlencode query='나'
+    [admin@NHNEnt:~]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/domains/brand,category/autocomplete?count=10' --data-urlencode query='나'
     {
       "collections" : [ {
         "index" : 0,

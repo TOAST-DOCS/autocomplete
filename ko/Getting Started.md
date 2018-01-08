@@ -20,7 +20,7 @@
     ![](http://static.toastoven.net/prod_autocomplete/domain_create_procedure.png?)
     1. "도메인 생성" 버튼을 클릭합니다.
     2. 도메인 이름을 입력합니다.
-        * 영문, 숫자 및 일부 특수문자만 가능합니다.
+        * 영문(소문자), 숫자 및 일부 특수문자만 가능합니다.
         * 사용 가능한 특수 문자
         ```
         '~' '@' '$' '&' '(' ')' ':' '_' '-' '.'
@@ -71,7 +71,7 @@
     * 색인 API
        * Request
           ```
-          $ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/SKYgXLbmLmHkzwQz/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+          $ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
           ```
        * Response
           ```
@@ -82,7 +82,7 @@
     * 색인 결과 확인 API
         * Request
             ```
-            curl -i -XGET 'https://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/SKYgXLbmLmHkzwQz/domains/test/indexing_log?id=1'
+            curl -i -XGET 'https://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/domains/test/indexing_log?id=1'
             ```
             * id 1은 위의 색인 API Response 의 id 입니다.
         * Response
@@ -114,7 +114,7 @@
     * 아래와 같이 Rest API를 사용 가능합니다.
     * Request    
     ```
-    $ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/SKYgXLbmLmHkzwQz/domains/test/autocomplete?count=10' --data-urlencode query='나'
+    $ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/domains/test/autocomplete?count=10' --data-urlencode query='나'
     ```
     * Response
     ```
