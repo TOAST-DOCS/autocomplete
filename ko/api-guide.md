@@ -1,4 +1,4 @@
-## Search > Autocomplete > Developer's guide
+## Search > Autocomplete > API 가이드
 
 ## 기능 설명
 
