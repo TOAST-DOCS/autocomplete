@@ -1,4 +1,4 @@
-## Search > Autocomplete > Getting Started
+## Search > Autocomplete > 콘솔 사용 가이드
 
 ## 서비스 활성화
 * Autocomplete 서비스를 활성화 하기 위해서 Console로 이동합니다.
