@@ -103,7 +103,7 @@
 
 ### 자동완성
 * 자동완성 방법
-    ![](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure.png?)
+    ![](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure.png??)
     1. "자동완성" 탭을 클릭합니다.
     2. 검색할 단어를 입력합니다.
     3. 출력 개수를 지정합니다.
@@ -331,5 +331,5 @@
         * 예제) 202.179.177.21, 202.179.177.0/24
     * all 일 경우 모두 매칭 됩니다.
     * 값이 비어 있을 경우 모두 매칭 안됩니다.  
-* Allow, Deny 둘 다에 매칭이 될 경우 Deny 됩니다.
-* Allow, Deny 둘 다에 매칭이 안될 경우 Deny 됩니다.    
+* 허용, 거부 둘 다에 매칭이 될 경우 거부됩니다.
+* 허용, 거부 둘 다에 매칭이 안될 경우 거부됩니다.  
