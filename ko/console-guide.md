@@ -15,11 +15,11 @@
 
 ## 기본 사용법
 
-### 도메인 생성
-* 도메인 생성 방법
+### 서비스 생성
+* 서비스 생성 방법
     ![](http://static.toastoven.net/prod_autocomplete/domain_create_procedure.png?)
-    1. "도메인 생성" 버튼을 클릭합니다.
-    2. 도메인 이름을 입력합니다.
+    1. "서비스 생성" 버튼을 클릭합니다.
+    2. 서비스 ID를 입력합니다.
         * 영문 소문자, 숫자 및 일부 특수 문자만 사용 가능합니다.
         * 사용 가능한 특수 문자
         ```
@@ -27,9 +27,9 @@
         ```        
     3. "저장" 버튼을 클릭합니다.    
 <br>
-* 도메인 생성 결과
+* 서비스 생성 결과
     ![](http://static.toastoven.net/prod_autocomplete/domain_create_result.png?)
-    1. 생성된 도메인(test)를 클릭합니다.
+    1. 생성된 서비스 ID(test)를 클릭합니다.
 <br>
 
 ### 색인
@@ -240,7 +240,7 @@
 ### Multi domain
 * 2개 이상 domain 의 자동완성 결과를 한 번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
     * 예를 들어 브랜드와 카테고리 자동완성을 한 번의 API 요청으로 출력할 때 사용합니다.
-* brand 도메인 생성
+* brand 서비스 생성
     ![](http://static.toastoven.net/prod_autocomplete/domain_create-brand.png)
 * brand 색인 파일 생성 (data/brand.json)
   ```
@@ -258,7 +258,7 @@
 * brand 색인
     ![](http://static.toastoven.net/prod_autocomplete/indexing-brand.png?)
 <br>    
-* category 도메인 생성
+* category 서비스 생성
     ![](http://static.toastoven.net/prod_autocomplete/domain_create-category.png)
 <br>
 * category 색인 파일 생성 (data/category.json)
