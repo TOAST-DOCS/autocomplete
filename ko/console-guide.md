@@ -237,8 +237,8 @@
     1. "나이"의 영타인 ""skdl"를 입력했을 때
     2. "나이키"가 출력 됩니다.
 
-### Multi domain
-* 2개 이상 domain 의 자동완성 결과를 한 번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
+### Multi 서비스
+* 2개 이상 서비스의 자동완성 결과를 한 번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
     * 예를 들어 브랜드와 카테고리 자동완성을 한 번의 API 요청으로 출력할 때 사용합니다.
 * brand 서비스 생성
     ![](http://static.toastoven.net/prod_autocomplete/domain_create-brand.png)
@@ -279,7 +279,7 @@
     ![](http://static.toastoven.net/prod_autocomplete/indexing-category.png)
 * 자동완성
     ```
-    [admin@NHNEnt:~]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/domains/brand,category/autocomplete?count=10' --data-urlencode query='나'
+    [admin@NHNEnt:~]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='나'
     {
       "collections" : [ {
         "index" : 0,
@@ -294,7 +294,7 @@
       "ver" : "1.0"
     }
     ```
-    * API 호출시 domain/brand,category로 요청했습니다.
+    * API 호출시 "serviceids/brand,category"로 요청했습니다.
     * API 응답에 index 0 는 brand, index 1 은 category 자동완성 결과가 출력 됩니다.
 
 ## 상세 가이드
