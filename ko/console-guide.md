@@ -1,5 +1,9 @@
 ## Search > Autocomplete > 콘솔 사용 가이드
 
+## 문서 설명
+* 문서 내의 호스트명 "alpha-api-autocomplete.cloud.toast.com"는 사용자별로 다를 수 있습니다.
+* 문서 내의 앱키 "3PrEhyNmfipIHMkZ"는 사용자별로 다를 수 있습니다.
+
 ## 서비스 활성화
 * Autocomplete 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
@@ -66,8 +70,6 @@
     6. "색인" 버튼을 클릭합니다.
     7. "Refresh" 버튼을 클릭합니다.
     8. 색인 결과를 확인합니다.
-    <br>
-    * 호스트명(alpha-api-autocomplete.cloud.toast.com)은 다를 수 있습니다.
 <br>
 * Rest API
     * 색인 API
@@ -75,7 +77,6 @@
           ```
           $ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
           ```
-          * 호스트명(alpha-api-autocomplete.cloud.toast.com)은 다를 수 있습니다.
        * Response
           ```
           {
@@ -88,7 +89,6 @@
             curl -i -XGET 'https://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing_log?id=1'
             ```
             * id 1은 위의 색인 API Response 의 id입니다.
-            * 호스트명(alpha-api-autocomplete.cloud.toast.com)은 다를 수 있습니다.
         * Response
             ```
             {
@@ -113,8 +113,6 @@
     3. 출력 개수를 지정합니다.
     4. 자동완성 Rest API입니다.
     5. 자동완성 결과가 출력됩니다.   
-    <br>
-    * 호스트명(alpha-api-autocomplete.cloud.toast.com)은 다를 수 있습니다.
 <br>    
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
@@ -122,7 +120,6 @@
         ```
         $ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/autocomplete?count=10' --data-urlencode query='나'
         ```
-        * 호스트명(alpha-api-autocomplete.cloud.toast.com)은 다를 수 있습니다.
     * Response
         ```
         {
@@ -137,6 +134,8 @@
         ```
 
 ### ACL
+* 색인 및 자동완성 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
+    * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
 * ACL 설정 방법
     ![](http://static.toastoven.net/prod_autocomplete/acl_procedure.png???)
     1. "ACL" 탭을 클릭합니다.
@@ -172,8 +171,6 @@
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-extra_info.png?)
     1. 이미지 URL과 카테고리 정보가 출력됩니다.
-    <br>
-    * 호스트명(alpha-api-autocomplete.cloud.toast.com)은 다를 수 있습니다.
 
 ### Input/Output을 다르게 설정
 * "나이키"를 입력했을때 "Nike"가 출력되도록 하는 기능입니다.
@@ -199,8 +196,6 @@
     ![](http://static.toastoven.net/prod_autocomplete/input-output.png?)
     1. "나"를 입력했을 때
     2. "Nike"가 출력됩니다.
-    <br>
-    * 호스트명(alpha-api-autocomplete.cloud.toast.com)은 다를 수 있습니다.
 
 ### 초성 검색
 * "ㄴㅇㅋ"를 입력했을 때 "나이키"가 출력되도록 하는 기능입니다.
@@ -224,8 +219,6 @@
     ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png???)
     1. "ㄴㅇㅋ"를 입력했을 때
     2. "나이키"가 출력 됩니다.
-    <br>
-    * 호스트명(alpha-api-autocomplete.cloud.toast.com)은 다를 수 있습니다.
 
 ### 한타<->영타 자동 변화
 * "나이키"의 영타 "skdlzl"를 입력했을 때 "나이키"가 출력되도록 하는 기능입니다.
@@ -249,8 +242,6 @@
     ![](http://static.toastoven.net/prod_autocomplete/suggest-haneng.png?)
     1. "나이"의 영타인 ""skdl"를 입력했을 때
     2. "나이키"가 출력 됩니다.
-    <br>
-    * 호스트명(alpha-api-autocomplete.cloud.toast.com)은 다를 수 있습니다.
 
 ### Multi 서비스
 * 2개 이상 서비스의 자동완성 결과를 한 번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
@@ -311,8 +302,6 @@
     ```
     * API 호출시 "serviceids/brand,category"로 요청했습니다.
     * API 응답에 index 0 는 brand, index 1 은 category 자동완성 결과가 출력 됩니다.
-    <br>
-    * 호스트명(alpha-api-autocomplete.cloud.toast.com)은 다를 수 있습니다.
 
 ## 상세 가이드
 
