@@ -1,5 +1,9 @@
 ## Search > Autocomplete > 콘솔 사용 가이드
 
+## 문서 설명
+* 문서 내의 호스트명 "alpha-api-autocomplete.cloud.toast.com"는 사용자별로 다를 수 있습니다.
+* 문서 내의 앱키 "3PrEhyNmfipIHMkZ"는 사용자별로 다를 수 있습니다.
+
 ## 서비스 활성화
 * Autocomplete 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
@@ -34,6 +38,7 @@
 
 ### 색인
 * 색인할 파일 생성
+    * 아래 예제와 같은 형식으로 색인 요청 파일을 생성합니다.
     * <span style="color:red">색인할 파일은 UTF-8로 생성해야 합니다.</span>
         * Windows 메모장에서 파일 저장시 인코딩을 UTF-8로 지정해서 저장합니다.
     * 예제에서는 data/documents.json 이름으로 생성했습니다.
@@ -113,23 +118,25 @@
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
     * Request    
-    ```
-    $ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/autocomplete?count=10' --data-urlencode query='나'
-    ```
+        ```
+        $ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/autocomplete?count=10' --data-urlencode query='나'
+        ```
     * Response
-    ```
-    {
-      "collections" : [ {
-        "index" : 0,
-        "items" : [ [ "나이키" ], [ "나이키 운동화" ] ],
-        "title" : ""
-      } ],
-      "query" : [ "나", "sk" ],
-      "ver" : "1.0"
-    }
-    ```
+        ```
+        {
+          "collections" : [ {
+            "index" : 0,
+            "items" : [ [ "나이키" ], [ "나이키 운동화" ] ],
+            "title" : ""
+          } ],
+          "query" : [ "나", "sk" ],
+          "ver" : "1.0"
+        }
+        ```
 
 ### ACL
+* 색인 및 자동완성 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
+    * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
 * ACL 설정 방법
     ![](http://static.toastoven.net/prod_autocomplete/acl_procedure.png???)
     1. "ACL" 탭을 클릭합니다.
