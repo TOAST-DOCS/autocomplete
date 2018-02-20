@@ -58,7 +58,7 @@
       }
     ]
     ```
-    * 최대 파일 사이즈는 160MB입니다.
+    * 최대 파일 사이즈는 128MB입니다.
 <br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_01.png)
