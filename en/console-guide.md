@@ -95,8 +95,8 @@
             {
               "request_time" : "2017-10-23T12:36:43",
               "file_name" : "documents.json",
-              "file_size" : "114",
-              "status" : "4"
+              "file_size" : 114,
+              "status" : 4
             }
             ```
             * status
