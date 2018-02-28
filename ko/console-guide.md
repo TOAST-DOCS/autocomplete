@@ -72,20 +72,21 @@
     7. "Refresh" 버튼을 클릭합니다.
     8. 색인 결과를 확인합니다.
 <br>
+* 색인 주의 사항
     * 색인을 요청하면 기존 데이터는 모두 삭제되고 신규 데이터로 교체됩니다.
 <br>
 * Rest API
     * 색인 API
-       * Request
-          ```
-          $ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-          ```
-       * Response
-          ```
-          {
-            "id" : 1
-          }
-          ```    
+        * Request
+            ```
+            $ curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            ```
+        * Response
+            ```
+            {
+              "id" : 1
+            }
+            ```    
     * 색인 결과 확인 API
         * Request
             ```
