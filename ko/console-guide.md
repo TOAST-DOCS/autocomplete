@@ -58,7 +58,7 @@
       }
     ]
     ```
-    * 최대 파일 사이즈는 128MB입니다.
+    * 최대 파일 사이즈는 32MB입니다.
 <br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_01.png)
@@ -71,6 +71,8 @@
     6. "색인" 버튼을 클릭합니다.
     7. "Refresh" 버튼을 클릭합니다.
     8. 색인 결과를 확인합니다.
+<br>
+    * 색인을 요청하면 기존 데이터는 모두 삭제되고 신규 데이터로 교체됩니다.
 <br>
 * Rest API
     * 색인 API
