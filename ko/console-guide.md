@@ -201,29 +201,6 @@
     1. "나"를 입력했을 때
     2. "Nike"가 출력됩니다.
 
-### 초성 검색
-* "ㄴㅇㅋ"를 입력했을 때 "나이키"가 출력되도록 하는 기능입니다.
-* 색인 파일 생성 (data/documents.json)
-  ```
-  [
-    {
-      "input": "나이키",
-      "weight": 2
-    },
-    {
-      "input": "아디다스",
-      "weight": 1
-    }
-  ]
-  ```
-* 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing.png)
-<br>
-* 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png???)
-    1. "ㄴㅇㅋ"를 입력했을 때
-    2. "나이키"가 출력 됩니다.
-
 ### 한타<->영타 자동 변화
 * "나이키"의 영타 "skdlzl"를 입력했을 때 "나이키"가 출력되도록 하는 기능입니다.
 * 색인 파일 생성 (data/documents.json)
@@ -246,6 +223,32 @@
     ![](http://static.toastoven.net/prod_autocomplete/suggest-haneng.png?)
     1. "나이"의 영타인 ""skdl"를 입력했을 때
     2. "나이키"가 출력 됩니다.
+
+### 초성 검색
+* "ㄴㅇㅋ"를 입력했을 때 "나이키"가 출력되도록 하는 기능입니다.
+* 색인 파일 생성 (data/documents.json)
+  ```
+  [
+    {
+      "input": "나이키",
+      "weight": 2
+    },
+    {
+      "input": "아디다스",
+      "weight": 1
+    }
+  ]
+  ```
+* 색인
+  ```
+  curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@data/documents.json'
+  ```
+<br>
+* 자동완성
+    ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png???)
+    1. "ㄴㅇㅋ"를 입력했을 때
+    2. "나이키"가 출력 됩니다.
+
 
 ### Multi 서비스
 * 2개 이상 서비스의 자동완성 결과를 한 번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
