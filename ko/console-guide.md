@@ -227,22 +227,23 @@
 ### 초성 검색
 * "ㄴㅇㅋ"를 입력했을 때 "나이키"가 출력되도록 하는 기능입니다.
 * 색인 파일 생성 (data/documents.json)
-  ```
-  [
-    {
-      "input": "나이키",
-      "weight": 2
-    },
-    {
-      "input": "아디다스",
-      "weight": 1
-    }
-  ]
-  ```
+   ```
+   [
+     {
+       "input": "나이키",
+       "weight": 2
+     },
+     {
+       "input": "아디다스",
+       "weight": 1
+     }
+   ]
+   ```
 * 색인
-  ```
-  curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@data/documents.json'
-  ```
+   ```
+   curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@data/documents.json'
+   ```
+   * chosung=true를 추가합니다.
 <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png???)
