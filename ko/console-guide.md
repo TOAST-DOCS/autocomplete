@@ -243,7 +243,7 @@
    ```
    curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@data/documents.json'
    ```
-   * chosung=true를 추가합니다.
+     * chosung=true를 추가합니다.
 <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png???)
