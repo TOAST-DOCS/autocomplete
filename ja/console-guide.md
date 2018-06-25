@@ -69,7 +69,7 @@
     4. "열기" 버튼을 클릭합니다.  
     5. 색인 명령어가 Rest API로 출력됩니다.
     6. "색인" 버튼을 클릭합니다.
-    7. "Refresh" 버튼을 클릭합니다.
+    7. "새로 고침" 버튼을 클릭합니다.
     8. 색인 결과를 확인합니다.
 <br>
 * 색인 주의 사항
@@ -170,7 +170,9 @@
     * payload에 출력하고 싶은 부가 정보를 입력합니다.
 <br>   
 * 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing.png?)
+    ![](http://static.toastoven.net/prod_autocomplete/indexing-extra_info.png?)
+    1. 색인할 파일을 선택합니다.
+    2. "색인"" 버튼을 클릭합니다.
 <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-extra_info.png?)
@@ -194,7 +196,9 @@
   ]
   ```
 * 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing.png)
+    ![](http://static.toastoven.net/prod_autocomplete/indexing.png??)
+    1. 색인할 파일을 선택합니다.
+    2. "색인"" 버튼을 클릭합니다.
 <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/input-output.png?)
@@ -217,7 +221,10 @@
   ]
   ```
 * 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing.png)
+    ![](http://static.toastoven.net/prod_autocomplete/indexing-koreng.png??)
+    1. 색인할 파일을 선택합니다.
+    2. "한영타 변환"을 체크합니다.
+    3. "색인"" 버튼을 클릭합니다.
 <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-haneng.png?)
@@ -240,10 +247,10 @@
    ]
    ```
 * 색인
-   ```
-   curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@data/documents.json'
-   ```
-     * chosung=true를 추가합니다.
+    ![](http://static.toastoven.net/prod_autocomplete/indexing-chosung.png)
+    1. 색인할 파일을 선택합니다.
+    2. "초성 자동완성"을 체크합니다.
+    3. "색인"" 버튼을 클릭합니다.
 <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png???)
@@ -270,7 +277,9 @@
   ]
   ```
 * brand 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing-brand.png?)
+    ![](http://static.toastoven.net/prod_autocomplete/indexing-brand.png??????)
+    1. 색인할 파일을 선택합니다.
+    2. "색인"" 버튼을 클릭합니다.
 <br>    
 * category 서비스 생성
     ![](http://static.toastoven.net/prod_autocomplete/domain_create-category.png)
@@ -290,7 +299,9 @@
   ```
 
 * category 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing-category.png)
+    ![](http://static.toastoven.net/prod_autocomplete/indexing-category.png????)
+    1. 색인할 파일을 선택합니다.
+    2. "색인"" 버튼을 클릭합니다.
 * 자동완성
     ```
     [admin@NHNEnt:~]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='나'
