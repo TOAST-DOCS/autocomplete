@@ -60,7 +60,7 @@
     <br><br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_01.png)
-    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_02.png??????????????????)
+    ![](http://static.toastoven.net/prod_autocomplete/basic-indexing-20180724.png)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
@@ -71,7 +71,7 @@
     8. 색인 결과를 확인합니다.
     <br><br>
 * 색인 주의 사항
-    * 색인을 요청하면 기존 데이터는 모두 삭제되고 신규 데이터로 교체됩니다.
+    * <span style="color:red">색인을 요청하면 기존 데이터는 모두 삭제되고 신규 데이터로 교체됩니다.</span>
     <br><br>
 * Rest API
     * 색인 API
