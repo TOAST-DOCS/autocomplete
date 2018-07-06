@@ -258,7 +258,7 @@
     ```
     <br>
     * 색인할 때 "초성 자동완성"을 체크합니다.
-    ![](http://static.toastoven.net/prod_autocomplete/indexing_option-chosung-20180724.png)
+    ![](http://static.toastoven.net/prod_autocomplete/chosung-indexing-20180724.png)
     <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png???)
@@ -328,7 +328,6 @@
 
 ### 출력 우선 순위
 * 색인 파일이 아래와 같을 경우 사용자가 'ㄴ' 을 입력하면 "노트북", "나이키", "남성상의" 순으로 출력됩니다.
-    * 'ㄴ'으로 시작하는 단어 중 weight 가 높은 순으로 출력됩니다.
     ```
     [
       {
@@ -345,7 +344,7 @@
       }
     ]
     ```
-
+    * 'ㄴ'으로 시작하는 단어 중 weight 가 높은 순으로 출력됩니다.
 ### ACL
 * ACL 설정 화면
     ![](http://static.toastoven.net/prod_autocomplete/detail-acl.png?)
