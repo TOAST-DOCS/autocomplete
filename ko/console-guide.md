@@ -28,7 +28,7 @@
         ```
         '~' '@' '$' '&' '(' ')' ':' '_' '-'
         ```        
-    3. "저장" 버튼을 클릭합니다.    
+    3. "저장" 버튼을 클릭합니다.
     <br><br>
 * 서비스 생성 결과
     ![](http://static.toastoven.net/prod_autocomplete/domain_create_result.png?)
@@ -114,7 +114,7 @@
     2. 검색할 단어를 입력합니다.
     3. 출력 개수를 지정합니다.
     4. 자동완성 Rest API입니다.
-    5. 자동완성 결과가 출력됩니다.   
+    5. 자동완성 결과가 출력됩니다.
     <br><br>
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
@@ -148,8 +148,8 @@
 ## 기능 가이드
 
 ### 부가 정보 출력
-* 자동완성 출력시 부가 정보(이미지 URL, 카테고리, etc...)를 같이 출력하는 기능합니다.
-* 색인 파일 생성 (data/documents.json)
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
     ```
     [
       {
@@ -166,92 +166,100 @@
     ```
     * payload에 출력하고 싶은 부가 정보를 입력합니다.
     <br><br>
-* 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing-extra_info.png?)
-    1. 색인할 파일을 선택합니다.
-    2. "색인"" 버튼을 클릭합니다.
-    <br><br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-extra_info.png?)
     1. 이미지 URL과 카테고리 정보가 출력됩니다.
 
 ### Input/Output을 다르게 설정
-* "나이키"를 입력했을때 "Nike"가 출력되도록 하는 기능입니다.
-* 색인 파일 생성 (data/documents.json)
-  ```
-  [
-    {
-      "input": "나이키",
-      "output": "Nike",
-      "weight": 2
-    },
-    {
-      "input": "아디다스",
-      "output": "Adidas",
-      "weight": 1
-    }
-  ]
-  ```
-  <br>
 * 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing.png??)
-    1. 색인할 파일을 선택합니다.
-    2. "색인"" 버튼을 클릭합니다.
-    <br><br>
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+      {
+        "input": "나이키",
+        "output": "Nike",
+        "weight": 2
+      },
+      {
+        "input": "아디다스",
+        "output": "Adidas",
+        "weight": 1
+      }
+    ]
+    ```
+    <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/input-output.png?)
     1. "나"를 입력했을 때
     2. "Nike"가 출력됩니다.
 
-### 한타<->영타 자동 변화
-* "나이키"의 영타 "skdlzl"를 입력했을 때 "나이키"가 출력되도록 하는 기능입니다.
-* 색인 파일 생성 (data/documents.json)
-  ```
-  [
-    {
-      "input": "나이키",
-      "weight": 2
-    },
-    {
-      "input": "아디다스",
-      "weight": 1
-    }
-  ]
-  ```
-  <br>
+### 중간 매칭
 * 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing-koreng.png??)
-    1. 색인할 파일을 선택합니다.
-    2. "한영타 변환"을 체크합니다.
-    3. "색인"" 버튼을 클릭합니다.
-    <br><br>
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+      {
+        "input": "나이키운동화",
+        "weight": 2
+      },
+      {
+        "input": "아디다스 운동화",
+        "weight": 1
+      }
+    ]
+    ```
+    <br>
+    * 색인할 때 "중간 매치"을 체크합니다.
+    ![](http://static.toastoven.net/prod_autocomplete/infix-indexing-20180724.png)
+    <br>
+* 자동완성
+    ![](http://static.toastoven.net/prod_autocomplete/infix-suggest-20180724.png)
+    1. "운동"을 입력했을 때
+    2. 중간에 "운동"으로 시작되는 "나이키운동화"가 출력 됩니다.
+
+### 한영타 변화
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+      {
+        "input": "나이키",
+        "weight": 2
+      },
+      {
+        "input": "아디다스",
+        "weight": 1
+      }
+    ]
+    ```
+    <br>
+    * 색인할 때 "한영타 변환"을 체크합니다.
+    ![](http://static.toastoven.net/prod_autocomplete/indexing_option-haneng-20180724.png)
+    <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-haneng.png?)
     1. "나이"의 영타인 ""skdl"를 입력했을 때
     2. "나이키"가 출력 됩니다.
 
-### 초성 검색
-* "ㄴㅇㅋ"를 입력했을 때 "나이키"가 출력되도록 하는 기능입니다.
-* 색인 파일 생성 (data/documents.json)
-   ```
-   [
-     {
-       "input": "나이키",
-       "weight": 2
-     },
-     {
-       "input": "아디다스",
-       "weight": 1
-     }
-   ]
-   ```
-   <br>
+### 초성 자동완성
 * 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing-chosung.png)
-    1. 색인할 파일을 선택합니다.
-    2. "초성 자동완성"을 체크합니다.
-    3. "색인"" 버튼을 클릭합니다.
-<br>
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+      {
+        "input": "나이키",
+        "weight": 2
+      },
+      {
+        "input": "아디다스",
+        "weight": 1
+      }
+    ]
+    ```
+    <br>
+    * 색인할 때 "초성 자동완성"을 체크합니다.
+    ![](http://static.toastoven.net/prod_autocomplete/indexing_option-chosung-20180724.png)
+    <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png???)
     1. "ㄴㅇㅋ"를 입력했을 때
@@ -262,46 +270,40 @@
     * 예를 들어 브랜드와 카테고리 자동완성을 한 번의 API 요청으로 출력할 때 사용합니다.
 * brand 서비스 생성
     ![](http://static.toastoven.net/prod_autocomplete/domain_create-brand.png)
-* brand 색인 파일 생성 (data/brand.json)
-  ```
-  [
-    {
-      "input": "나이키",
-      "weight": 2
-    },
-    {
-      "input": "아디다스",
-      "weight": 1
-    }
-  ]
-  ```
+    <br>
 * brand 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing-brand.png??????)
-    1. 색인할 파일을 선택합니다.
-    2. "색인"" 버튼을 클릭합니다.
-    <br><br>
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+      {
+        "input": "나이키",
+        "weight": 2
+      },
+      {
+        "input": "아디다스",
+        "weight": 1
+      }
+    ]
+    ```
+    <br>
 * category 서비스 생성
     ![](http://static.toastoven.net/prod_autocomplete/domain_create-category.png)
-    <br><br>
-* category 색인 파일 생성 (data/category.json)
-  ```
-  [
-    {
-      "input": "남성가방",
-      "weight": 2
-    },
-    {
-      "input": "아우터",
-      "weight": 1
-    }
-  ]
-  ```
-  <br>
+    <br>
 * category 색인
-    ![](http://static.toastoven.net/prod_autocomplete/indexing-category.png????)
-    1. 색인할 파일을 선택합니다.
-    2. "색인"" 버튼을 클릭합니다.
-    <br><br>
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+      {
+        "input": "남성가방",
+        "weight": 2
+      },
+      {
+        "input": "아우터",
+        "weight": 1
+      }
+    ]
+    ```
+    <br>
 * 자동완성
     ```
     [admin@NHNEnt:~]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='나'
