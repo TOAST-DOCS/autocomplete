@@ -209,7 +209,7 @@
     ]
     ```
     <br>
-    * 색인할 때 "중간 매치"을 체크합니다.
+    * 색인할 때 "중간 매칭"을 체크합니다.
     ![](http://static.toastoven.net/prod_autocomplete/infix-indexing-20180724.png)
     <br>
 * 자동완성
@@ -234,7 +234,7 @@
     ```
     <br>
     * 색인할 때 "한영타 변환"을 체크합니다.
-    ![](http://static.toastoven.net/prod_autocomplete/indexing_option-haneng-20180724.png)
+    ![](http://static.toastoven.net/prod_autocomplete/koreng-indexing-20180724.png)
     <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-haneng.png?)
