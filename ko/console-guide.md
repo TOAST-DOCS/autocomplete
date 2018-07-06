@@ -10,12 +10,11 @@
     ![](http://static.toastoven.net/prod_autocomplete/product-use-02-20180724.png)
     1. "서비스 선택"을 클릭합니다.
     2. "Autocomplete"을 클릭해서 서비스를 활성화합니다.
-<br>
+    <br><br>
 * 활성화 확인
     ![](http://static.toastoven.net/prod_autocomplete/product-use-03-20180724.png)
     1. "Search" 클릭합니다.
     2. "Autocomplete"가 노출되면 활성화된 것입니다.
-<br>
 
 ## 기본 사용법
 
@@ -30,11 +29,10 @@
         '~' '@' '$' '&' '(' ')' ':' '_' '-'
         ```        
     3. "저장" 버튼을 클릭합니다.    
-<br>
+    <br><br>
 * 서비스 생성 결과
     ![](http://static.toastoven.net/prod_autocomplete/domain_create_result.png?)
     1. 생성된 서비스 ID(test)를 클릭합니다.
-<br>
 
 ### 색인
 * 색인할 파일 생성
@@ -59,7 +57,7 @@
     ]
     ```
     * 최대 파일 사이즈는 32MB입니다.
-<br>
+    <br><br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_01.png)
     ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_02.png??????????????????)
@@ -71,10 +69,10 @@
     6. "색인" 버튼을 클릭합니다.
     7. "새로 고침" 버튼을 클릭합니다.
     8. 색인 결과를 확인합니다.
-<br>
+    <br><br>
 * 색인 주의 사항
     * 색인을 요청하면 기존 데이터는 모두 삭제되고 신규 데이터로 교체됩니다.
-<br>
+    <br><br>
 * Rest API
     * 색인 API
         * Request
@@ -117,7 +115,7 @@
     3. 출력 개수를 지정합니다.
     4. 자동완성 Rest API입니다.
     5. 자동완성 결과가 출력됩니다.   
-<br>    
+    <br><br>
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
     * Request    
@@ -146,7 +144,6 @@
     2. 색인 요청 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
     3. 자동완성 요청은 모든 IP에서 가능하도록 설정한 예제입니다.
     4. "저장" 버튼을 클릭합니다.  
-<br>
 
 ## 기능 가이드
 
@@ -168,12 +165,12 @@
     ]
     ```
     * payload에 출력하고 싶은 부가 정보를 입력합니다.
-<br>   
+    <br><br>
 * 색인
     ![](http://static.toastoven.net/prod_autocomplete/indexing-extra_info.png?)
     1. 색인할 파일을 선택합니다.
     2. "색인"" 버튼을 클릭합니다.
-<br>
+    <br><br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-extra_info.png?)
     1. 이미지 URL과 카테고리 정보가 출력됩니다.
@@ -195,11 +192,12 @@
     }
   ]
   ```
+  <br>
 * 색인
     ![](http://static.toastoven.net/prod_autocomplete/indexing.png??)
     1. 색인할 파일을 선택합니다.
     2. "색인"" 버튼을 클릭합니다.
-<br>
+    <br><br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/input-output.png?)
     1. "나"를 입력했을 때
@@ -220,12 +218,13 @@
     }
   ]
   ```
+  <br>
 * 색인
     ![](http://static.toastoven.net/prod_autocomplete/indexing-koreng.png??)
     1. 색인할 파일을 선택합니다.
     2. "한영타 변환"을 체크합니다.
     3. "색인"" 버튼을 클릭합니다.
-<br>
+    <br><br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-haneng.png?)
     1. "나이"의 영타인 ""skdl"를 입력했을 때
@@ -246,6 +245,7 @@
      }
    ]
    ```
+   <br>
 * 색인
     ![](http://static.toastoven.net/prod_autocomplete/indexing-chosung.png)
     1. 색인할 파일을 선택합니다.
@@ -256,7 +256,6 @@
     ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png???)
     1. "ㄴㅇㅋ"를 입력했을 때
     2. "나이키"가 출력 됩니다.
-
 
 ### Multi 서비스
 * 2개 이상 서비스의 자동완성 결과를 한 번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
@@ -280,10 +279,10 @@
     ![](http://static.toastoven.net/prod_autocomplete/indexing-brand.png??????)
     1. 색인할 파일을 선택합니다.
     2. "색인"" 버튼을 클릭합니다.
-<br>    
+    <br><br>
 * category 서비스 생성
     ![](http://static.toastoven.net/prod_autocomplete/domain_create-category.png)
-<br>
+    <br><br>
 * category 색인 파일 생성 (data/category.json)
   ```
   [
@@ -297,11 +296,12 @@
     }
   ]
   ```
-
+  <br>
 * category 색인
     ![](http://static.toastoven.net/prod_autocomplete/indexing-category.png????)
     1. 색인할 파일을 선택합니다.
     2. "색인"" 버튼을 클릭합니다.
+    <br><br>
 * 자동완성
     ```
     [admin@NHNEnt:~]$ curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='나'
@@ -345,8 +345,8 @@
     ```
 
 ### ACL
-![](http://static.toastoven.net/prod_autocomplete/detail-acl.png?)
-
+* ACL 설정 화면
+    ![](http://static.toastoven.net/prod_autocomplete/detail-acl.png?)
 * 입력형식
     * IP 형식으로 입력 가능합니다.
         * 예제) 202.179.177.21
