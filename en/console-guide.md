@@ -1,4 +1,4 @@
-## Search > Autocomplete > Console Guide
+## Search > Autocomplete > 콘솔 사용 가이드
 
 ## 문서 설명
 * 문서 내의 호스트명 "alpha-api-autocomplete.cloud.toast.com"는 사용자별로 다를 수 있습니다.
