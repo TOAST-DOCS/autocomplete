@@ -386,6 +386,7 @@
         ```
         * conversion_weights로 "17,16,15,14,13,12,11,10"을 지정했습니다.
     * conversion_weights의 index별 의미
+
         | index | description | 예제의 값 |
         | -------|-----|----|
         | 0     | 원본 | 17 |
@@ -397,6 +398,7 @@
         | 6     | 중간 매칭의 초성 | 11 |
         | 7     | 중간 매칭의 초성의 한영타 변환 | 10 |
     * 예제 설명
+
         | key | relevance | description |
         |-------|-----|--------|
         | 나이키 | 20 = 3(weight) + 17(conversion weight) | "나이키"의 원본 |
