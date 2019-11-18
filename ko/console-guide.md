@@ -397,6 +397,7 @@
         | 5     | 중간 매칭의 한영타 변환 | 12 |
         | 6     | 중간 매칭의 초성 | 11 |
         | 7     | 중간 매칭의 초성의 한영타 변환 | 10 |
+
     * 예제 설명
 
         | key | relevance | description |
@@ -417,6 +418,7 @@
         | dpdjaortm | 13 = 1(weight) + 12(conversion weight) | "나이키 에어맥스"의 중간 매칭의 한영타 변환 |
         | ㅇㅇㅁㅅ | 12 = 1(weight) + 11(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성 |
         | ddat | 11 = 1(weight) + 10(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성의 한영타 변환 |
+
         * 사용자가 "ㅇ"을 입력했을때 "운동화"(relevance 19)가 "에어맥스"(relevance 14) 보다 먼저 출력 됩니다.
 
 ### ACL
