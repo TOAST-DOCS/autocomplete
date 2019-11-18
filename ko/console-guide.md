@@ -375,10 +375,9 @@
             "input": "나이키",
             "weight": 3
           },
-					{
+          {
             "input": "운동화",
             "weight": 2
-          },
           {
             "input": "나이키 에어맥스",
             "weight": 1
@@ -401,7 +400,7 @@
         | key | relevance | description |
         |-------|-----|--------|
         | 나이키 | 20 = 3(weight) + 17(conversion weight) | "나이키"의 원본 |
-        | 운동화 | 29 = 2(weight) + 17(conversion weight) | "운동화"의 원본 |
+        | 운동화 | 19 = 2(weight) + 17(conversion weight) | "운동화"의 원본 |
         | 나이키 에어맥스 | 18 = 1(weight) + 17(conversion weight) | "나이키 에어맥스"의 원본 |
         | skdlzl | 19 = 3(weight) + 16(conversion weight) | "나이키"의 한영타 변환
         | dnsehdghk| 18 = 2(weight) + 16(conversion weight) | "운동화"의 한영타 변환 |
@@ -416,7 +415,7 @@
         | dpdjaortm | 13 = 1(weight) + 12(conversion weight) | "나이키 에어맥스"의 중간 매칭의 한영타 변환 |
         | ㅇㅇㅁㅅ | 12 = 1(weight) + 11(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성 |
         | ddat | 11 = 1(weight) + 10(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성의 한영타 변환 |
-        * 사용자가 "ㅇ"을 입력했을때 "운동화"(relevance 29)가 "에어맥스"(relevance 24) 보다 먼저 출력 됩니다.
+        * 사용자가 "ㅇ"을 입력했을때 "운동화"(relevance 19)가 "에어맥스"(relevance 14) 보다 먼저 출력 됩니다.
 
 ### ACL
 * ACL 설정 화면
