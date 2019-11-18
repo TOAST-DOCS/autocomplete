@@ -369,7 +369,7 @@
     * 원본, 중간 매칭, 한영타 변환, 초성 자동완성의 출력 순서를 조절할 수 있습니다.
     * 예제
         ```
-        curl -i -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,14,13,12,11,10"' -H 'Content-Type:application/json; charset=UTF-8' -d '
+        curl -i -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,14,13,12,11,10' -H 'Content-Type:application/json; charset=UTF-8' -d '
         [
           {
             "input": "나이키",
@@ -378,6 +378,7 @@
           {
             "input": "운동화",
             "weight": 2
+          },
           {
             "input": "나이키 에어맥스",
             "weight": 1
