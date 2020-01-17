@@ -179,15 +179,12 @@
       }
     ]
     ```
-    <br>
     * 색인할 때 "중간 매칭"을 체크합니다.
-
-    ![](http://static.toastoven.net/prod_autocomplete/infix-indexing-20200117.1616.png)
-    <br>
+        ![](http://static.toastoven.net/prod_autocomplete/infix-indexing-20200117.1616.png)
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/infix-suggest-20200117.1619.png)
-    1. "운동"을 입력했을 때
-    2. 중간에 "운동"으로 시작되는 "나이키운동화"가 출력 됩니다.
+        1. "운동"을 입력했을 때
+        2. 중간에 "운동"으로 시작되는 "나이키운동화"가 출력 됩니다.
 
 ### 한영타 변환
 * 색인
@@ -204,15 +201,12 @@
       }
     ]
     ```
-    <br>
     * 색인할 때 "한영타 변환"을 체크합니다.
-
-    ![](http://static.toastoven.net/prod_autocomplete/koreng-indexing-20200117.1623.png)
-    <br>
+        ![](http://static.toastoven.net/prod_autocomplete/koreng-indexing-20200117.1623.png)
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/koreng-suggest-20200117.1630.png)
-    1. "나이"의 영타인 ""skdl"를 입력했을 때
-    2. "나이키"가 출력 됩니다.
+        1. "나이"의 영타인 ""skdl"를 입력했을 때
+        2. "나이키"가 출력 됩니다.
 
 ### 초성 자동완성
 * 색인
@@ -229,15 +223,12 @@
       }
     ]
     ```
-    <br>
     * 색인할 때 "초성 자동완성"을 체크합니다.
-
-    ![](http://static.toastoven.net/prod_autocomplete/chosung-indexing-20200117.1632.png)
-    <br>
+        ![](http://static.toastoven.net/prod_autocomplete/chosung-indexing-20200117.1632.png)
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/chosung-suggest-20200117.1634.png)
-    1. "ㄴㅇㅋ"를 입력했을 때
-    2. "나이키"가 출력 됩니다.
+        1. "ㄴㅇㅋ"를 입력했을 때
+        2. "나이키"가 출력 됩니다.
 
 ### 부가 정보 출력
 * 색인
@@ -257,10 +248,10 @@
     ]
     ```
     * payload에 출력하고 싶은 부가 정보를 입력합니다.
-    <br><br>
+
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-payload-20200117.1532.png)
-    1. 입력한 부가 정보(이미지 URL, 카테고리)가 출력됩니다.
+        1. 입력한 부가 정보(이미지 URL, 카테고리)가 출력됩니다.
 
 ### Input/Output을 다르게 설정
 * 색인
@@ -279,18 +270,16 @@
       }
     ]
     ```
-    <br>
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-output-20200117.1536.png)
-    1. "나"를 입력했을 때
-    2. "Nike"가 출력됩니다.
+        1. "나"를 입력했을 때
+        2. "Nike"가 출력됩니다.
 
 ### Multi 서비스
 * 2개 이상 서비스의 자동완성 결과를 한 번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
     * 예를 들어 브랜드와 카테고리 자동완성을 한 번의 API 요청으로 출력할 때 사용합니다.
 * brand 서비스 생성
     ![](http://static.toastoven.net/prod_autocomplete/domain_create-brand-20200117.1646.png)
-    <br>
 * brand 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -305,10 +294,8 @@
       }
     ]
     ```
-    <br>
 * category 서비스 생성
     ![](http://static.toastoven.net/prod_autocomplete/domain_create-category-20200117.1651.png)
-    <br>
 * category 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -323,7 +310,6 @@
       }
     ]
     ```
-    <br>
 * 자동완성
     ```
     curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='나'
