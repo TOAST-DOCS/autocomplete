@@ -1,18 +1,18 @@
 ## Search > Autocomplete > 콘솔 사용 가이드
 
-## 문서 설명
+## 알아두기
 * 문서 내의 호스트명 "alpha-api-autocomplete.cloud.toast.com"는 사용자별로 다를 수 있습니다.
-* 문서 내의 앱키 "3PrEhyNmfipIHMkZ"는 사용자별로 다를 수 있습니다.
+* 문서 내의 앱키 "3PrEhyNmfipIHMkZ"는 사용자별로 다릅니다.
 
-## 서비스 활성화
+## 시작하기
 * Autocomplete 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
-    ![](http://static.toastoven.net/prod_autocomplete/product-use-02-20180724.png)
+    ![](http://static.toastoven.net/prod_autocomplete/product-use-02-20200117.1337.png)
     1. "서비스 선택"을 클릭합니다.
     2. "Autocomplete"을 클릭해서 서비스를 활성화합니다.
     <br><br>
 * 활성화 확인
-    ![](http://static.toastoven.net/prod_autocomplete/product-use-03-20180724.png)
+    ![](http://static.toastoven.net/prod_autocomplete/product-use-03-20200117.1407.png)
     1. "Search" 클릭합니다.
     2. "Autocomplete"가 노출되면 활성화된 것입니다.
 
@@ -20,7 +20,7 @@
 
 ### 1. 서비스 생성
 * 서비스 생성 방법
-    ![](http://static.toastoven.net/prod_autocomplete/domain_create_procedure.png?)
+    ![](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-20200117.1417.png)
     1. "서비스 생성" 버튼을 클릭합니다.
     2. 서비스 ID를 입력합니다.
         * 영어 소문자, 숫자 및 \_(underscore)와 -(dash)만 사용할 수 있습니다.
@@ -29,7 +29,7 @@
     3. "저장" 버튼을 클릭합니다.
     <br><br>
 * 서비스 생성 결과
-    ![](http://static.toastoven.net/prod_autocomplete/domain_create_result.png?)
+    ![](http://static.toastoven.net/prod_autocomplete/domain_create_result-20200117.1459.png)
     1. 생성된 서비스 ID(test)를 클릭합니다.
 
 ### 2. 색인
@@ -57,8 +57,8 @@
     * 최대 파일 사이즈는 32MB입니다.
     <br><br>
 * 색인 방법
-    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_01.png)
-    ![](http://static.toastoven.net/prod_autocomplete/basic-indexing-20180724.png)
+    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-20200117.1508.png)
+    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-20200117.1516.png)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
@@ -126,7 +126,7 @@
 
 ### 3. 자동완성
 * 자동완성 방법
-    ![](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure.png??)
+    ![](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-20200117.1521.png)
     1. "자동완성" 탭을 클릭합니다.
     2. 검색할 단어를 입력합니다.
     3. 출력 개수를 지정합니다.
@@ -156,13 +156,13 @@
 * 색인 및 자동완성 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
     * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
 * ACL 설정 방법
-    ![](http://static.toastoven.net/prod_autocomplete/acl_procedure.png???)
+    ![](http://static.toastoven.net/prod_autocomplete/acl_procedure-20200117.1525.png)
     1. "ACL" 탭을 클릭합니다.
     2. 색인 요청 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
     3. 자동완성 요청은 모든 IP에서 가능하도록 설정한 예제입니다.
     4. "저장" 버튼을 클릭합니다.  
 
-## 기능 가이드
+## 기능 상세 설명
 
 ### 부가 정보 출력
 * 색인
