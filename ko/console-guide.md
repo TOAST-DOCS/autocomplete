@@ -101,7 +101,8 @@
             {
               "id" : 1
             }
-            ```    
+            ```   
+            <br>
     * 색인 결과 확인 API
         * Request
             ```
@@ -183,8 +184,8 @@
         ![](http://static.toastoven.net/prod_autocomplete/infix-indexing-20200117.1616.png)
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/infix-suggest-20200117.1619.png)
-        1. "운동"을 입력했을 때
-        2. 중간에 "운동"으로 시작되는 "나이키운동화"가 출력 됩니다.
+    1. "운동"을 입력했을 때
+    2. 중간에 "운동"으로 시작되는 "나이키운동화"가 출력 됩니다.
 
 ### 한영타 변환
 * 색인
@@ -205,8 +206,8 @@
         ![](http://static.toastoven.net/prod_autocomplete/koreng-indexing-20200117.1623.png)
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/koreng-suggest-20200117.1630.png)
-        1. "나이"의 영타인 ""skdl"를 입력했을 때
-        2. "나이키"가 출력 됩니다.
+    1. "나이"의 영타인 ""skdl"를 입력했을 때
+    2. "나이키"가 출력 됩니다.
 
 ### 초성 자동완성
 * 색인
@@ -226,9 +227,9 @@
     * 색인할 때 "초성 자동완성"을 체크합니다.
         ![](http://static.toastoven.net/prod_autocomplete/chosung-indexing-20200117.1632.png)
 * 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/chosung-suggest-20200117.1634.png)
-        1. "ㄴㅇㅋ"를 입력했을 때
-        2. "나이키"가 출력 됩니다.
+    ![](http://static.toastoven.net/prod_autocomplete/chosung-suggest-20200117.1753.png)
+    1. "ㄴㅇㅋ"를 입력했을 때
+    2. "나이키"가 출력 됩니다.
 
 ### 부가 정보 출력
 * 색인
@@ -248,10 +249,9 @@
     ]
     ```
     * payload에 출력하고 싶은 부가 정보를 입력합니다.
-
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-payload-20200117.1532.png)
-        1. 입력한 부가 정보(이미지 URL, 카테고리)가 출력됩니다.
+    1. 입력한 부가 정보(이미지 URL, 카테고리)가 출력됩니다.
 
 ### Input/Output을 다르게 설정
 * 색인
@@ -272,8 +272,8 @@
     ```
 * 자동완성
     ![](http://static.toastoven.net/prod_autocomplete/suggest-output-20200117.1536.png)
-        1. "나"를 입력했을 때
-        2. "Nike"가 출력됩니다.
+    1. "나"를 입력했을 때
+    2. "Nike"가 출력됩니다.
 
 ### Multi 서비스
 * 2개 이상 서비스의 자동완성 결과를 한 번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
