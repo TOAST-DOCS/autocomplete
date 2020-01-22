@@ -1,18 +1,18 @@
 ## Search > Autocomplete > 콘솔 사용 가이드
 
-## 문서 설명
-* 문서 내의 호스트명 "alpha-api-autocomplete.cloud.toast.com"는 사용자별로 다를 수 있습니다.
-* 문서 내의 앱키 "3PrEhyNmfipIHMkZ"는 사용자별로 다를 수 있습니다.
+## 알아두기
+* 문서 내의 호스트명 "api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com"는 사용자별로 다를 수 있습니다.
+* 문서 내의 앱키 "7IkFjTvxA8zwfL8e"는 사용자별로 다릅니다.
 
-## 서비스 활성화
+## 시작하기
 * Autocomplete 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
-    ![](http://static.toastoven.net/prod_autocomplete/product-use-02-20180724.png)
+    ![](http://static.toastoven.net/prod_autocomplete/product-use-02-20200117.1337.png)
     1. "서비스 선택"을 클릭합니다.
     2. "Autocomplete"을 클릭해서 서비스를 활성화합니다.
     <br><br>
 * 활성화 확인
-    ![](http://static.toastoven.net/prod_autocomplete/product-use-03-20180724.png)
+    ![](http://static.toastoven.net/prod_autocomplete/product-use-03-20200117.1407.png)
     1. "Search" 클릭합니다.
     2. "Autocomplete"가 노출되면 활성화된 것입니다.
 
@@ -20,16 +20,16 @@
 
 ### 1. 서비스 생성
 * 서비스 생성 방법
-    ![](http://static.toastoven.net/prod_autocomplete/domain_create_procedure.png?)
+    ![](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-20200117.1417.png)
     1. "서비스 생성" 버튼을 클릭합니다.
     2. 서비스 ID를 입력합니다.
-        * 영문 소문자, 숫자 및 \_(underscore)와 -(dash)만 사용할 수 있습니다.
+        * 영어 소문자, 숫자 및 \_(underscore)와 -(dash)만 사용할 수 있습니다.
         * 숫자, \_(underscore), -(dash)로 시작할 수 없습니다.
         * 최소 두 글자 이상 가능합니다.
     3. "저장" 버튼을 클릭합니다.
     <br><br>
 * 서비스 생성 결과
-    ![](http://static.toastoven.net/prod_autocomplete/domain_create_result.png?)
+    ![](http://static.toastoven.net/prod_autocomplete/domain_create_result-20200117.1459.png)
     1. 생성된 서비스 ID(test)를 클릭합니다.
 
 ### 2. 색인
@@ -57,8 +57,8 @@
     * 최대 파일 사이즈는 32MB입니다.
     <br><br>
 * 색인 방법
-    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure_01.png)
-    ![](http://static.toastoven.net/prod_autocomplete/basic-indexing-20180724.png)
+    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-20200117.1508.png)
+    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-20200117.1516.png)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
@@ -76,11 +76,11 @@
         * Request
             * 파일 업로드 방식
                 ```
-                curl -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+                curl -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
                 ```
             * Payload 방식
                 ```
-                curl -i -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:application/json; charset=UTF-8' -d '
+                curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:application/json; charset=UTF-8' -d '
                 [
                   {
                     "input": "나이키",
@@ -101,11 +101,12 @@
             {
               "id" : 1
             }
-            ```    
+            ```   
+            <br>
     * 색인 결과 확인 API
         * Request
             ```
-            curl -i -XGET 'https://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing_log?id=1'
+            curl -i -XGET 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1'
             ```
             * id 1은 위의 색인 API Response 의 id입니다.
         * Response
@@ -126,7 +127,7 @@
 
 ### 3. 자동완성
 * 자동완성 방법
-    ![](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure.png??)
+    ![](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-20200117.1521.png)
     1. "자동완성" 탭을 클릭합니다.
     2. 검색할 단어를 입력합니다.
     3. 출력 개수를 지정합니다.
@@ -137,7 +138,7 @@
     * 아래와 같이 Rest API를 사용 가능합니다.
     * Request    
         ```
-        curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/autocomplete?count=10' --data-urlencode query='나'
+        curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' --data-urlencode query='나'
         ```
     * Response
         ```
@@ -156,13 +157,79 @@
 * 색인 및 자동완성 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
     * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
 * ACL 설정 방법
-    ![](http://static.toastoven.net/prod_autocomplete/acl_procedure.png???)
+    ![](http://static.toastoven.net/prod_autocomplete/acl_procedure-20200117.1525.png)
     1. "ACL" 탭을 클릭합니다.
     2. 색인 요청 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
     3. 자동완성 요청은 모든 IP에서 가능하도록 설정한 예제입니다.
     4. "저장" 버튼을 클릭합니다.  
 
-## 기능 가이드
+## 기능 상세 설명
+
+### 중간 매칭
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+      {
+        "input": "나이키운동화",
+        "weight": 2
+      },
+      {
+        "input": "아디다스 운동화",
+        "weight": 1
+      }
+    ]
+    ```
+    * 색인할 때 "중간 매칭"을 체크합니다.
+        ![](http://static.toastoven.net/prod_autocomplete/infix-indexing-20200117.1616.png)
+* 자동완성
+    ![](http://static.toastoven.net/prod_autocomplete/infix-suggest-20200117.1619.png)
+    1. "운동"을 입력했을 때
+    2. 중간에 "운동"으로 시작되는 "나이키운동화"가 출력 됩니다.
+
+### 한영타 변환
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+      {
+        "input": "나이키",
+        "weight": 2
+      },
+      {
+        "input": "아디다스",
+        "weight": 1
+      }
+    ]
+    ```
+    * 색인할 때 "한영타 변환"을 체크합니다.
+        ![](http://static.toastoven.net/prod_autocomplete/koreng-indexing-20200117.1623.png)
+* 자동완성
+    ![](http://static.toastoven.net/prod_autocomplete/koreng-suggest-20200117.1630.png)
+    1. "나이"의 영타인 ""skdl"를 입력했을 때
+    2. "나이키"가 출력 됩니다.
+
+### 초성 자동완성
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+      {
+        "input": "나이키",
+        "weight": 2
+      },
+      {
+        "input": "아디다스",
+        "weight": 1
+      }
+    ]
+    ```
+    * 색인할 때 "초성 자동완성"을 체크합니다.
+        ![](http://static.toastoven.net/prod_autocomplete/chosung-indexing-20200117.1632.png)
+* 자동완성
+    ![](http://static.toastoven.net/prod_autocomplete/chosung-suggest-20200117.1753.png)
+    1. "ㄴㅇㅋ"를 입력했을 때
+    2. "나이키"가 출력 됩니다.
 
 ### 부가 정보 출력
 * 색인
@@ -182,10 +249,9 @@
     ]
     ```
     * payload에 출력하고 싶은 부가 정보를 입력합니다.
-    <br><br>
 * 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/suggest-extra_info.png?)
-    1. 이미지 URL과 카테고리 정보가 출력됩니다.
+    ![](http://static.toastoven.net/prod_autocomplete/suggest-payload-20200117.1532.png)
+    1. 입력한 부가 정보(이미지 URL, 카테고리)가 출력됩니다.
 
 ### Input/Output을 다르게 설정
 * 색인
@@ -204,90 +270,16 @@
       }
     ]
     ```
-    <br>
 * 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/input-output.png?)
+    ![](http://static.toastoven.net/prod_autocomplete/suggest-output-20200117.1536.png)
     1. "나"를 입력했을 때
     2. "Nike"가 출력됩니다.
-
-### 중간 매칭
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-      {
-        "input": "나이키운동화",
-        "weight": 2
-      },
-      {
-        "input": "아디다스 운동화",
-        "weight": 1
-      }
-    ]
-    ```
-    <br>
-    * 색인할 때 "중간 매칭"을 체크합니다.
-    ![](http://static.toastoven.net/prod_autocomplete/infix-indexing-20180724.png)
-    <br>
-* 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/infix-suggest-20180724.png)
-    1. "운동"을 입력했을 때
-    2. 중간에 "운동"으로 시작되는 "나이키운동화"가 출력 됩니다.
-
-### 한영타 변환
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-      {
-        "input": "나이키",
-        "weight": 2
-      },
-      {
-        "input": "아디다스",
-        "weight": 1
-      }
-    ]
-    ```
-    <br>
-    * 색인할 때 "한영타 변환"을 체크합니다.
-    ![](http://static.toastoven.net/prod_autocomplete/koreng-indexing-20180724.png)
-    <br>
-* 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/suggest-haneng.png?)
-    1. "나이"의 영타인 ""skdl"를 입력했을 때
-    2. "나이키"가 출력 됩니다.
-
-### 초성 자동완성
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-      {
-        "input": "나이키",
-        "weight": 2
-      },
-      {
-        "input": "아디다스",
-        "weight": 1
-      }
-    ]
-    ```
-    <br>
-    * 색인할 때 "초성 자동완성"을 체크합니다.
-    ![](http://static.toastoven.net/prod_autocomplete/chosung-indexing-20180724.png)
-    <br>
-* 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/suggest-cho.png???)
-    1. "ㄴㅇㅋ"를 입력했을 때
-    2. "나이키"가 출력 됩니다.
 
 ### Multi 서비스
 * 2개 이상 서비스의 자동완성 결과를 한 번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
     * 예를 들어 브랜드와 카테고리 자동완성을 한 번의 API 요청으로 출력할 때 사용합니다.
 * brand 서비스 생성
-    ![](http://static.toastoven.net/prod_autocomplete/domain_create-brand.png)
-    <br>
+    ![](http://static.toastoven.net/prod_autocomplete/domain_create-brand-20200117.1646.png)
 * brand 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -302,10 +294,8 @@
       }
     ]
     ```
-    <br>
 * category 서비스 생성
-    ![](http://static.toastoven.net/prod_autocomplete/domain_create-category.png)
-    <br>
+    ![](http://static.toastoven.net/prod_autocomplete/domain_create-category-20200117.1651.png)
 * category 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -320,10 +310,9 @@
       }
     ]
     ```
-    <br>
 * 자동완성
     ```
-    curl -G -XGET 'http://alpha-api-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='나'
+    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='나'
     {
       "collections" : [ {
         "index" : 0,
@@ -367,7 +356,7 @@
     * 원본, 중간 매칭, 한영타 변환, 초성 자동완성의 출력 순서를 조절할 수 있습니다.
     * 예제
         ```
-        curl -i -XPOST 'http://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,14,13,12,11,10' -H 'Content-Type:application/json; charset=UTF-8' -d '
+        curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,14,13,12,11,10' -H 'Content-Type:application/json; charset=UTF-8' -d '
         [
           {
             "input": "나이키",
@@ -391,7 +380,7 @@
         | 0     | 원본 |
         | 1     | 원본의 한영타 변환 |
         | 2     | 원본의 초성 |
-        | 3     | 원본의 초성의 영타 변환 |
+        | 3     | 원본의 초성의 한영타 변환 |
         | 4     | 중간 매칭 |
         | 5     | 중간 매칭의 한영타 변환 |
         | 6     | 중간 매칭의 초성 |
@@ -422,7 +411,7 @@
 
 ### ACL
 * ACL 설정 화면
-    ![](http://static.toastoven.net/prod_autocomplete/detail-acl.png?)
+    ![](http://static.toastoven.net/prod_autocomplete/acl-detail-20200117.1654.png)
 * 입력형식
     * IP 형식으로 입력 가능합니다.
         * 예제) 202.179.177.21
@@ -494,7 +483,7 @@ public class IndexingClient {
 
 			// build http request and assign multipart upload data.
 			HttpUriRequest request = RequestBuilder
-				.post("https://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?split=true&koreng=true&chosung=false")
+				.post("https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false")
 				.setEntity(data)
 				.build();
 
@@ -541,7 +530,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://alpha-api-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/3PrEhyNmfipIHMkZ/serviceids/test/indexing?split=true&koreng=true&chosung=false");
+    curl_setopt($ch, CURLOPT_URL,"https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
