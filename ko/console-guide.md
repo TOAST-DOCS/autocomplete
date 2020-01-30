@@ -23,8 +23,8 @@
     ![](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-20200117.1417.png)
     1. "서비스 생성" 버튼을 클릭합니다.
     2. 서비스 ID를 입력합니다.
-        * 영어 소문자, 숫자 및 \_(underscore)와 -(dash)만 사용할 수 있습니다.
-        * 숫자, \_(underscore), -(dash)로 시작할 수 없습니다.
+        * 영어 소문자, 숫자 및 \_(밑줄)과 -(하이픈)만 사용할 수 있습니다.
+        * 숫자, \_(밑줄), -(하이픈)로 시작할 수 없습니다.
         * 최소 두 글자 이상 가능합니다.
     3. "저장" 버튼을 클릭합니다.
     <br><br>
