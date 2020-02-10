@@ -75,17 +75,17 @@
 
 4. **열기** 버튼을 클릭합니다.
 
-![img](https://camo.githubusercontent.com/e5edbb5e02a0b3e89a688c599b767577e078bd45/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e646578696e675f70726f6365647572652d30312d32303230303131372e313530382e706e67)  
-
 5. 색인 명령어가 Rest API로 출력됩니다.
 
 6. **색인** 버튼을 클릭합니다.
 
 7. **새로 고침** 버튼을 클릭합니다.
 
-![img](https://camo.githubusercontent.com/3552863677ff50b7c560d2f15ce020c026524cfb/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e646578696e675f70726f6365647572652d30322d32303230303131372e313531362e706e67)
-
 8. 색인 결과를 확인합니다.
+
+![img](https://camo.githubusercontent.com/e5edbb5e02a0b3e89a688c599b767577e078bd45/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e646578696e675f70726f6365647572652d30312d32303230303131372e313530382e706e67)  
+
+![img](https://camo.githubusercontent.com/3552863677ff50b7c560d2f15ce020c026524cfb/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e646578696e675f70726f6365647572652d30322d32303230303131372e313531362e706e67)
 
 **색인 주의 사항**
 
@@ -99,31 +99,31 @@
 
     - Request
 
-      - 파일 업로드 방식
+        - 파일 업로드 방식
 
-        ```
-        curl -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-        ```
+          ```
+          curl -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+          ```
 
-      - Payload 방식
+        - Payload 방식
 
-        ```
-        curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:application/json; charset=UTF-8' -d '
-        [
-          {
-            "input": "나이키",
-            "weight": 3
-          },
-          {
-            "input": "나이키 운동화",
-            "weight": 2
-          },
-          {
-            "input": "운동화",
-            "weight": 1
-          }
-        ]'
-        ```
+          ```
+          curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:application/json; charset=UTF-8' -d '
+          [
+            {
+              "input": "나이키",
+              "weight": 3
+            },
+            {
+              "input": "나이키 운동화",
+              "weight": 2
+            },
+            {
+              "input": "운동화",
+              "weight": 1
+            }
+          ]'
+          ```
 
     - Response
 
@@ -141,7 +141,7 @@
       curl -i -XGET 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1'
       ```
 
-      - id 1은 위의 색인 API Response 의 id입니다.
+        - id 1은 위의 색인 API Response 의 id입니다.
 
     - Response
 
@@ -154,12 +154,12 @@
       }
       ```
 
-      - status
-        - 1 : 대기 중
-        - 2 : 무시됨
-        - 3 : 진행 중
-        - 4 : 성공
-        - 5 : 실패
+        - status
+          - 1 : 대기 중
+          - 2 : 무시됨
+          - 3 : 진행 중
+          - 4 : 성공
+          - 5 : 실패
 
 ### 3. 자동 완성
 
