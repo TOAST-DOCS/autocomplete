@@ -101,65 +101,65 @@
 
         - 파일 업로드 방식
 
-          ```
-          curl -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-          ```
+            ```
+            curl -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            ```
 
         - Payload 방식
 
-          ```
-          curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:application/json; charset=UTF-8' -d '
-          [
-            {
-              "input": "나이키",
-              "weight": 3
-            },
-            {
-              "input": "나이키 운동화",
-              "weight": 2
-            },
-            {
-              "input": "운동화",
-              "weight": 1
-            }
-          ]'
-          ```
+            ```
+            curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            [
+              {
+                "input": "나이키",
+                "weight": 3
+              },
+              {
+                "input": "나이키 운동화",
+                "weight": 2
+              },
+              {
+                "input": "운동화",
+                "weight": 1
+              }
+            ]'
+            ```
 
     - Response
 
-      ```
-      {
-        "id" : 1
-      }
-      ```
+        ```
+        {
+          "id" : 1
+        }
+        ```
 
   - 색인 결과 확인 API
 
     - Request
 
-      ```
-      curl -i -XGET 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1'
-      ```
+        ```
+        curl -i -XGET 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1'
+        ```
 
         - id 1은 위의 색인 API Response 의 id입니다.
 
     - Response
 
-      ```
-      {
-        "request_time" : "2017-10-23T12:36:43",
-        "file_name" : "documents.json",
-        "file_size" : 114,
-        "status" : 4
-      }
-      ```
+        ```
+        {
+          "request_time" : "2017-10-23T12:36:43",
+          "file_name" : "documents.json",
+          "file_size" : 114,
+          "status" : 4
+        }
+        ```
 
         - status
-          - 1 : 대기 중
-          - 2 : 무시됨
-          - 3 : 진행 중
-          - 4 : 성공
-          - 5 : 실패
+            - 1 : 대기 중
+            - 2 : 무시됨
+            - 3 : 진행 중
+            - 4 : 성공
+            - 5 : 실패
 
 ### 3. 자동 완성
 
