@@ -1,441 +1,578 @@
-## Search > Autocomplete > 콘솔 사용 가이드
+## Search > Autocomplete > コンソール使用ガイド
 
-## 알아두기
-* 문서 내의 호스트명 "api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com"는 사용자별로 다를 수 있습니다.
-* 문서 내의 앱키 "7IkFjTvxA8zwfL8e"는 사용자별로 다릅니다.
+## 注意
 
-## 시작하기
-* Autocomplete 서비스를 활성화하기 위해서 Console로 이동합니다.
-* 활성화 방법
-    ![](http://static.toastoven.net/prod_autocomplete/product-use-02-20200117.1337.png)
-    1. "서비스 선택"을 클릭합니다.
-    2. "Autocomplete"을 클릭해서 서비스를 활성화합니다.
-    <br><br>
-* 활성화 확인
-    ![](http://static.toastoven.net/prod_autocomplete/product-use-03-20200117.1407.png)
-    1. "Search" 클릭합니다.
-    2. "Autocomplete"가 노출되면 활성화된 것입니다.
+- 文書内のホスト名「api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com」は、ユーザーごとに異なる場合があります。
+- 文書内のアプリケーションキー「7IkFjTvxA8zwfL8e」は、ユーザーごとに異なります。
 
-## 기본 사용법
+## 始める
 
-### 1. 서비스 생성
-* 서비스 생성 방법
-    ![](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-20200117.1417.png)
-    1. "서비스 생성" 버튼을 클릭합니다.
-    2. 서비스 ID를 입력합니다.
-        * 영어 소문자, 숫자 및 \_(밑줄)과 -(하이픈)만 사용할 수 있습니다.
-        * 숫자, \_(밑줄), -(하이픈)로 시작할 수 없습니다.
-        * 최소 두 글자 이상 가능합니다.
-    3. "저장" 버튼을 클릭합니다.
-    <br><br>
-* 서비스 생성 결과
-    ![](http://static.toastoven.net/prod_autocomplete/domain_create_result-20200117.1459.png)
-    1. 생성된 서비스 ID(test)를 클릭합니다.
+まずAutocompleteサービスを有効化します。
+1. **TOAST Console**で**サービス選択**をクリックします。
+2. **Autocomplete**をクリックします。
+![img](https://camo.githubusercontent.com/fede2041ec8707d6f0c9d0adfe6445e968e67b09/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f70726f647563742d7573652d30322d32303230303131372e313333372e706e67)
 
-### 2. 색인
-* 색인할 파일 생성
-    * 아래 예제와 같은 형식으로 색인 요청 파일을 생성합니다.
-    * <span style="color:red">색인할 파일은 UTF-8로 생성해야 합니다.</span>
-        * Windows 메모장에서 파일 저장시 인코딩을 UTF-8로 지정해서 저장합니다.
-    * 예제에서는 data/documents.json 이름으로 생성했습니다.
-    ```
-    [
-      {
-        "input": "나이키",
-        "weight": 3
-      },
-      {
-        "input": "나이키 운동화",
-        "weight": 2
-      },
-      {
-        "input": "운동화",
-        "weight": 1
-      }
-    ]
-    ```
-    * 최대 파일 사이즈는 32MB입니다.
-    <br><br>
-* 색인 방법
-    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-20200117.1508.png)
-    ![](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-20200117.1516.png)
-    1. "색인" 탭을 클릭합니다.
-    2. "파일 선택" 버튼을 클릭합니다.
-    3. 색인할 파일을 선택합니다.
-    4. "열기" 버튼을 클릭합니다.  
-    5. 색인 명령어가 Rest API로 출력됩니다.
-    6. "색인" 버튼을 클릭합니다.
-    7. "새로 고침" 버튼을 클릭합니다.
-    8. 색인 결과를 확인합니다.
-    <br><br>
-* 색인 주의 사항
-    * <span style="color:red">색인을 요청하면 기존 데이터는 모두 삭제되고 신규 데이터로 교체됩니다.</span>
-    <br><br>
-* Rest API
-    * 색인 API
-        * Request
-            * 파일 업로드 방식
-                ```
-                curl -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-                ```
-            * Payload 방식
-                ```
-                curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:application/json; charset=UTF-8' -d '
-                [
-                  {
-                    "input": "나이키",
-                    "weight": 3
-                  },
-                  {
-                    "input": "나이키 운동화",
-                    "weight": 2
-                  },
-                  {
-                    "input": "운동화",
-                    "weight": 1
-                  }
-                ]'
-                ```
-        * Response
+サービスが有効になっているかを確認する方法は次のとおりです。
+1. **TOAST Console**左側のメニューで**Search**をクリックします。
+2. **Autocomplete**が表示されていれば、サービスが有効になっているということです。
+![img](https://camo.githubusercontent.com/02282e4d4bdf2cd04d07cba4fc856be137777c22/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f70726f647563742d7573652d30332d32303230303131372e313430372e706e67)
+
+## 基本使用方法
+
+### 1. サービスの作成
+1. **サービス作成**ボタンをクリックします。
+
+2. **サービス作成**ウィンドウでサービスIDを入力します。
+
+    - 英字小文字、数字およびアーダースコア(_)とハイフン(-)のみ使用できます。
+    - 最初の文字に数字、アーダースコア(_)、ハイフン(-)は使用できません。
+    - 2文字以上入力する必要があります。
+
+3. **保存**ボタンをクリックします。
+
+![img](https://camo.githubusercontent.com/6cdfb1dfdfb9da040ed77d952327091a38d130de/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174655f70726f6365647572652d32303230303131372e313431372e706e67)
+
+作成されたサービス結果を確認します。  
+1. 作成されたサービスID(test)をクリックします。
+
+![img](https://camo.githubusercontent.com/b719ce4e9b8e37433c7451ec46ea1d1f3774b0dd/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174655f726573756c742d32303230303131372e313435392e706e67)
+
+### 2. インデックス
+
+インデックスするファイルを作成してインデックスする方法は次のとおりです。
+
+**インデックスファイルの作成**
+
+  - 下記例のような形式でインデックスリクエストファイルを作成します。
+  - インデックスするファイルはUTF-8で作成する必要があります。
+      - Windowsのメモ帳でファイルを保存する時は、エンコードをUTF-8に指定して保存します。
+  - 例ではdata/documents.jsonという名前で作成しました。
+  - 最大ファイルサイズは32MBです。
+
+```
+[
+  {
+    "input": "ナイキ",
+    "weight": 3
+  },
+  {
+    "input": "ナイキ運動靴",
+    "weight": 2
+  },
+  {
+    "input": "運動靴",
+    "weight": 1
+  }
+]
+```
+
+**インデックス方法**
+
+1. **インデックス**タブをクリックします。
+
+2. **ファイル選択**ボタンをクリックします。
+
+3. インデックスするファイルを選択します。
+
+4. **開く**ボタンをクリックします。
+
+5. インデックスコマンドがREST APIで出力されます。
+
+6. **インデックス**ボタンをクリックします。
+
+7. **更新**ボタンをクリックします。
+
+8. インデックス結果を確認します。
+
+![img](https://camo.githubusercontent.com/e5edbb5e02a0b3e89a688c599b767577e078bd45/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e646578696e675f70726f6365647572652d30312d32303230303131372e313530382e706e67)  
+![img](https://camo.githubusercontent.com/3552863677ff50b7c560d2f15ce020c026524cfb/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e646578696e675f70726f6365647572652d30322d32303230303131372e313531362e706e67)
+
+**インデックスの注意事項**
+
+インデックスをリクエストすると、既存のデータはすべて削除され、新規データに変更されます。
+
+
+
+**REST API**
+
+  - インデックスAPI
+
+    - Request
+
+        - ファイルアップロード方式
+
             ```
-            {
-              "id" : 1
-            }
-            ```   
-            <br>
-    * 색인 결과 확인 API
-        * Request
+            curl -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
-            curl -i -XGET 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1'
-            ```
-            * id 1은 위의 색인 API Response 의 id입니다.
-        * Response
-            ```
-            {
-              "request_time" : "2017-10-23T12:36:43",
-              "file_name" : "documents.json",
-              "file_size" : 114,
-              "status" : 4
-            }
-            ```
-            * status
-                * 1 : 대기 중
-                * 2 : 무시됨
-                * 3 : 진행 중
-                * 4 : 성공
-                * 5 : 실패
 
-### 3. 자동완성
-* 자동완성 방법
-    ![](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-20200117.1521.png)
-    1. "자동완성" 탭을 클릭합니다.
-    2. 검색할 단어를 입력합니다.
-    3. 출력 개수를 지정합니다.
-    4. 자동완성 Rest API입니다.
-    5. 자동완성 결과가 출력됩니다.
-    <br><br>
-* Rest API
-    * 아래와 같이 Rest API를 사용 가능합니다.
-    * Request    
-        ```
-        curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' --data-urlencode query='나'
-        ```
-    * Response
+        - Payload方式
+
+            ```
+            curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            [
+              {
+                "input": "ナイキ",
+                "weight": 3
+              },
+              {
+                "input": "ナイキ 運動靴",
+                "weight": 2
+              },
+              {
+                "input": "運動靴",
+                "weight": 1
+              }
+            ]'
+            ```
+
+    - Response
+
         ```
         {
-          "collections" : [ {
-            "index" : 0,
-            "items" : [ [ "나이키" ], [ "나이키 운동화" ] ],
-            "title" : ""
-          } ],
-          "query" : [ "나", "sk" ],
-          "ver" : "1.0"
+          "id" : 1
         }
         ```
 
-### 4. ACL
-* 색인 및 자동완성 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
-    * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
-* ACL 설정 방법
-    ![](http://static.toastoven.net/prod_autocomplete/acl_procedure-20200117.1525.png)
-    1. "ACL" 탭을 클릭합니다.
-    2. 색인 요청 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
-    3. 자동완성 요청은 모든 IP에서 가능하도록 설정한 예제입니다.
-    4. "저장" 버튼을 클릭합니다.  
+  - インデックス結果確認API
 
-## 기능 상세 설명
+    - Request
 
-### 중간 매칭
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-      {
-        "input": "나이키운동화",
-        "weight": 2
-      },
-      {
-        "input": "아디다스 운동화",
-        "weight": 1
-      }
-    ]
-    ```
-    * 색인할 때 "중간 매칭"을 체크합니다.
-        ![](http://static.toastoven.net/prod_autocomplete/infix-indexing-20200117.1616.png)
-* 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/infix-suggest-20200117.1619.png)
-    1. "운동"을 입력했을 때
-    2. 중간에 "운동"으로 시작되는 "나이키운동화"가 출력 됩니다.
+        ```
+        curl -i -XGET 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1'
+        ```
 
-### 한영타 변환
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-      {
-        "input": "나이키",
-        "weight": 2
-      },
-      {
-        "input": "아디다스",
-        "weight": 1
-      }
-    ]
-    ```
-    * 색인할 때 "한영타 변환"을 체크합니다.
-        ![](http://static.toastoven.net/prod_autocomplete/koreng-indexing-20200117.1623.png)
-* 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/koreng-suggest-20200117.1630.png)
-    1. "나이"의 영타인 ""skdl"를 입력했을 때
-    2. "나이키"가 출력 됩니다.
+        - id 1は、上記インデックス API Responseのidです。
 
-### 초성 자동완성
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-      {
-        "input": "나이키",
-        "weight": 2
-      },
-      {
-        "input": "아디다스",
-        "weight": 1
-      }
-    ]
-    ```
-    * 색인할 때 "초성 자동완성"을 체크합니다.
-        ![](http://static.toastoven.net/prod_autocomplete/chosung-indexing-20200117.1632.png)
-* 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/chosung-suggest-20200117.1753.png)
-    1. "ㄴㅇㅋ"를 입력했을 때
-    2. "나이키"가 출력 됩니다.
+    - Response
 
-### 부가 정보 출력
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-      {
-        "input": "나이키",
-        "payload": ["http://image.nhnent.com/images/nike.jpg", "브랜드>스포츠"],
-        "weight": 2
-      },
-      {
-        "input": "아디다스",
-        "payload": ["http://image.nhnent.com/images/adidas.jpg", "브랜드>스포츠"],
-        "weight": 1
-      }
-    ]
-    ```
-    * payload에 출력하고 싶은 부가 정보를 입력합니다.
-* 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/suggest-payload-20200117.1532.png)
-    1. 입력한 부가 정보(이미지 URL, 카테고리)가 출력됩니다.
+        ```
+        {
+          "request_time" : "2017-10-23T12:36:43",
+          "file_name" : "documents.json",
+          "file_size" : 114,
+          "status" : 4
+        }
+        ```
 
-### Input/Output을 다르게 설정
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-      {
-        "input": "나이키",
-        "output": "Nike",
-        "weight": 2
-      },
-      {
-        "input": "아디다스",
-        "output": "Adidas",
-        "weight": 1
-      }
-    ]
-    ```
-* 자동완성
-    ![](http://static.toastoven.net/prod_autocomplete/suggest-output-20200117.1536.png)
-    1. "나"를 입력했을 때
-    2. "Nike"가 출력됩니다.
+        - status
+            - 1 :待機中
+            - 2 : 無視された
+            - 3 :進行中
+            - 4 :成功
+            - 5 :失敗
 
-### Multi 서비스
-* 2개 이상 서비스의 자동완성 결과를 한 번의 자동완성 API 요청으로 출력되도록 하는 기능입니다.
-    * 예를 들어 브랜드와 카테고리 자동완성을 한 번의 API 요청으로 출력할 때 사용합니다.
-* brand 서비스 생성
-    ![](http://static.toastoven.net/prod_autocomplete/domain_create-brand-20200117.1646.png)
-* brand 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
+### 3. オートコンプリート
+
+**オートコンプリート方法**
+
+1. **オートコンプリート**タブをクリックします。
+
+2. 検索する単語を入力します。
+
+3. 出力数を指定します。
+
+4. オートコンプリートREST APIです。
+
+5. オートコンプリート結果が出力されます。
+
+![img](https://camo.githubusercontent.com/7b5ba9c39e5e35c5a4f6873f2cdb06bdd0bc1eb7/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6175746f636f6d706c6574655f70726f6365647572652d32303230303131372e313532312e706e67)
+
+**REST API**
+
+  - Request
+
     ```
-    [
-      {
-        "input": "나이키",
-        "weight": 2
-      },
-      {
-        "input": "아디다스",
-        "weight": 1
-      }
-    ]
+    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' --data-urlencode query='ナ'
     ```
-* category 서비스 생성
-    ![](http://static.toastoven.net/prod_autocomplete/domain_create-category-20200117.1651.png)
-* category 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
+
+  - Response
+
     ```
-    [
-      {
-        "input": "남성가방",
-        "weight": 2
-      },
-      {
-        "input": "아우터",
-        "weight": 1
-      }
-    ]
-    ```
-* 자동완성
-    ```
-    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='나'
     {
       "collections" : [ {
         "index" : 0,
-        "items" : [ [ "나이키" ] ],
-        "title" : ""
-      }, {
-        "index" : 1,
-        "items" : [ [ "남성가방" ] ],
+        "items" : [ [ "ナイキ" ], [ "ナイキ 運動靴" ] ],
         "title" : ""
       } ],
-      "query" : [ "나", "sk" ],
+      "query" : [ "ナ", "sk" ],
       "ver" : "1.0"
     }
     ```
-    * API 호출시 "serviceids/brand,category"로 요청했습니다.
-    * API 응답에 index 0 는 brand, index 1 은 category 자동완성 결과가 출력 됩니다.
 
-## 상세 가이드
+### 4. ACL
 
-### 출력 우선 순위
-* 색인 파일이 아래와 같을 경우 사용자가 'ㄴ' 을 입력하면 "노트북", "나이키", "남성상의" 순으로 출력됩니다.
+インデックス およびオートコンプリートREST APIを呼び出すことができる端末のIPを制限できます。
+コンソールでテストする場合、ACL設定と関係ありません。
+
+**ACLの設定方法**
+
+1. **ACL**タブをクリックします。
+
+2. インデックスをリクエストするIPアドレスが202.179.177.21の場合のみインデックスができるように設定した例です。
+
+3. オートコンプリートリクエストは、すべてのIPからできるように設定した例です。
+
+4. **保存**ボタンをクリックします。
+
+![img](https://camo.githubusercontent.com/299f6d5330cad8525920c9a32da94d5ba55716ac/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f61636c5f70726f6365647572652d32303230303131372e313532352e706e67)
+
+
+
+## 機能詳細説明
+
+### 中間マッチング
+
+**インデックス**
+
+テストを行うためにデータをインデックスします。
+
+```
+[
+  {
+    "input": "ナイキ運動靴",
+    "weight": 2
+  },
+  {
+    "input": "アディダス 運動靴",
+    "weight": 1
+  }
+]
+```
+
+インデックスする時、**中間マッチング**を選択します。
+
+[![img](https://camo.githubusercontent.com/3c8342ec8fe686cf686281c1cccbedf5dcbb6660/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e6669782d696e646578696e672d32303230303131372e313631362e706e67)](https://camo.githubusercontent.com/3c8342ec8fe686cf686281c1cccbedf5dcbb6660/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e6669782d696e646578696e672d32303230303131372e313631362e706e67)
+
+**オートコンプリート**
+
+1. **運動**を入力します。
+
+2. 中間に**運動**がある**ナイキ運動靴**が出力されます。
+
+![img](https://camo.githubusercontent.com/9c8d7a33edc2af8720362ea09194d2fb8fffbe74/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e6669782d737567676573742d32303230303131372e313631392e706e67)
+
+
+### 韓国語/英語入力変換
+
+**インデックス**
+
+テストを行うためにデータをインデックスします。
+
+```
+[
+  {
+    "input": "ナイキ",
+    "weight": 2
+  },
+  {
+    "input": "アディダス",
+    "weight": 1
+  }
+]
+```
+
+インデックスする時、**韓国語/英語入力変換**を選択します。
+
+[![img](https://camo.githubusercontent.com/b8c6fa079d8560e637d937227fad5a9f24472709/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6b6f72656e672d696e646578696e672d32303230303131372e313632332e706e67)](https://camo.githubusercontent.com/b8c6fa079d8560e637d937227fad5a9f24472709/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6b6f72656e672d696e646578696e672d32303230303131372e313632332e706e67)
+
+**オートコンプリート**
+
+1. 「나이」の英語入力である「skdl」を入力します。
+
+2. 「나이키」が出力されます。
+
+![img](https://camo.githubusercontent.com/6ed22f7ead71302064ae61184087b64745cdca8a/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6b6f72656e672d737567676573742d32303230303131372e313633302e706e67)
+
+
+### 初声オートコンプリート
+
+**インデックス**
+
+テストを行うためにデータをインデックスします。
+
+```
+[
+  {
+    "input": "ナイキ",
+    "weight": 2
+  },
+  {
+    "input": "アディダス",
+    "weight": 1
+  }
+]
+```
+
+  - インデックスする時、**初声オートコンプリート**をチェックします。
+
+[![img](https://camo.githubusercontent.com/083dc9ba9a8dc5f6afabe074c69dde39e150c9f7/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f63686f73756e672d696e646578696e672d32303230303131372e313633322e706e67)](https://camo.githubusercontent.com/083dc9ba9a8dc5f6afabe074c69dde39e150c9f7/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f63686f73756e672d696e646578696e672d32303230303131372e313633322e706e67)
+
+**オートコンプリート**
+
+1. 「ㄴㅇㅋ」を入力します。
+
+2. 「나이키」が出力されます。
+
+![img](https://camo.githubusercontent.com/4eb769261d3f0687958baff8dfb5ba27695903f4/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f63686f73756e672d737567676573742d32303230303131372e313735332e706e67)
+
+
+### 付加情報出力
+
+**インデックス**
+
+テストを行うためにデータをインデックスします。
+
+```
+[
+  {
+    "input": "ナイキ",
+    "payload": ["http://image.nhnent.com/images/nike.jpg", "ブランド > スポーツ"],
+    "weight": 2
+  },
+  {
+    "input": "アディダス",
+    "payload": ["http://image.nhnent.com/images/adidas.jpg", "ブランド > スポーツ"],
+    "weight": 1
+  }
+]
+```
+
+ペイロード(payload)に出力したい付加情報を入力します。
+
+**オートコンプリート**
+
+1. 入力した付加情報(イメージURL、カテゴリー)が出力されます。
+
+![img](https://camo.githubusercontent.com/6b3a3900fd78396e735ea78a15572a7526dcd85b/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f737567676573742d7061796c6f61642d32303230303131372e313533322e706e67)
+
+
+
+### Input/Outputを別々に設定
+
+**インデックス**
+
+テストを行うためにデータをインデックスします。
+
+```
+[
+  {
+    "input": "ナイキ",
+    "output": "Nike",
+    "weight": 2
+  },
+  {
+    "input": "アディダス",
+    "output": "Adidas",
+    "weight": 1
+  }
+]
+```
+
+**オートコンプリート**
+
+1. 「나」を入力入力します。
+
+2. 「Nike」が出力されます。
+
+![img](https://camo.githubusercontent.com/58cc333c46417956e3881bc908791368c7dfcc67/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f737567676573742d6f75747075742d32303230303131372e313533362e706e67)
+
+
+### マルチサービス
+
+2個以上のサービスのオートコンプリート結果を1回のオートコンプリートAPIリクエストで出力する機能です。例えば、ブランドとカテゴリーのオートコンプリートを1回のAPIリクエストで出力する時に使用します。
+
+**ブランドサービスの作成**
+
+**サービス作成**ボタンをクリックした後、**サービス作成**ウィンドウでIDを入力し、**作成**ボタンをクリックします。
+
+[![img](https://camo.githubusercontent.com/a1ce9dc03fe963ec1c8038e60eac25650830d4e8/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d6272616e642d32303230303131372e313634362e706e67)](https://camo.githubusercontent.com/a1ce9dc03fe963ec1c8038e60eac25650830d4e8/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d6272616e642d32303230303131372e313634362e706e67)
+
+**ブランドインデックス**
+
+テストを行うためにデータをインデックスします。
+
+```
+[
+  {
+    "input": "ナイキ",
+    "weight": 2
+  },
+  {
+    "input": "アディダス",
+    "weight": 1
+  }
+]
+```
+
+**カテゴリーサービスの作成**
+
+**サービス作成**ボタンをクリックした後、**サービス作成**ウィンドウでIDを入力し、**作成**ボタンをクリックします。
+
+[![img](https://camo.githubusercontent.com/efb7010501ba3b26a887ef566e2f882dd95b4b36/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d63617465676f72792d32303230303131372e313635312e706e67)](https://camo.githubusercontent.com/efb7010501ba3b26a887ef566e2f882dd95b4b36/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d63617465676f72792d32303230303131372e313635312e706e67)
+
+**カテゴリーインデックス**
+
+テストを行うためにデータをインデックスします。
+
+```
+[
+  {
+    "input": "メンズバッグ",
+    "weight": 2
+  },
+  {
+    "input": "アウター",
+    "weight": 1
+  }
+]
+```
+
+**オートコンプリート**
+
+API呼び出し時、「serviceids/brand,category」にリクエストしました。
+
+APIレスポンスにindex 0はbrand、index 1はcategoryオートコンプリート結果が出力されます。
+
+```
+curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='ナ'
+{
+  "collections" : [ {
+    "index" : 0,
+    "items" : [ [ "ナイキ" ] ],
+    "title" : ""
+  }, {
+    "index" : 1,
+    "items" : [ [ "メンズバッグ" ] ],
+    "title" : ""
+  } ],
+  "query" : [ "나", "sk" ],
+  "ver" : "1.0"
+}
+```
+
+
+
+## 詳細ガイド
+
+### 出力優先順位
+
+インデックスファイルが下記のような場合、ユーザーが「ㄴ」を入力すると「ノートパソコン」、「ナイキ」、「メンズトップス」の順に出力されます。
+
+```
+[
+  {
+    "input": "ノートパソコン",
+    "weight": 3
+  },
+  {
+    "input": "ナイキ",
+    "weight": 2
+  },
+  {
+    "input": "メンズトップス",
+    "weight": 1
+  }
+]
+```
+
+  - 「ㄴ」で始まる単語のうち、weightが高い順に出力されます。
+
+- conversion_weights
+
+ 原本、中間マッチング、韓国語/英語入力変換、 初声オートコンプリートの出力順序を調節できます。
+
+  - 例
+
     ```
+    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,14,13,12,11,10' -H 'Content-Type:application/json; charset=UTF-8' -d '
     [
       {
-        "input": "노트북",
+        "input": "ナイキ",
         "weight": 3
       },
       {
-        "input": "나이키",
+        "input": "運動靴",
         "weight": 2
       },
       {
-        "input": "남성상의",
+        "input": "ナイキ エアマックス",
         "weight": 1
       }
-    ]
+    ]'
     ```
-    * 'ㄴ'으로 시작하는 단어 중 weight 가 높은 순으로 출력됩니다.
-		<br>
-* conversion_weights
-    * 원본, 중간 매칭, 한영타 변환, 초성 자동완성의 출력 순서를 조절할 수 있습니다.
-    * 예제
-        ```
-        curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,14,13,12,11,10' -H 'Content-Type:application/json; charset=UTF-8' -d '
-        [
-          {
-            "input": "나이키",
-            "weight": 3
-          },
-          {
-            "input": "운동화",
-            "weight": 2
-          },
-          {
-            "input": "나이키 에어맥스",
-            "weight": 1
-          }
-        ]'
-        ```
-        * conversion_weights로 "17,16,15,14,13,12,11,10"을 지정했습니다.
-    * conversion_weights의 Index별 의미
 
-        | Index | Description |
-        | -------|-----|
-        | 0     | 원본 |
-        | 1     | 원본의 한영타 변환 |
-        | 2     | 원본의 초성 |
-        | 3     | 원본의 초성의 한영타 변환 |
-        | 4     | 중간 매칭 |
-        | 5     | 중간 매칭의 한영타 변환 |
-        | 6     | 중간 매칭의 초성 |
-        | 7     | 중간 매칭의 초성의 한영타 변환 |
+    - conversion_weightsに "17,16,15,14,13,12,11,10"を指定しました。
 
-    * 예제 데이터 색인 결과
+  - conversion_weightsの各Indexの意味
 
-        | Key | Relevance | Description |
-        |-------|-----|--------|
-        | 나이키 | 20 = 3(weight) + 17(conversion weight) | "나이키"의 원본 |
-        | 운동화 | 19 = 2(weight) + 17(conversion weight) | "운동화"의 원본 |
-        | 나이키 에어맥스 | 18 = 1(weight) + 17(conversion weight) | "나이키 에어맥스"의 원본 |
-        | skdlzl | 19 = 3(weight) + 16(conversion weight) | "나이키"의 한영타 변환
-        | dnsehdghk| 18 = 2(weight) + 16(conversion weight) | "운동화"의 한영타 변환 |
-        | skdlzl dpdjaortm | 17 = 1(weight) + 16(conversion weight) | "나이키 에어맥스"의 한영타 변환 |
-        | ㄴㅇㅋ | 18 = 3(weight) + 15(conversion weight) | "나이키"의 초성 |
-        | ㅇㄷㅎ | 17 = 2(weight) + 15(conversion weight) | "운동화"의 초성 |
-        | ㄴㅇㅋ ㅇㅇㅁㅅ | 16 = 1(weight) + 15(conversion weight) | "'나이키 에어맥스"의 초성 |
-        | sdz | 17 = 3(weight) + 14(conversion weight) | "나이키"의 초성의 한영타 변환 |
-        | deg | 16 = 2(weight) + 14(conversion weight) | "운동화"의 초성의 한영타 변환 |
-        | sdz ddat | 15 = 1(weight) + 14(conversion weight) | "나이키 에어맥스"의 초성의 한영타 변환 |
-        | 에어맥스 | 14 = 1(weight) + 13(conversion weight) | "나이키 에어맥스"의 중간 매칭 |
-        | dpdjaortm | 13 = 1(weight) + 12(conversion weight) | "나이키 에어맥스"의 중간 매칭의 한영타 변환 |
-        | ㅇㅇㅁㅅ | 12 = 1(weight) + 11(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성 |
-        | ddat | 11 = 1(weight) + 10(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성의 한영타 변환 |
+    | Index | Description                    |
+    | ----- | ------------------------------ |
+    | 0     | 原本                          |
+    | 1     | 原本の韓国語/英語入力変換            |
+    | 2     | 原本の初声                    |
+    | 3     | 原本の初声の韓国語/英語入力変換     |
+    | 4     | 中間マッチング                      |
+    | 5     | 中間マッチングの韓国語/英語入力変換       |
+    | 6     | 中間マッチングの初声               |
+    | 7     | 中間マッチングの初声の韓国語/英語入力変換 |
 
-        * 사용자가 "ㅇ"을 입력했을때 "운동화"(relevance 19)가 "에어맥스"(relevance 14) 보다 먼저 출력 됩니다.
+  - サンプルデータのインデックス結果
+
+    | Key              | Relevance                              | Description                                        |
+    | ---------------- | -------------------------------------- | -------------------------------------------------- |
+    | ナイキ           | 20 = 3(weight) + 17(conversion weight) | "ナイキ"の原本                                   |
+    | 運動靴           | 19 = 2(weight) + 17(conversion weight) | "運動靴"の原本                                   |
+    | ナイキ エアマックス  | 18 = 1(weight) + 17(conversion weight) | "ナイキ エアマックス"の原本                          |
+    | skdlzl           | 19 = 3(weight) + 16(conversion weight) | "ナイキ"の韓国語/英語入力変換                            |
+    | dnsehdghk        | 18 = 2(weight) + 16(conversion weight) | "運動靴"の韓国語/英語入力変換                            |
+    | skdlzl dpdjaortm | 17 = 1(weight) + 16(conversion weight) | "ナイキ エアマックス"の韓国語/英語入力変換                   |
+    | ㄴㅇㅋ          | 18 = 3(weight) + 15(conversion weight) | "ナイキ"の初声                                    |
+    | ㅇㄷㅎ          | 17 = 2(weight) + 15(conversion weight) | "運動靴"の初声                                    |
+    | ㄴㅇㅋㅇㅇㅁㅅ | 16 = 1(weight) + 15(conversion weight) | "'ナイキ エアマックス"の初声                          |
+    | sdz              | 17 = 3(weight) + 14(conversion weight) | "ナイキ"の初声の韓国語/英語入力変換                     |
+    | deg              | 16 = 2(weight) + 14(conversion weight) | "運動靴"の初声の韓国語/英語入力変換                     |
+    | sdz ddat         | 15 = 1(weight) + 14(conversion weight) | "ナイキ エアマックス"の初声の韓国語/英語入力変換            |
+    | エアマックス         | 14 = 1(weight) + 13(conversion weight) | "ナイキ エアマックス"の中間マッチング                      |
+    | dpdjaortm        | 13 = 1(weight) + 12(conversion weight) | "ナイキ エアマックス"の中間マッチングの韓国語/英語入力変換       |
+    | ㅇㅇㅁㅅ        | 12 = 1(weight) + 11(conversion weight) | "ナイキ エアマックス"の中間マッチングの初声               |
+    | ddat             | 11 = 1(weight) + 10(conversion weight) | "ナイキ エアマックス"の中間マッチングの初声の韓国語/英語入力変換 |
+
+    - ユーザーが「ㅇ」を入力した時、「運動靴」(relevance 19)が「エアマックス」(relevance 14)より先に出力されます。
 
 ### ACL
-* ACL 설정 화면
-    ![](http://static.toastoven.net/prod_autocomplete/acl-detail-20200117.1654.png)
-* 입력형식
-    * IP 형식으로 입력 가능합니다.
-        * 예제) 202.179.177.21
-    * CIDR 형식으로 입력 가능합니다.
-        * 예제) 202.179.177.0/24
-    * IP 또는 CIDR 을 여러 개 입력 가능합니다.
-        * 예제) 202.179.177.21, 202.179.177.0/24
-    * all 일 경우 모두 매칭 됩니다.
-    * 값이 비어 있을 경우 모두 매칭 안됩니다.  
-* 허용, 거부 둘 다에 매칭이 될 경우 거부됩니다.
-* 허용, 거부 둘 다에 매칭이 안될 경우 거부됩니다.  
 
+ACLの設定画面は次のとおりです。
 
-## 클라이언트 예제 코드
-* 파일 업로드 방식의 색인 예제 코드입니다.
+[![img](https://camo.githubusercontent.com/7e9a17d67a5611786da108de51a5baef6a3999ab/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f61636c2d64657461696c2d32303230303131372e313635342e706e67)](https://camo.githubusercontent.com/7e9a17d67a5611786da108de51a5baef6a3999ab/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f61636c2d64657461696c2d32303230303131372e313635342e706e67)
+
+- 入力形式
+  - IP形式で入力できます。
+    - 例) 202.179.177.21
+  - CIDR形式で入力できます。
+    - 例) 202.179.177.0/24
+  - IPまたはCIDRを複数入力できます。
+    - 例) 202.179.177.21, 202.179.177.0/24
+  - allの場合、すべてマッチングされます。
+    - 値が空の場合、すべてマッチングされません。  
+- 許可、拒否のどちらにもマッチングされる場合、拒否されます。
+- 許可、拒否のどちらにもマッチングされない場合、拒否されます。
+
+## クライアントサンプルコード
+
+次はファイルアップロード方式のインデックスサンプルコードです。
 
 ### java
-* dependency
-``` java
+
+- dependency
+
+```
 compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
 compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
 ```
-* 색인(파일 업로드 방식)
-``` java
+
+- インデックス(ファイルアップロード方式)
+
+```
 package com.toast.cloud.autocomplete.client;
 
 import org.apache.http.HttpEntity;
@@ -461,7 +598,7 @@ public class IndexingClient {
 		String documents = ""
 			+ "[\n"
 			+ "  {\n"
-			+ "	   \"input\": \"나이키\",\n"
+			+ "	   \"input\": \"ナイキ\",\n"
 			+ "    \"weight\": 3\n"
 			+ "  }\n"
 			+ "]\n";
@@ -507,13 +644,15 @@ public class IndexingClient {
 ```
 
 ### php
-* 색인(파일 업로드 방식)
-``` php
+
+- インデックス(ファイルアップロード方式)
+
+```
 <?php
     $documents = ""
       . "[\n"
       . "  {\n"
-      . "    \"input\": \"나이키\",\n"
+      . "    \"input\": \"ナイキ\",\n"
       . "    \"weight\": 3\n"
       . "  }\n"
       . "]\n";
