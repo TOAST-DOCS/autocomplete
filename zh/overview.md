@@ -8,7 +8,7 @@
 
 Service is configured as below:
 
-![img](http://static.toastoven.net/prod_autocomplete/block_diagrm-20200113.png)
+![img](http://static.toastoven.net/prod_autocomplete/block_diagrm-en-20200304.png)
 
 Development Process
 

@@ -8,7 +8,7 @@
 
 サービスの構成図は次のとおりです。
 
-![img](http://static.toastoven.net/prod_autocomplete/block_diagrm-20200113.png)
+![img](http://static.toastoven.net/prod_autocomplete/block_diagrm-ja-20200304.png)
 
 サービス開発プロセス
 

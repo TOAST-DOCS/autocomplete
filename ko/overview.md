@@ -8,7 +8,7 @@
 
 서비스 구성도는 다음과 같습니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/block_diagrm-20200113.png)
+![img](http://static.toastoven.net/prod_autocomplete/block_diagrm-ko-20200304.png)
 
 서비스 개발 과정
 
