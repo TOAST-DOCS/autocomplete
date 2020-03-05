@@ -1,6 +1,6 @@
 ## Search > Autocomplete > Release Notes
 
-### Feb. 25, 2020
+### Mar. 24, 2020
 
 - Converted into Beta Service from the Alpha service.
 
@@ -25,4 +25,4 @@
 
 ### Feb. 22, 2018
 
-- Released the Autocomplete Service 
+- Released the Autocomplete Service
