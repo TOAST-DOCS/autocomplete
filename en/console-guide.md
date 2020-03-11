@@ -8,13 +8,19 @@
 ## Getting Started
 
 First, enable the Automcomplete Service.
+
 1. Go to **TOAST Console** and click **Select Services**.
+
 2. Click **Autocomplete**.
+
 ![img](http://static.toastoven.net/prod_autocomplete/product-use-02-20200117.1337.png)
 
  Do as follows to check if service is enabled:
+
 1. Click **Search** on the left menu on **TOAST Console**.
+
 2. If you can find **Autocomplete**, the service has been enabled.
+
 ![img](http://static.toastoven.net/prod_autocomplete/product-use-03-20200117.1407.png)
 
 ## Basic Usage

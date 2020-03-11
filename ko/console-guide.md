@@ -8,14 +8,20 @@
 ## 시작하기
 
 먼저 Autocomplete 서비스를 활성화합니다.
+
 1. **TOAST Console**에서 **서비스 선택**을 클릭합니다.
+
 2. **Autocomplete**을 클릭합니다.
-![img](http://static.toastoven.net/prod_autocomplete/product-use-02-20200117.1337.png)
+
+![img](http://static.toastoven.net/prod_autocomplete/product-use-02-ko-20200304.png)
 
 서비스가 활성화되었는지 확인하는 방법은 다음과 같습니다.
+
 1. **TOAST Console** 왼쪽 메뉴에서 **Search**를 클릭합니다.
+
 2. **Autocomplete**가 보이면 서비스가 활성화된 것입니다.
-![img](http://static.toastoven.net/prod_autocomplete/product-use-03-20200117.1407.png)
+
+![img](http://static.toastoven.net/prod_autocomplete/product-use-03-ko-20200304.png)
 
 ## 기본 사용법
 
@@ -30,12 +36,12 @@
 
 3. **저장** 버튼을 클릭합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-20200117.1417.png)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-ko-20200304.png)
 
 생성된 서비스 결과를 확인합니다.  
 1. 생성된 서비스 ID(test)를 클릭합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/domain_create_result-20200117.1459.png)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create_result-ko-20200304.png)
 
 ### 2. 색인
 
@@ -84,8 +90,8 @@
 
 8. 색인 결과를 확인합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-20200117.1508.png)  
-![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-20200117.1516.png)
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-ko-20200304.png)  
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-ko-20200304.png)
 
 **색인 주의 사항**
 
@@ -175,7 +181,7 @@
 
 5. 자동 완성 결과가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-20200117.1521.png)
+![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ko-20200304.png)
 
 **REST API**
 
@@ -214,7 +220,7 @@
 
 4. **저장** 버튼을 클릭합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/acl_procedure-20200117.1525.png)
+![img](http://static.toastoven.net/prod_autocomplete/acl_procedure-ko-20200304.png)
 
 
 
@@ -241,7 +247,7 @@
 
 색인할 때 **중간 매칭**을 선택합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-20200117.1616.png)
+![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-ko-20200304.png)
 
 **자동 완성**
 
@@ -249,7 +255,7 @@
 
 2. 중간에 **운동**으로 시작되는 **나이키운동화**가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-20200117.1619.png)
+![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ko-20200304.png)
 
 
 ### 한영타 변환
@@ -273,7 +279,7 @@
 
 색인할 때 **한영타 변환**을 선택합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/koreng-indexing-20200117.1623.png)
+![img](http://static.toastoven.net/prod_autocomplete/koreng-indexing-ko-20200304.png)
 
 **자동 완성**
 
@@ -281,7 +287,7 @@
 
 2. '나이키'가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-20200117.1630.png)
+![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-ko-20200304.png)
 
 
 ### 초성 자동 완성
@@ -305,7 +311,7 @@
 
   - 색인할 때 **초성 자동완성**을 체크합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/chosung-indexing-20200117.1632.png)
+![img](http://static.toastoven.net/prod_autocomplete/chosung-indexing-ko-20200304.png)
 
 **자동 완성**
 
@@ -313,7 +319,7 @@
 
 2. '나이키'가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/chosung-suggest-20200117.1753.png)
+![img](http://static.toastoven.net/prod_autocomplete/chosung-suggest-ko-20200304.png)
 
 
 ### 부가 정보 출력
@@ -343,7 +349,7 @@
 
 1. 입력한 부가 정보(이미지 URL, 카테고리)가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-20200117.1532.png)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ko-20200304.png)
 
 
 
@@ -374,7 +380,7 @@
 
 2. 'Nike'가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-output-20200117.1536.png)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ko-20200304.png)
 
 
 ### 멀티 서비스
@@ -385,7 +391,7 @@
 
 **서비스 생성** 버튼을 클릭한 후 **서비스 생성** 창에서 ID를 입력하고 **생성** 버튼을 클릭합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/domain_create-brand-20200117.1646.png)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create-brand-ko-20200304.png)
 
 **브랜드 색인**
 
@@ -408,7 +414,7 @@
 
 **서비스 생성** 버튼을 클릭한 후 **서비스 생성** 창에서 ID를 입력하고 **생성** 버튼을 클릭합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/domain_create-category-20200117.1651.png)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create-category-ko-20200304.png)
 
 **카테고리 색인**
 
@@ -543,7 +549,7 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
 
 ACL 설정 화면은 다음과 같습니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/acl-detail-20200117.1654.png)
+![img](http://static.toastoven.net/prod_autocomplete/acl-detail-ko-20200304.png)
 
 - 입력 형식
   - IP 형식으로 입력 가능합니다.

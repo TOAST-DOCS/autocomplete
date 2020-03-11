@@ -8,13 +8,19 @@
 ## 始める
 
 まずAutocompleteサービスを有効化します。
+
 1. **TOAST Console**で**サービス選択**をクリックします。
+
 2. **Autocomplete**をクリックします。
+
 ![img](http://static.toastoven.net/prod_autocomplete/product-use-02-20200117.1337.png)
 
 サービスが有効になっているかを確認する方法は次のとおりです。
+
 1. **TOAST Console**左側のメニューで**Search**をクリックします。
+
 2. **Autocomplete**が表示されていれば、サービスが有効になっているということです。
+
 ![img](http://static.toastoven.net/prod_autocomplete/product-use-03-20200117.1407.png)
 
 ## 基本使用方法
