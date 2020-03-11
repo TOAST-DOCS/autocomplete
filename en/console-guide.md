@@ -10,12 +10,12 @@
 First, enable the Automcomplete Service.
 1. Go to **TOAST Console** and click **Select Services**.
 2. Click **Autocomplete**.
-![img](https://camo.githubusercontent.com/fede2041ec8707d6f0c9d0adfe6445e968e67b09/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f70726f647563742d7573652d30322d32303230303131372e313333372e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/product-use-02-20200117.1337.png)
 
  Do as follows to check if service is enabled:
 1. Click **Search** on the left menu on **TOAST Console**.
 2. If you can find **Autocomplete**, the service has been enabled.
-![img](https://camo.githubusercontent.com/02282e4d4bdf2cd04d07cba4fc856be137777c22/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f70726f647563742d7573652d30332d32303230303131372e313430372e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/product-use-03-20200117.1407.png)
 
 ## Basic Usage
 
@@ -29,12 +29,12 @@ First, enable the Automcomplete Service.
 
 3. Click **Save**.
 
-![img](https://camo.githubusercontent.com/6cdfb1dfdfb9da040ed77d952327091a38d130de/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174655f70726f6365647572652d32303230303131372e313431372e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-20200117.1417.png)
 
 Check the result of service creation.
 1. Click Service ID which is created (test).
 
-![img](https://camo.githubusercontent.com/b719ce4e9b8e37433c7451ec46ea1d1f3774b0dd/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174655f726573756c742d32303230303131372e313435392e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create_result-20200117.1459.png)
 
 ### 2. Indexing
 
@@ -83,8 +83,8 @@ Do as follows to create and index files.
 
 8. Check index results.
 
-![img](https://camo.githubusercontent.com/e5edbb5e02a0b3e89a688c599b767577e078bd45/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e646578696e675f70726f6365647572652d30312d32303230303131372e313530382e706e67)  
-![img](https://camo.githubusercontent.com/3552863677ff50b7c560d2f15ce020c026524cfb/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e646578696e675f70726f6365647572652d30322d32303230303131372e313531362e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-20200117.1508.png)  
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-20200117.1516.png)
 
 **Caution for Index**
 
@@ -174,7 +174,7 @@ When index is requested, previous data are all deleted and replaced by new data.
 
 5. Result of autocomplete comes out. .
 
-![img](https://camo.githubusercontent.com/7b5ba9c39e5e35c5a4f6873f2cdb06bdd0bc1eb7/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6175746f636f6d706c6574655f70726f6365647572652d32303230303131372e313532312e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-20200117.1521.png)
 
 **REST API**
 
@@ -213,7 +213,7 @@ Testing on console does not require ACL setting.
 
 4. Click **Save**.
 
-![img](https://camo.githubusercontent.com/299f6d5330cad8525920c9a32da94d5ba55716ac/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f61636c5f70726f6365647572652d32303230303131372e313532352e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/acl_procedure-20200117.1525.png)
 
 
 
@@ -240,7 +240,7 @@ To test, index data as below:
 
 Select **Middle-match** for indexing.
 
-[![img](https://camo.githubusercontent.com/3c8342ec8fe686cf686281c1cccbedf5dcbb6660/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e6669782d696e646578696e672d32303230303131372e313631362e706e67)](https://camo.githubusercontent.com/3c8342ec8fe686cf686281c1cccbedf5dcbb6660/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e6669782d696e646578696e672d32303230303131372e313631362e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-20200117.1616.png)
 
 **Autocomplete**
 
@@ -248,7 +248,7 @@ Select **Middle-match** for indexing.
 
 2. You can find in the middle **Nike Sneakers** starting with **Workout**
 
-![img](https://camo.githubusercontent.com/9c8d7a33edc2af8720362ea09194d2fb8fffbe74/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e6669782d737567676573742d32303230303131372e313631392e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-20200117.1619.png)
 
 
 ### Korean-English Conversion
@@ -272,7 +272,7 @@ To test, index data as below:
 
 Select **Korean-English Conversion** for indexing.
 
-[![img](https://camo.githubusercontent.com/b8c6fa079d8560e637d937227fad5a9f24472709/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6b6f72656e672d696e646578696e672d32303230303131372e313632332e706e67)](https://camo.githubusercontent.com/b8c6fa079d8560e637d937227fad5a9f24472709/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6b6f72656e672d696e646578696e672d32303230303131372e313632332e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/koreng-indexing-20200117.1623.png)
 
 **Autocomplete**
 
@@ -280,7 +280,7 @@ Select **Korean-English Conversion** for indexing.
 
 2. Then, 'Nike' comes as the output.
 
-![img](https://camo.githubusercontent.com/6ed22f7ead71302064ae61184087b64745cdca8a/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6b6f72656e672d737567676573742d32303230303131372e313633302e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-20200117.1630.png)
 
 
 ### Autocomplete for Initial Letters
@@ -304,7 +304,7 @@ To test, index data as below:
 
   - Check **Autocomplete for Initial Letters** for indexing.
 
-[![img](https://camo.githubusercontent.com/083dc9ba9a8dc5f6afabe074c69dde39e150c9f7/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f63686f73756e672d696e646578696e672d32303230303131372e313633322e706e67)](https://camo.githubusercontent.com/083dc9ba9a8dc5f6afabe074c69dde39e150c9f7/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f63686f73756e672d696e646578696e672d32303230303131372e313633322e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/chosung-indexing-20200117.1632.png)
 
 **Autocomplete**
 
@@ -312,7 +312,7 @@ To test, index data as below:
 
 2. '나이키' shows as output.
 
-![img](https://camo.githubusercontent.com/4eb769261d3f0687958baff8dfb5ba27695903f4/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f63686f73756e672d737567676573742d32303230303131372e313735332e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/chosung-suggest-20200117.1753.png)
 
 
 ### Output of Additional Information
@@ -342,7 +342,7 @@ Enter additional information you need as output for payload.
 
 1. The additional information input (image URL and category) comes as output.
 
-![img](https://camo.githubusercontent.com/6b3a3900fd78396e735ea78a15572a7526dcd85b/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f737567676573742d7061796c6f61642d32303230303131372e313533322e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-20200117.1532.png)
 
 
 
@@ -373,7 +373,7 @@ To test, index data as below:
 
 2. 'Nike' comes as output.
 
-![img](https://camo.githubusercontent.com/58cc333c46417956e3881bc908791368c7dfcc67/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f737567676573742d6f75747075742d32303230303131372e313533362e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-output-20200117.1536.png)
 
 
 ### Multiple Services
@@ -384,7 +384,7 @@ Autocomplete results of more than two services come with one-time request for au
 
 Click **Create Services**, enter ID on a popup of **Create Services**, and click **Create**.  
 
-[![img](https://camo.githubusercontent.com/a1ce9dc03fe963ec1c8038e60eac25650830d4e8/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d6272616e642d32303230303131372e313634362e706e67)](https://camo.githubusercontent.com/a1ce9dc03fe963ec1c8038e60eac25650830d4e8/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d6272616e642d32303230303131372e313634362e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create-brand-20200117.1646.png)
 
 **Brand Index**
 
@@ -407,7 +407,7 @@ To test, index data as below:
 
 Click **Create Services** , enter ID on a popup for **Create Services**, and click **Create**.
 
-[![img](https://camo.githubusercontent.com/efb7010501ba3b26a887ef566e2f882dd95b4b36/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d63617465676f72792d32303230303131372e313635312e706e67)](https://camo.githubusercontent.com/efb7010501ba3b26a887ef566e2f882dd95b4b36/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d63617465676f72792d32303230303131372e313635312e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create-category-20200117.1651.png)
 
 **Category Index**
 
@@ -542,7 +542,7 @@ In the case of the following index files, when user enters 'ㄴ', the output sho
 
 ACL can be set on a page like this:
 
-[![img](https://camo.githubusercontent.com/7e9a17d67a5611786da108de51a5baef6a3999ab/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f61636c2d64657461696c2d32303230303131372e313635342e706e67)](https://camo.githubusercontent.com/7e9a17d67a5611786da108de51a5baef6a3999ab/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f61636c2d64657461696c2d32303230303131372e313635342e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/acl-detail-20200117.1654.png)
 
 - Input Formats
   - Available in the IP format.
