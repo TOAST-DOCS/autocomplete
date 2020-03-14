@@ -8,14 +8,20 @@
 ## Getting Started
 
 First, enable the Automcomplete Service.
+
 1. Go to **TOAST Console** and click **Select Services**.
+
 2. Click **Autocomplete**.
-![img](https://camo.githubusercontent.com/fede2041ec8707d6f0c9d0adfe6445e968e67b09/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f70726f647563742d7573652d30322d32303230303131372e313333372e706e67)
+
+![img](http://static.toastoven.net/prod_autocomplete/product-use-02-en-20200304.jpg)
 
  Do as follows to check if service is enabled:
+
 1. Click **Search** on the left menu on **TOAST Console**.
+
 2. If you can find **Autocomplete**, the service has been enabled.
-![img](https://camo.githubusercontent.com/02282e4d4bdf2cd04d07cba4fc856be137777c22/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f70726f647563742d7573652d30332d32303230303131372e313430372e706e67)
+
+![img](http://static.toastoven.net/prod_autocomplete/product-use-03-en-20200304.jpg)
 
 ## Basic Usage
 
@@ -29,12 +35,12 @@ First, enable the Automcomplete Service.
 
 3. Click **Save**.
 
-![img](https://camo.githubusercontent.com/6cdfb1dfdfb9da040ed77d952327091a38d130de/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174655f70726f6365647572652d32303230303131372e313431372e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-en-20200304.jpg)
 
 Check the result of service creation.
 1. Click Service ID which is created (test).
 
-![img](https://camo.githubusercontent.com/b719ce4e9b8e37433c7451ec46ea1d1f3774b0dd/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174655f726573756c742d32303230303131372e313435392e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create_result-en-20200304.jpg)
 
 ### 2. Indexing
 
@@ -83,8 +89,8 @@ Do as follows to create and index files.
 
 8. Check index results.
 
-![img](https://camo.githubusercontent.com/e5edbb5e02a0b3e89a688c599b767577e078bd45/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e646578696e675f70726f6365647572652d30312d32303230303131372e313530382e706e67)  
-![img](https://camo.githubusercontent.com/3552863677ff50b7c560d2f15ce020c026524cfb/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e646578696e675f70726f6365647572652d30322d32303230303131372e313531362e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-en-20200304.jpg)  
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-en-20200304.jpg)
 
 **Caution for Index**
 
@@ -174,10 +180,10 @@ When index is requested, previous data are all deleted and replaced by new data.
 
 5. Result of autocomplete comes out. .
 
-![img](https://camo.githubusercontent.com/7b5ba9c39e5e35c5a4f6873f2cdb06bdd0bc1eb7/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6175746f636f6d706c6574655f70726f6365647572652d32303230303131372e313532312e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-en-20200304.jpg)
 
 **REST API**
-
+en-20200304
   - Request
 
     ```
@@ -213,7 +219,7 @@ Testing on console does not require ACL setting.
 
 4. Click **Save**.
 
-![img](https://camo.githubusercontent.com/299f6d5330cad8525920c9a32da94d5ba55716ac/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f61636c5f70726f6365647572652d32303230303131372e313532352e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/acl_procedure-en-20200304.jpg)
 
 
 
@@ -240,7 +246,7 @@ To test, index data as below:
 
 Select **Middle-match** for indexing.
 
-[![img](https://camo.githubusercontent.com/3c8342ec8fe686cf686281c1cccbedf5dcbb6660/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e6669782d696e646578696e672d32303230303131372e313631362e706e67)](https://camo.githubusercontent.com/3c8342ec8fe686cf686281c1cccbedf5dcbb6660/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e6669782d696e646578696e672d32303230303131372e313631362e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-en-20200304.jpg)
 
 **Autocomplete**
 
@@ -248,72 +254,7 @@ Select **Middle-match** for indexing.
 
 2. You can find in the middle **Nike Sneakers** starting with **Workout**
 
-![img](https://camo.githubusercontent.com/9c8d7a33edc2af8720362ea09194d2fb8fffbe74/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f696e6669782d737567676573742d32303230303131372e313631392e706e67)
-
-
-### Korean-English Conversion
-
-**Index**
-
-To test, index data as below:
-
-```
-[
-  {
-    "input": "Nike",
-    "weight": 2
-  },
-  {
-    "input": "Adidas",
-    "weight": 1
-  }
-]
-```
-
-Select **Korean-English Conversion** for indexing.
-
-[![img](https://camo.githubusercontent.com/b8c6fa079d8560e637d937227fad5a9f24472709/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6b6f72656e672d696e646578696e672d32303230303131372e313632332e706e67)](https://camo.githubusercontent.com/b8c6fa079d8560e637d937227fad5a9f24472709/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6b6f72656e672d696e646578696e672d32303230303131372e313632332e706e67)
-
-**Autocomplete**
-
-1. Enter 'skdl', typed in English for '나이', which is transliterated for 'Ni' from Nike.
-
-2. Then, 'Nike' comes as the output.
-
-![img](https://camo.githubusercontent.com/6ed22f7ead71302064ae61184087b64745cdca8a/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f6b6f72656e672d737567676573742d32303230303131372e313633302e706e67)
-
-
-### Autocomplete for Initial Letters
-
-**Index**
-
-To test, index data as below:
-
-```
-[
-  {
-    "input": "Nike",
-    "weight": 2
-  },
-  {
-    "input": "Adidas",
-    "weight": 1
-  }
-]
-```
-
-  - Check **Autocomplete for Initial Letters** for indexing.
-
-[![img](https://camo.githubusercontent.com/083dc9ba9a8dc5f6afabe074c69dde39e150c9f7/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f63686f73756e672d696e646578696e672d32303230303131372e313633322e706e67)](https://camo.githubusercontent.com/083dc9ba9a8dc5f6afabe074c69dde39e150c9f7/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f63686f73756e672d696e646578696e672d32303230303131372e313633322e706e67)
-
-**Autocomplete**
-
-1. Enter 'ㄴㅇㅋ'.
-
-2. '나이키' shows as output.
-
-![img](https://camo.githubusercontent.com/4eb769261d3f0687958baff8dfb5ba27695903f4/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f63686f73756e672d737567676573742d32303230303131372e313735332e706e67)
-
+![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-en-20200304.jpg)
 
 ### Output of Additional Information
 
@@ -342,7 +283,7 @@ Enter additional information you need as output for payload.
 
 1. The additional information input (image URL and category) comes as output.
 
-![img](https://camo.githubusercontent.com/6b3a3900fd78396e735ea78a15572a7526dcd85b/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f737567676573742d7061796c6f61642d32303230303131372e313533322e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-en-20200304.jpg)
 
 
 
@@ -355,13 +296,13 @@ To test, index data as below:
 ```
 [
   {
-    "input": "Nike",
-    "output": "Nike",
+    "input": "Shoes",
+    "output": "Sneakers",
     "weight": 2
   },
   {
-    "input": "Adidas",
-    "output": "Adidas",
+    "input": "Boots",
+    "output": "Sneakers",
     "weight": 1
   }
 ]
@@ -369,11 +310,11 @@ To test, index data as below:
 
 **Autocomplete**
 
-1. Enter '나'.
+1. Enter 'sh'.
 
-2. 'Nike' comes as output.
+2. 'Sneakers' comes as output.
 
-![img](https://camo.githubusercontent.com/58cc333c46417956e3881bc908791368c7dfcc67/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f737567676573742d6f75747075742d32303230303131372e313533362e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-output-en-20200304.jpg)
 
 
 ### Multiple Services
@@ -384,7 +325,7 @@ Autocomplete results of more than two services come with one-time request for au
 
 Click **Create Services**, enter ID on a popup of **Create Services**, and click **Create**.  
 
-[![img](https://camo.githubusercontent.com/a1ce9dc03fe963ec1c8038e60eac25650830d4e8/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d6272616e642d32303230303131372e313634362e706e67)](https://camo.githubusercontent.com/a1ce9dc03fe963ec1c8038e60eac25650830d4e8/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d6272616e642d32303230303131372e313634362e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create-brand-en-20200304.jpg)
 
 **Brand Index**
 
@@ -407,7 +348,7 @@ To test, index data as below:
 
 Click **Create Services** , enter ID on a popup for **Create Services**, and click **Create**.
 
-[![img](https://camo.githubusercontent.com/efb7010501ba3b26a887ef566e2f882dd95b4b36/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d63617465676f72792d32303230303131372e313635312e706e67)](https://camo.githubusercontent.com/efb7010501ba3b26a887ef566e2f882dd95b4b36/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f646f6d61696e5f6372656174652d63617465676f72792d32303230303131372e313635312e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create-category-en-20200304.jpg)
 
 **Category Index**
 
@@ -416,7 +357,7 @@ To test, index data as below:
 ```
 [
   {
-    "input": "Men's Bags",
+    "input": "Activewear",
     "weight": 2
   },
   {
@@ -433,18 +374,18 @@ Requested with 'serviceids/brand,category' to call APIs.
 The API response shows autocomplete results for brand at index 0 and category at index 1.  
 
 ```
-curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='나'
+curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='a'
 {
   "collections" : [ {
     "index" : 0,
-    "items" : [ [ "Nike" ] ],
+    "items" : [ [ "adidas" ] ],
     "title" : ""
   }, {
     "index" : 1,
-    "items" : [ [ "Men's Bags" ] ],
+    "items" : [ [ "actiewear" ] ],
     "title" : ""
   } ],
-  "query" : [ "나", "sk" ],
+  "query" : [ "a", "ㅁ" ],
   "ver" : "1.0"
 }
 ```
@@ -455,65 +396,65 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
 
 ### Priority of Output
 
-In the case of the following index files, when user enters 'ㄴ', the output shows in the order of '노트북', '나이키' and '남성상의', which are transliterated as 'Laptop', 'Nike', and 'Men's Tops', respectively.
+In the case of the following index files, when user enters 'no', the output shows in the order of 'notebook'.
 
 ```
 [
   {
-    "input": "노트북",
+    "input": "notebook",
     "weight": 3
   },
   {
-    "input": "나이키",
+    "input": "notepad",
     "weight": 2
   },
   {
-    "input": "남성상의",
+    "input": "note cards",
     "weight": 1
   }
 ]
 ```
 
-  - Words starting with 'ㄴ' come in the order of higher weights.
+  - Words starting with 'no' come in the order of higher weights.
 
 - conversion_weights
 
-  The output order can be adjusted for original, middled match, Korean/English conversion, or initial-letter autocomplete.  
+  The output order can be adjusted for original, middled match autocomplete.  
 
   - Example
 
     ```
-    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,14,13,12,11,10' -H 'Content-Type:application/json; charset=UTF-8' -d '
+    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,0,0,0,13,0,0,0' -H 'Content-Type:application/json; charset=UTF-8' -d '
     [
       {
-        "input": "나이키",
+        "input": "notebook",
         "weight": 3
       },
       {
-        "input": "운동화",
+        "input": "notepad",
         "weight": 2
       },
       {
-        "input": "나이키 에어맥스",
+        "input": "note cards",
         "weight": 1
       }
     ]'
     ```
 
-    - Numbers are specified by "17,16,15,14,13,12,11,10" for conversion_weights.
+    - Numbers are specified by "17,0,0,0,13,0,0,0" for conversion_weights.
 
   - Significance of Each Index of conversion_weights
 
     | Index | Description                                                  |
     | ----- | ------------------------------------------------------------ |
     | 0     | Original                                                     |
-    | 1     | Korean/English converted for the original                    |
-    | 2     | Initial letters of the original                              |
-    | 3     | Korean/English converted for initial letters of the original |
+    | 1     | Not used for english                                         |
+    | 2     | Not used for english                                         |
+    | 3     | Not used for english                                         |		
     | 4     | Middle match                                                 |
-    | 5     | Korean/English converted for middle match                    |
-    | 6     | Initial letters of middle match                              |
-    | 7     | Korean/English converted for initial letters of middle match |
+    | 5     | Not used for english                                         |		
+    | 6     | Not used for english                                         |		
+    | 7     | Not used for english                                         |		
 
   - Index results of example data  
 
@@ -542,7 +483,7 @@ In the case of the following index files, when user enters 'ㄴ', the output sho
 
 ACL can be set on a page like this:
 
-[![img](https://camo.githubusercontent.com/7e9a17d67a5611786da108de51a5baef6a3999ab/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f61636c2d64657461696c2d32303230303131372e313635342e706e67)](https://camo.githubusercontent.com/7e9a17d67a5611786da108de51a5baef6a3999ab/687474703a2f2f7374617469632e746f6173746f76656e2e6e65742f70726f645f6175746f636f6d706c6574652f61636c2d64657461696c2d32303230303131372e313635342e706e67)
+![img](http://static.toastoven.net/prod_autocomplete/acl-detail-en-20200304.jpg)
 
 - Input Formats
   - Available in the IP format.

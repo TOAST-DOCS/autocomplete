@@ -13,7 +13,7 @@
 
 2. **Autocomplete**をクリックします。
 
-![img](http://static.toastoven.net/prod_autocomplete/product-use-02-20200117.1337.png)
+![img](http://static.toastoven.net/prod_autocomplete/product-use-02-ja-20200304.jpg)
 
 サービスが有効になっているかを確認する方法は次のとおりです。
 
@@ -21,7 +21,7 @@
 
 2. **Autocomplete**が表示されていれば、サービスが有効になっているということです。
 
-![img](http://static.toastoven.net/prod_autocomplete/product-use-03-20200117.1407.png)
+![img](http://static.toastoven.net/prod_autocomplete/product-use-03-ja-20200304.jpg)
 
 ## 基本使用方法
 
@@ -36,12 +36,12 @@
 
 3. **保存**ボタンをクリックします。
 
-![img](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-20200117.1417.png)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-ja-20200304.jpg)
 
 作成されたサービス結果を確認します。  
 1. 作成されたサービスID(test)をクリックします。
 
-![img](http://static.toastoven.net/prod_autocomplete/domain_create_result-20200117.1459.png)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create_result-ja-20200304.jpg)
 
 ### 2. インデックス
 
@@ -90,8 +90,8 @@
 
 8. インデックス結果を確認します。
 
-![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-20200117.1508.png)  
-![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-20200117.1516.png)
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-ja-20200304.jpg)  
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-ja-20200304.jpg)
 
 **インデックスの注意事項**
 
@@ -181,7 +181,7 @@
 
 5. オートコンプリート結果が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-20200117.1521.png)
+![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ja-20200304.jpg)
 
 **REST API**
 
@@ -220,7 +220,7 @@
 
 4. **保存**ボタンをクリックします。
 
-![img](http://static.toastoven.net/prod_autocomplete/acl_procedure-20200117.1525.png)
+![img](http://static.toastoven.net/prod_autocomplete/acl_procedure-ja-20200304.jpg)
 
 
 
@@ -247,7 +247,7 @@
 
 インデックスする時、**中間マッチング**を選択します。
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-20200117.1616.png)
+![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-ja-20200304.jpg)
 
 **オートコンプリート**
 
@@ -255,72 +255,7 @@
 
 2. 中間に**運動**がある**ナイキ運動靴**が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-20200117.1619.png)
-
-
-### 韓国語/英語入力変換
-
-**インデックス**
-
-テストを行うためにデータをインデックスします。
-
-```
-[
-  {
-    "input": "ナイキ",
-    "weight": 2
-  },
-  {
-    "input": "アディダス",
-    "weight": 1
-  }
-]
-```
-
-インデックスする時、**韓国語/英語入力変換**を選択します。
-
-![img](http://static.toastoven.net/prod_autocomplete/koreng-indexing-20200117.1623.png)
-
-**オートコンプリート**
-
-1. 「나이」の英語入力である「skdl」を入力します。
-
-2. 「나이키」が出力されます。
-
-![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-20200117.1630.png)
-
-
-### 初声オートコンプリート
-
-**インデックス**
-
-テストを行うためにデータをインデックスします。
-
-```
-[
-  {
-    "input": "ナイキ",
-    "weight": 2
-  },
-  {
-    "input": "アディダス",
-    "weight": 1
-  }
-]
-```
-
-  - インデックスする時、**初声オートコンプリート**をチェックします。
-
-![img](http://static.toastoven.net/prod_autocomplete/chosung-indexing-20200117.1632.png)
-
-**オートコンプリート**
-
-1. 「ㄴㅇㅋ」を入力します。
-
-2. 「나이키」が出力されます。
-
-![img](http://static.toastoven.net/prod_autocomplete/chosung-suggest-20200117.1753.png)
-
+![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ja-20200304.jpg)
 
 ### 付加情報出力
 
@@ -349,7 +284,7 @@
 
 1. 入力した付加情報(イメージURL、カテゴリー)が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-20200117.1532.png)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ja-20200304.jpg)
 
 
 
@@ -380,7 +315,7 @@
 
 2. 「Nike」が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-output-20200117.1536.png)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ja-20200304.jpg)
 
 
 ### マルチサービス
@@ -391,7 +326,7 @@
 
 **サービス作成**ボタンをクリックした後、**サービス作成**ウィンドウでIDを入力し、**作成**ボタンをクリックします。
 
-![img](http://static.toastoven.net/prod_autocomplete/domain_create-brand-20200117.1646.png)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create-brand-ja-20200304.jpg)
 
 **ブランドインデックス**
 
@@ -414,7 +349,7 @@
 
 **サービス作成**ボタンをクリックした後、**サービス作成**ウィンドウでIDを入力し、**作成**ボタンをクリックします。
 
-![img](http://static.toastoven.net/prod_autocomplete/domain_create-category-20200117.1651.png)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create-category-ja-20200304.jpg)
 
 **カテゴリーインデックス**
 
@@ -440,18 +375,18 @@ API呼び出し時、「serviceids/brand,category」にリクエストしまし�
 APIレスポンスにindex 0はbrand、index 1はcategoryオートコンプリート結果が出力されます。
 
 ```
-curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='ナ'
+curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='ア'
 {
   "collections" : [ {
     "index" : 0,
-    "items" : [ [ "ナイキ" ] ],
+    "items" : [ [ "アディダス" ] ],
     "title" : ""
   }, {
     "index" : 1,
-    "items" : [ [ "メンズバッグ" ] ],
+    "items" : [ [ "アウター" ] ],
     "title" : ""
   } ],
-  "query" : [ "나", "sk" ],
+  "query" : [ "ア"],
   "ver" : "1.0"
 }
 ```
@@ -549,7 +484,7 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
 
 ACLの設定画面は次のとおりです。
 
-![img](http://static.toastoven.net/prod_autocomplete/acl-detail-20200117.1654.png)
+![img](http://static.toastoven.net/prod_autocomplete/acl-detail-ja-20200304.jpg)
 
 - 入力形式
   - IP形式で入力できます。
