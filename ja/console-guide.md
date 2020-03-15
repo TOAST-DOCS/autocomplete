@@ -317,7 +317,6 @@
 
 ![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ja-20200304.jpg)
 
-
 ### マルチサービス
 
 2個以上のサービスのオートコンプリート結果を1回のオートコンプリートAPIリクエストで出力する機能です。例えば、ブランドとカテゴリーのオートコンプリートを1回のAPIリクエストで出力する時に使用します。

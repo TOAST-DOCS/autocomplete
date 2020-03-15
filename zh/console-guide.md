@@ -183,7 +183,7 @@ When index is requested, previous data are all deleted and replaced by new data.
 ![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-en-20200304.jpg)
 
 **REST API**
-en-20200304
+
   - Request
 
     ```
@@ -427,10 +427,10 @@ The output order can be adjusted for original, middled match autocomplete.
         "input": "nike airmax",
         "weight": 2
       },
-			{
-  			"input": "airpods",
-			  "weight": 1
-		  }			
+      {
+        "input": "airpods",
+        "weight": 1
+      }			
     ]'
     ```
 
