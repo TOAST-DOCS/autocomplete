@@ -510,7 +510,7 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
 
     - conversion_weights로 "17,16,15,14,13,12,11,10"을 지정했습니다.
 
-  - conversion_weights의 Index별 의미
+- conversion_weights의 Index별 의미
 
     | Index | Description                    |
     | ----- | ------------------------------ |
@@ -523,7 +523,7 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
     | 6     | 중간 매칭의 초성               |
     | 7     | 중간 매칭의 초성의 한영타 변환 |
 
-  - 예제 데이터 색인 결과
+- 예제 데이터 색인 결과
 
     | Key              | Relevance                              | Description                                        |
     | ---------------- | -------------------------------------- | -------------------------------------------------- |
@@ -544,7 +544,7 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
     | ㅇㅇㅁㅅ         | 12 = 1(weight) + 11(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성               |
     | ddat             | 11 = 1(weight) + 10(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성의 한영타 변환 |
 
-      - 사용자가 'ㅇ'을 입력했을때 '운동화'(relevance 19)가 '에어맥스'(relevance 14)보다 먼저 출력됩니다.
+    - 사용자가 'ㅇ'을 입력했을때 '운동화'(relevance 19)가 '에어맥스'(relevance 14)보다 먼저 출력됩니다.
 
 ### ACL
 
