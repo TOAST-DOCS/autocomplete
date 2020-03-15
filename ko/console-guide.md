@@ -553,6 +553,7 @@ ACL 설정 화면은 다음과 같습니다.
 ![img](http://static.toastoven.net/prod_autocomplete/acl-detail-ko-20200304.jpg)
 
 **입력 형식**
+
 - IP 형식으로 입력 가능합니다.
     - 예제) 202.179.177.21
 - CIDR 형식으로 입력 가능합니다.
