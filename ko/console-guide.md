@@ -462,6 +462,8 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
 
 ### 출력 우선 순위
 
+**설정 방법**
+
 색인 파일이 아래와 같을 경우 사용자가 'ㄴ' 을 입력하면 '노트북', '나이키', '남성상의'순으로 출력됩니다.
 
 ```
@@ -479,15 +481,14 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
     "weight": 1
   }
 ]
-```
+```  
+- 'ㄴ'으로 시작하는 단어 중 weight가 높은 순서대로 출력됩니다.
 
-  - 'ㄴ'으로 시작하는 단어 중 weight가 높은 순서대로 출력됩니다.
+**conversion_weights**
 
-- conversion_weights
+원본, 중간 매칭, 한영타 변환, 초성 자동 완성의 출력 순서를 조절할 수 있습니다.
 
-  원본, 중간 매칭, 한영타 변환, 초성 자동 완성의 출력 순서를 조절할 수 있습니다.
-
-  - 예제
+- 예제
 
     ```
     curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,14,13,12,11,10' -H 'Content-Type:application/json; charset=UTF-8' -d '
@@ -543,7 +544,7 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
     | ㅇㅇㅁㅅ         | 12 = 1(weight) + 11(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성               |
     | ddat             | 11 = 1(weight) + 10(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성의 한영타 변환 |
 
-    - 사용자가 'ㅇ'을 입력했을때 '운동화'(relevance 19)가 '에어맥스'(relevance 14)보다 먼저 출력됩니다.
+      - 사용자가 'ㅇ'을 입력했을때 '운동화'(relevance 19)가 '에어맥스'(relevance 14)보다 먼저 출력됩니다.
 
 ### ACL
 
