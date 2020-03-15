@@ -390,13 +390,11 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
 }
 ```
 
-
-
 ## Guide Details
 
 ### Priority of Output
 
-In the case of the following index files, when user enters 'no', the output shows in the order of 'notebook'.
+In the case of the following index files, when user enters 'no', the output shows in the order of 'notebook', 'notepad', 'note cards'.
 
 ```
 [
@@ -414,70 +412,52 @@ In the case of the following index files, when user enters 'no', the output show
   }
 ]
 ```
+- Words starting with 'no' come in the order of higher weights.
 
-  - Words starting with 'no' come in the order of higher weights.
+**conversion_weights**
 
-- conversion_weights
+The output order can be adjusted for original, middled match autocomplete.  
 
-  The output order can be adjusted for original, middled match autocomplete.  
-
-  - Example
+- Example
 
     ```
     curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,0,0,0,13,0,0,0' -H 'Content-Type:application/json; charset=UTF-8' -d '
     [
       {
-        "input": "notebook",
-        "weight": 3
-      },
-      {
-        "input": "notepad",
+        "input": "nike airmax",
         "weight": 2
       },
-      {
-        "input": "note cards",
-        "weight": 1
-      }
+			{
+  			"input": "airpods",
+			  "weight": 1
+		  }			
     ]'
     ```
 
     - Numbers are specified by "17,0,0,0,13,0,0,0" for conversion_weights.
 
-  - Significance of Each Index of conversion_weights
+- Significance of Each Index of conversion_weights
 
     | Index | Description                                                  |
     | ----- | ------------------------------------------------------------ |
     | 0     | Original                                                     |
-    | 1     | Not used for english                                         |
-    | 2     | Not used for english                                         |
-    | 3     | Not used for english                                         |		
+    | 1     | Not available for english                                    |
+    | 2     | Not available for english                                    |
+    | 3     | Not available for english                                    |		
     | 4     | Middle match                                                 |
-    | 5     | Not used for english                                         |		
-    | 6     | Not used for english                                         |		
-    | 7     | Not used for english                                         |		
+    | 5     | Not available for english                                    |		
+    | 6     | Not available for english                                    |		
+    | 7     | Not available for english                                    |		
 
-  - Index results of example data  
+- Index results of example data  
 
     | Key              | Relevance                              | Description                                                  |
     | ---------------- | -------------------------------------- | ------------------------------------------------------------ |
-    | 나이키           | 20 = 3(weight) + 17(conversion weight) | Original of "나이키"                                         |
-    | 운동화           | 19 = 2(weight) + 17(conversion weight) | Original of "운동화"                                         |
-    | 나이키 에어맥스  | 18 = 1(weight) + 17(conversion weight) | Original of "나이키 에어맥스"                                |
-    | skdlzl           | 19 = 3(weight) + 16(conversion weight) | Converted in English for "나이키"                            |
-    | dnsehdghk        | 18 = 2(weight) + 16(conversion weight) | Converted in English for "운동화"                            |
-    | skdlzl dpdjaortm | 17 = 1(weight) + 16(conversion weight) | Converted in English for "나이키 에어맥스"                   |
-    | ㄴㅇㅋ           | 18 = 3(weight) + 15(conversion weight) | Initial letters of "나이키"                                  |
-    | ㅇㄷㅎ           | 17 = 2(weight) + 15(conversion weight) | Initial letters of "운동화"                                  |
-    | ㄴㅇㅋ ㅇㅇㅁㅅ  | 16 = 1(weight) + 15(conversion weight) | Initial letters of "'나이키 에어맥스"                        |
-    | sdz              | 17 = 3(weight) + 14(conversion weight) | Converted in English for the initial letters of "나이키"     |
-    | deg              | 16 = 2(weight) + 14(conversion weight) | Converted in English for the initial letters of "운동화"     |
-    | sdz ddat         | 15 = 1(weight) + 14(conversion weight) | Converted in English for the initial letters of "나이키 에어맥스" |
-    | 에어맥스         | 14 = 1(weight) + 13(conversion weight) | Middle match of "나이키 에어맥스"                            |
-    | dpdjaortm        | 13 = 1(weight) + 12(conversion weight) | Converted in English for middle match of "나이키 에어맥스"   |
-    | ㅇㅇㅁㅅ         | 12 = 1(weight) + 11(conversion weight) | Initial letters of middle match of "나이키 에어맥스"         |
-    | ddat             | 11 = 1(weight) + 10(conversion weight) | Converted in English for middle match of "나이키 에어맥스"   |
+    | nike airmax       | 19 = 2(weight) + 17(conversion weight) | Original of "nike airmax"                                     |
+    | airmax            | 15 = 2(weight) + 13(conversion weight) | Middle match of "nike airmax"                                 |
+    | airpods           | 18 = 1(weight) + 17(conversion weight) | Original of "airpods"                                          |
 
-    - By entering 'ㅇ', '운동화'(relevance 19) comes before '에어맥스'(relevance 14).
+    - By entering 'ai', 'airpods'(relevance 18) comes before 'airmax'(relevance 15).
 
 ### ACL
 
@@ -485,15 +465,16 @@ ACL can be set on a page like this:
 
 ![img](http://static.toastoven.net/prod_autocomplete/acl-detail-en-20200304.jpg)
 
-- Input Formats
-  - Available in the IP format.
+**Input Formats**
+
+- Available in the IP format.
     - Example) 202.179.177.21
-  - Available in the CIDR format.
+- Available in the CIDR format.
     - Example) 202.179.177.0/24
-  - Multiple inputs of IP or CIDR are available.
+- Multiple inputs of IP or CIDR are available.
     - Example) 202.179.177.21, 202.179.177.0/24
-  - All matched for all.
-  - All dis-matched when value is empty.
+- All matched for all.
+- All dis-matched when value is empty.
 - Rejected if applied both to Allow and Reject.
 - Rejected if not applied either to Allow or Reject.  
 

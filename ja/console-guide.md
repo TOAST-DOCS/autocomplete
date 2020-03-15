@@ -397,88 +397,70 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
 
 ### 出力優先順位
 
-インデックスファイルが下記のような場合、ユーザーが「ㄴ」を入力すると「ノートパソコン」、「ナイキ」、「メンズトップス」の順に出力されます。
+インデックスファイルが下記のような場合、ユーザーが「ナ」を入力すると「スニーカー」、「スイッチ」、「スマホケース」の順に出力されます。
 
 ```
 [
   {
-    "input": "ノートパソコン",
+    "input": "スニーカー",
     "weight": 3
   },
   {
-    "input": "ナイキ",
+    "input": "スイッチ",
     "weight": 2
   },
   {
-    "input": "メンズトップス",
+    "input": "スマホケース",
     "weight": 1
   }
 ]
 ```
+- 「ナ」で始まる単語のうち、weightが高い順に出力されます。
 
-  - 「ㄴ」で始まる単語のうち、weightが高い順に出力されます。
+**conversion_weights**
 
-- conversion_weights
+原本、中間マッチングの出力順序を調節できます。
 
- 原本、中間マッチング、韓国語/英語入力変換、 初声オートコンプリートの出力順序を調節できます。
-
-  - 例
+- 例
 
     ```
-    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,14,13,12,11,10' -H 'Content-Type:application/json; charset=UTF-8' -d '
+    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,0,0,0,13,0,0,0' -H 'Content-Type:application/json; charset=UTF-8' -d '
     [
       {
-        "input": "ナイキ",
-        "weight": 3
-      },
-      {
-        "input": "運動靴",
+        "input": "ナイキ スニーカー",
         "weight": 2
       },
       {
-        "input": "ナイキ エアマックス",
+        "input": "スマホケース",
         "weight": 1
       }
     ]'
     ```
 
-    - conversion_weightsに "17,16,15,14,13,12,11,10"を指定しました。
+    - conversion_weightsに "17,0,0,0,13,0,0,0"を指定しました。
 
-  - conversion_weightsの各Indexの意味
+- conversion_weightsの各Indexの意味
 
     | Index | Description                    |
     | ----- | ------------------------------ |
-    | 0     | 原本                          |
-    | 1     | 原本の韓国語/英語入力変換            |
-    | 2     | 原本の初声                    |
-    | 3     | 原本の初声の韓国語/英語入力変換     |
-    | 4     | 中間マッチング                      |
-    | 5     | 中間マッチングの韓国語/英語入力変換       |
-    | 6     | 中間マッチングの初声               |
-    | 7     | 中間マッチングの初声の韓国語/英語入力変換 |
+    | 0     | 原本                            |
+    | 1     | Not available for japanese     |
+    | 2     | Not available for japanese     |
+    | 3     | Not available for japanese     |
+    | 4     | 中間マッチング                     |
+    | 5     | Not available for japanese     |
+    | 6     | Not available for japanese     |
+    | 7     | Not available for japanese     |
 
-  - サンプルデータのインデックス結果
+- サンプルデータのインデックス結果
 
     | Key              | Relevance                              | Description                                        |
     | ---------------- | -------------------------------------- | -------------------------------------------------- |
-    | ナイキ           | 20 = 3(weight) + 17(conversion weight) | "ナイキ"の原本                                   |
-    | 運動靴           | 19 = 2(weight) + 17(conversion weight) | "運動靴"の原本                                   |
-    | ナイキ エアマックス  | 18 = 1(weight) + 17(conversion weight) | "ナイキ エアマックス"の原本                          |
-    | skdlzl           | 19 = 3(weight) + 16(conversion weight) | "ナイキ"の韓国語/英語入力変換                            |
-    | dnsehdghk        | 18 = 2(weight) + 16(conversion weight) | "運動靴"の韓国語/英語入力変換                            |
-    | skdlzl dpdjaortm | 17 = 1(weight) + 16(conversion weight) | "ナイキ エアマックス"の韓国語/英語入力変換                   |
-    | ㄴㅇㅋ          | 18 = 3(weight) + 15(conversion weight) | "ナイキ"の初声                                    |
-    | ㅇㄷㅎ          | 17 = 2(weight) + 15(conversion weight) | "運動靴"の初声                                    |
-    | ㄴㅇㅋㅇㅇㅁㅅ | 16 = 1(weight) + 15(conversion weight) | "'ナイキ エアマックス"の初声                          |
-    | sdz              | 17 = 3(weight) + 14(conversion weight) | "ナイキ"の初声の韓国語/英語入力変換                     |
-    | deg              | 16 = 2(weight) + 14(conversion weight) | "運動靴"の初声の韓国語/英語入力変換                     |
-    | sdz ddat         | 15 = 1(weight) + 14(conversion weight) | "ナイキ エアマックス"の初声の韓国語/英語入力変換            |
-    | エアマックス         | 14 = 1(weight) + 13(conversion weight) | "ナイキ エアマックス"の中間マッチング                      |
-    | dpdjaortm        | 13 = 1(weight) + 12(conversion weight) | "ナイキ エアマックス"の中間マッチングの韓国語/英語入力変換       |
-    | ㅇㅇㅁㅅ        | 12 = 1(weight) + 11(conversion weight) | "ナイキ エアマックス"の中間マッチングの初声               |
-    | ddat             | 11 = 1(weight) + 10(conversion weight) | "ナイキ エアマックス"の中間マッチングの初声の韓国語/英語入力変換 |
+    | ナイキ スニーカー     | 19 = 2(weight) + 17(conversion weight) | "ナイキ スニーカー"の原本                                   |
+    | スニーカー          | 15 = 2(weight) + 13(conversion weight) | "ナイキ スニーカー"の中間マッチング                      |
+    | スマホケース         | 18 = 1(weight) + 17(conversion weight) | "スマホケース"の原本                          |
 
-    - ユーザーが「ㅇ」を入力した時、「運動靴」(relevance 19)が「エアマックス」(relevance 14)より先に出力されます。
+    - ユーザーが「ナ」を入力した時、「スマホケース」(relevance 18)が「スニーカー」(relevance 15)より先に出力されます。
 
 ### ACL
 
@@ -486,14 +468,15 @@ ACLの設定画面は次のとおりです。
 
 ![img](http://static.toastoven.net/prod_autocomplete/acl-detail-ja-20200304.jpg)
 
-- 入力形式
-  - IP形式で入力できます。
+**入力形式**
+
+- IP形式で入力できます。
     - 例) 202.179.177.21
-  - CIDR形式で入力できます。
+- CIDR形式で入力できます。
     - 例) 202.179.177.0/24
-  - IPまたはCIDRを複数入力できます。
+- IPまたはCIDRを複数入力できます。
     - 例) 202.179.177.21, 202.179.177.0/24
-  - allの場合、すべてマッチングされます。
+- allの場合、すべてマッチングされます。
     - 値が空の場合、すべてマッチングされません。  
 - 許可、拒否のどちらにもマッチングされる場合、拒否されます。
 - 許可、拒否のどちらにもマッチングされない場合、拒否されます。

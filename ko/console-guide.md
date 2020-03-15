@@ -527,21 +527,21 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
 
     | Key              | Relevance                              | Description                                        |
     | ---------------- | -------------------------------------- | -------------------------------------------------- |
-    | 나이키           | 20 = 3(weight) + 17(conversion weight) | "나이키"의 원본                                    |
-    | 운동화           | 19 = 2(weight) + 17(conversion weight) | "운동화"의 원본                                    |
-    | 나이키 에어맥스  | 18 = 1(weight) + 17(conversion weight) | "나이키 에어맥스"의 원본                           |
+    | 나이키             | 20 = 3(weight) + 17(conversion weight) | "나이키"의 원본                                    |
     | skdlzl           | 19 = 3(weight) + 16(conversion weight) | "나이키"의 한영타 변환                             |
-    | dnsehdghk        | 18 = 2(weight) + 16(conversion weight) | "운동화"의 한영타 변환                             |
-    | skdlzl dpdjaortm | 17 = 1(weight) + 16(conversion weight) | "나이키 에어맥스"의 한영타 변환                    |
-    | ㄴㅇㅋ           | 18 = 3(weight) + 15(conversion weight) | "나이키"의 초성                                    |
-    | ㅇㄷㅎ           | 17 = 2(weight) + 15(conversion weight) | "운동화"의 초성                                    |
-    | ㄴㅇㅋ ㅇㅇㅁㅅ  | 16 = 1(weight) + 15(conversion weight) | "'나이키 에어맥스"의 초성                          |
+    | ㄴㅇㅋ             | 18 = 3(weight) + 15(conversion weight) | "나이키"의 초성                                    |
     | sdz              | 17 = 3(weight) + 14(conversion weight) | "나이키"의 초성의 한영타 변환                      |
+    | 운동화             | 19 = 2(weight) + 17(conversion weight) | "운동화"의 원본                                    |
+    | dnsehdghk        | 18 = 2(weight) + 16(conversion weight) | "운동화"의 한영타 변환                             |
+    | ㅇㄷㅎ             | 17 = 2(weight) + 15(conversion weight) | "운동화"의 초성                                    |		
     | deg              | 16 = 2(weight) + 14(conversion weight) | "운동화"의 초성의 한영타 변환                      |
+    | 나이키 에어맥스      | 18 = 1(weight) + 17(conversion weight) | "나이키 에어맥스"의 원본                           |
+    | skdlzl dpdjaortm | 17 = 1(weight) + 16(conversion weight) | "나이키 에어맥스"의 한영타 변환                    |
+    | ㄴㅇㅋ ㅇㅇㅁㅅ      | 16 = 1(weight) + 15(conversion weight) | "'나이키 에어맥스"의 초성                          |
     | sdz ddat         | 15 = 1(weight) + 14(conversion weight) | "나이키 에어맥스"의 초성의 한영타 변환             |
-    | 에어맥스         | 14 = 1(weight) + 13(conversion weight) | "나이키 에어맥스"의 중간 매칭                      |
+    | 에어맥스           | 14 = 1(weight) + 13(conversion weight) | "나이키 에어맥스"의 중간 매칭                      |
     | dpdjaortm        | 13 = 1(weight) + 12(conversion weight) | "나이키 에어맥스"의 중간 매칭의 한영타 변환        |
-    | ㅇㅇㅁㅅ         | 12 = 1(weight) + 11(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성               |
+    | ㅇㅇㅁㅅ           | 12 = 1(weight) + 11(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성               |
     | ddat             | 11 = 1(weight) + 10(conversion weight) | "나이키 에어맥스"의 중간 매칭의 초성의 한영타 변환 |
 
     - 사용자가 'ㅇ'을 입력했을때 '운동화'(relevance 19)가 '에어맥스'(relevance 14)보다 먼저 출력됩니다.
