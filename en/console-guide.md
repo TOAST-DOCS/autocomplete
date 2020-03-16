@@ -29,8 +29,8 @@ First, enable the Automcomplete Service.
 1. Click **Create Services**.
 
 2. Enter Service ID on **Create Services**.
-    - Only English in lowercase, numbers, as well as _ (underscore) and - (hypen) are available.
-    - Cannot start with a number, _ (underscore) or - (hypen).
+    - Only English in lowercase, numbers, as well as \_(underscore) and -(hypen) are available.
+    - Cannot start with a number, \_(underscore) or -(hypen).
     - At least two characters are required.
 
 3. Click **Save**.
@@ -44,11 +44,11 @@ Check the result of service creation.
 
 ### 2. Indexing
 
-Do as follows to create and index files.  
+Do as follows to create and index files.
 
 **Create Index Files**
 
-  - Create index request files in the format of example as below
+  - Create indexing request files in the format of example as below
   - Create files encoded in UTF-8.
       - Save the file on Windows memo, by specifying UTF-8 for encoding.
   - It was created in the name of data/documents.json in the example.
@@ -71,23 +71,23 @@ Do as follows to create and index files.
 ]
 ```
 
-**How to Index**
+**How to indexing**
 
-1. Click **Index**.
+1. Click **Indexing**.
 
-2. Click **Select Files**.
+2. Click **Select File**.
 
-3. Select a file to index.
+3. Select a file to indexing.
 
 4. Press **Open**.
 
-5. Index command comes as REST API.
+5. Indexing command comes as REST API.
 
-6. Click **Index**.
+6. Click **Indexing**.
 
 7. Click **Refresh**.
 
-8. Check index results.
+8. Check indexing results.
 
 ![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-en-20200304.jpg)  
 ![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-en-20200304.jpg)
@@ -100,7 +100,7 @@ When index is requested, previous data are all deleted and replaced by new data.
 
 **REST API**
 
-  - Index API
+  - Indexing API
 
     - Request
 
@@ -138,7 +138,7 @@ When index is requested, previous data are all deleted and replaced by new data.
         }
         ```
 
-  - Index Result Check API
+  - Indexing Result Check API
 
     - Request
 
@@ -206,7 +206,7 @@ When index is requested, previous data are all deleted and replaced by new data.
 
 ### 4. ACL
 
-IPs may be restricted for equipment which may call index and autocomplete REST APIs.
+IPs may be restricted for equipment which may call indexing and autocomplete REST APIs.
 Testing on console does not require ACL setting.
 
 **How to Set ACL**
