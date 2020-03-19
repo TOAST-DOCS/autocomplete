@@ -187,7 +187,7 @@ When index is requested, previous data are all deleted and replaced by new data.
   - Request
 
     ```
-    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' --data-urlencode query='나(sk)'
+    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' --data-urlencode query='ni'
     ```
 
   - Response
@@ -196,10 +196,10 @@ When index is requested, previous data are all deleted and replaced by new data.
     {
       "collections" : [ {
         "index" : 0,
-        "items" : [ [ "Nikie" ], [ "Nike Sneakers" ] ],
+        "items" : [ [ "nikie" ], [ "nike sneakers" ] ],
         "title" : ""
       } ],
-      "query" : [ "나", "sk" ],
+      "query" : [ "ni", "ㅜㅑ" ],
       "ver" : "1.0"
     }
     ```
