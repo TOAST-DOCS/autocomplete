@@ -108,13 +108,13 @@
         - 파일 업로드 방식
 
             ```
-            curl -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            curl -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
 
         - Payload 방식
 
             ```
-            curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
             [
               {
                 "input": "나이키",
@@ -144,7 +144,7 @@
     - Request
 
         ```
-        curl -i -XGET 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1'
+        curl -i -XGET 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
         ```
 
         - id 1은 위의 색인 API Response 의 id입니다.
@@ -188,7 +188,7 @@
   - Request
 
     ```
-    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' --data-urlencode query='나'
+    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
     ```
 
   - Response
@@ -440,7 +440,7 @@ API 호출 시 'serviceids/brand,category'로 요청했습니다.
 API 응답에 index 0은 brand, index 1은 category 자동 완성 결과가 출력됩니다.
 
 ```
-curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' --data-urlencode query='나'
+curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
 {
   "collections" : [ {
     "index" : 0,
@@ -491,7 +491,7 @@ curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomp
 - 예제
 
     ```
-    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,0,13,12,0,0' -H 'Content-Type:application/json; charset=UTF-8' -d '
+    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,0,13,12,0,0' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
     [
       {
         "input": "나이키",
