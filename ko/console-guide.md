@@ -435,28 +435,33 @@
 
 **자동 완성**
 
-API 호출 시 'serviceids/brand,category'로 요청했습니다.
+- Request
 
-API 응답에 index 0은 brand, index 1은 category 자동 완성 결과가 출력됩니다.
+    API 호출 시 'serviceids/brand,category'로 요청합니다.
 
-```
-curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
-{
-  "collections" : [ {
-    "index" : 0,
-    "items" : [ [ "나이키" ] ],
-    "title" : ""
-  }, {
-    "index" : 1,
-    "items" : [ [ "남성가방" ] ],
-    "title" : ""
-  } ],
-  "query" : [ "나", "sk" ],
-  "ver" : "1.0"
-}
-```
+    ```
+    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
+    ```
 
+- Response
 
+    API 응답에 index 0은 brand, index 1은 category 자동 완성 결과가 출력됩니다.
+
+    ```
+    {
+      "collections" : [ {
+        "index" : 0,
+        "items" : [ [ "나이키" ] ],
+        "title" : ""
+      }, {
+        "index" : 1,
+        "items" : [ [ "남성가방" ] ],
+        "title" : ""
+      } ],
+      "query" : [ "나", "sk" ],
+      "ver" : "1.0"
+    }
+    ```
 
 ## 상세 가이드
 

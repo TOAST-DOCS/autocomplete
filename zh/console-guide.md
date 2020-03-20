@@ -369,26 +369,33 @@ To test, index data as below:
 
 **Autocomplete**
 
-Requested with 'serviceids/brand,category' to call APIs.
+- Request
 
-The API response shows autocomplete results for brand at index 0 and category at index 1.  
+    Requested with 'serviceids/brand,category' to call APIs.
 
-```
-curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:en' --data-urlencode query='a'
-{
-  "collections" : [ {
-    "index" : 0,
-    "items" : [ [ "adidas" ] ],
-    "title" : ""
-  }, {
-    "index" : 1,
-    "items" : [ [ "actiewear" ] ],
-    "title" : ""
-  } ],
-  "query" : [ "a", "ㅁ" ],
-  "ver" : "1.0"
-}
-```
+    ```
+    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:en' --data-urlencode query='a'
+    ```		
+
+- Response
+
+    The API response shows autocomplete results for brand at index 0 and category at index 1.  
+
+    ```
+    {
+      "collections" : [ {
+        "index" : 0,
+        "items" : [ [ "adidas" ] ],
+        "title" : ""
+      }, {
+        "index" : 1,
+        "items" : [ [ "actiewear" ] ],
+        "title" : ""
+      } ],
+      "query" : [ "a", "ㅁ" ],
+      "ver" : "1.0"
+    }
+    ```
 
 ## Guide Details
 

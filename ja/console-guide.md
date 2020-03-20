@@ -369,28 +369,33 @@
 
 **オートコンプリート**
 
-API呼び出し時、「serviceids/brand,category」にリクエストしました。
+- Request
 
-APIレスポンスにindex 0はbrand、index 1はcategoryオートコンプリート結果が出力されます。
+    API呼び出し時、「serviceids/brand,category」にリクエストしました。
 
-```
-curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ja' --data-urlencode query='ア'
-{
-  "collections" : [ {
-    "index" : 0,
-    "items" : [ [ "アディダス" ] ],
-    "title" : ""
-  }, {
-    "index" : 1,
-    "items" : [ [ "アウター" ] ],
-    "title" : ""
-  } ],
-  "query" : [ "ア"],
-  "ver" : "1.0"
-}
-```
+    ```
+    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ja' --data-urlencode query='ア'
+    ```
+- Response
 
+    APIレスポンスにindex 0はbrand、index 1はcategoryオートコンプリート結果が出力されます。
 
+    ```
+    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ja' --data-urlencode query='ア'
+    {
+      "collections" : [ {
+        "index" : 0,
+        "items" : [ [ "アディダス" ] ],
+        "title" : ""
+      }, {
+        "index" : 1,
+        "items" : [ [ "アウター" ] ],
+        "title" : ""
+      } ],
+      "query" : [ "ア"],
+      "ver" : "1.0"
+    }
+    ```
 
 ## 詳細ガイド
 
