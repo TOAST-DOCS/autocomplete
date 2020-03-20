@@ -1,19 +1,28 @@
-## Search > Autocomplete > 릴리스 노트
+## Search > Autocomplete > Release Notes
 
-### 2018.12.27
-* Payload 방식의 색인 방법을 추가했습니다.
-    * 기존에는 파일 업로드 방식만 존재했습니다.
+### Mar. 24, 2020
 
-### 2018.07.24
-* 색인 로그에 전체 색인 크기 및 전체 문서 개수를 추가했습니다.
+- Converted into Beta Service from the Alpha service.
 
-### 2018.06.26
-* 형태소 분석 기능을 추가했습니다.
-    * 예를 들어 "상담안내"에 대해서 "안내"로 검색해도 "상담안내"가 출력됩니다.
+### Dec. 27, 2018
 
-### 2018.05.29
-* 언어 설정 오류를 수정했습니다.
-    * 웹 콘솔에서 영어, 일본어, 중국어 선택 시 발생한 오류를 수정했습니다.
+- Added the payload-type indexing.
+  - Only file-uploading type was available before.
 
-### 2018.02.22
-* Autocomplete 상품 출시
+### July 24, 2018
+
+- Added the entire index size and the total number of documents to the index log.
+
+### June 26, 2018
+
+- Added the morpheme analysis feature.  
+  - For instance, a search for 'Guide for Consultation' also shows results with 'Guide' only.
+
+### May 29, 2018
+
+- Modified errors in the language setting.
+  - Modified errors occurred with the selection of English, Japanese, and Chinese on web console.   
+
+### Feb. 22, 2018
+
+- Released the Autocomplete Service

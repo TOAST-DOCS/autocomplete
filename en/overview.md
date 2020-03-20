@@ -1,10 +1,26 @@
-## Search > Autocomplete > 개요
+## Search > Autocomplete > Overview
 
-자동완성 서비스를 합리적인 비용으로 손쉽게 구축할 수 있습니다.
+- Autocomplete is provided for the input of search words on search window.
+    - Enter data for Autocomplete by using index REST API.
+    - Get results for Autocomplete by using Autocomplete REST API.
 
-### 특/장점
-* 이중화를 통해 서비스 안정성을 보장합니다.
+### Developing Autocomplete Service
 
-### 주요 기능
-* 한타 <-> 영타를 자동으로 변환합니다.
-* 출력 순서를 지정할 수 있습니다.
+Service is configured as below:
+
+![img](http://static.toastoven.net/prod_autocomplete/block_diagrm-en-20200304.png)
+
+Development Process
+
+1. Create Services
+
+    - The Autocomplete service is created.
+
+2. Indexing
+
+    - Create JSON data according to the Autocomplete input format.
+    - Use REST API to enter created JSON data for Autocomplete.  
+
+3. Autocomplete
+
+    - Configure the front page with the result of Autocomplete REST API.
