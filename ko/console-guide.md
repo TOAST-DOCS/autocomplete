@@ -494,6 +494,7 @@
 데이터를 추가/수정/삭제할 때는 Incremental indexing API를 사용합니다.
 
 1. 테스트를 위한 사전 데이터를 입력
+
     ```
     curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
     [
@@ -509,9 +510,11 @@
       }
     ]'
     ```
+
     - Incremental indexing을 수행하기 위해서는 id를 반드시 입력되어 있어야 합니다.
 
 2. Incremental indexing
+
     ```
     curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/incremental?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
     [
@@ -533,6 +536,7 @@
       }
     ]'
     ```
+
     - action
         - add : 기존에 문서가 존재하면 수정, 존재하지 않으면 추가됩니다.
             - 위의 예제에서 "id-1"은 수정, "id-3"은 추가됩니다.
