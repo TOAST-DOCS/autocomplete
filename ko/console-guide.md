@@ -490,7 +490,9 @@
     - 색인이 진행 중일 때는 동작하지 않습니다.
 
 ### 색인 업데이트
+
 데이터를 추가/수정/삭제할 때는 Incremental indexing API를 사용합니다.
+
 1. 테스트를 위한 사전 데이터를 입력
     ```
     curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
