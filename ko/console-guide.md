@@ -463,6 +463,80 @@
     }
     ```
 
+### 대용량 데이터 색인
+기본 색인은 데이터 입력 사이즈가 32MB로 제한되어 있습니다.
+32MB를 초과하는 데이터를 입력할 때는 Full indexing API를 사용합니다.
+
+- Full indexing 시작
+    ```
+    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/begin'
+    ```
+    - 새로운 index(저장소)를 생성합니다.
+    - Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.
+- Full indexing 요청
+    ```
+    curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+    ```
+    - documents-002.json, documents-003.json 등 여러 번 색인 요청을 합니다.		
+- Full indexing 반영
+    ```
+    curl -i -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/end'
+    ```
+    - 색인된 내용을 서비스에 반영합니다.
+- Full indexing 취소
+    색인된 데이터를 서비스에 반영하지 않고 취소할 때 사용합니다.
+    ```
+    curl -i -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/cancel'
+    ```
+    - 색인이 진행 중일 때는 동작하지 않습니다.
+
+### 색인 업데이트
+데이터를 추가/수정/삭제할 때는 Incremental indexing API를 사용합니다.
+1. 테스트를 위한 사전 데이터를 입력
+    ```
+    curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+    [
+      {
+        "id": "id-1",
+        "input": "나이키 신발",
+        "weight": 1
+      },
+      {
+        "id": "id-2",
+        "input": "아디다스 신발",
+        "weight": 1
+      }
+    ]'
+    ```
+    - Incremental indexing을 수행하기 위해서는 id를 반드시 입력되어 있어야 합니다.
+
+2. Incremental indexing
+    ```
+    curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/incremental?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+    [
+      {
+        "id": "id-1",
+        "action": "add",
+        "input": "나이키 운동화",
+        "weight": 1
+      },
+      {
+        "id": "id-2",
+        "action": "delete"
+      },
+      {
+        "id": "id-3",
+        "action": "add",
+        "input": "뉴발란스 운동화",
+        "weight": 1
+      }
+    ]'
+    ```
+    - action
+        - add : 기존에 문서가 존재하면 수정, 존재하지 않으면 추가됩니다.
+            - 위의 예제에서 "id-1"은 수정, "id-3"은 추가됩니다.
+        - delete : 해당 문서를 삭제합니다.
+
 ## 상세 가이드
 
 ### 출력 우선 순위
