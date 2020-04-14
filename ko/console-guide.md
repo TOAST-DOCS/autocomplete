@@ -484,8 +484,6 @@
     ```
     - 색인된 내용을 서비스에 반영합니다.
 - Full indexing 취소
-
-    색인된 데이터를 서비스에 반영하지 않고 취소할 때 사용합니다.
     ```
     curl -i -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/cancel'
     ```
