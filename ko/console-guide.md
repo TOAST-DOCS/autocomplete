@@ -464,7 +464,7 @@
     ```
 
 ### 대용량 데이터 색인
-기본 색인은 데이터 입력 사이즈가 32MB로 제한되어 있습니다.
+기본 색인은 입력할 수 있는 데이터 크기가 32MB로 제한되어 있습니다.
 32MB를 초과하는 데이터를 입력할 때는 Full indexing API를 사용합니다.
 
 - Full indexing 시작
@@ -538,9 +538,9 @@ curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/
 ```
 
 - action
-    - add : 기존에 문서가 존재하면 수정, 존재하지 않으면 추가됩니다.
+    - add: 기존에 문서가 존재하면 수정, 존재하지 않으면 추가됩니다.
         - 위의 예제에서 "id-1"은 수정, "id-3"은 추가됩니다.
-    - delete : 해당 문서를 삭제합니다.
+    - delete: 해당 문서를 삭제합니다.
 
 ## 상세 가이드
 
