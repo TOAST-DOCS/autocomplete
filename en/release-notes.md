@@ -1,8 +1,14 @@
 ## Search > Autocomplete > Release Notes
 
+### 2020. 05. 26.
+
+- 대용량 데이터 색인(입력) 기능을 추가했습니다.
+- 색인 업데이트 기능을 추가했습니다.
+
 ### Mar. 24, 2020
 
 - Converted into Beta Service from the Alpha service.
+- 알파 서비스에서 베타 서비스로 전환했습니다.
 
 ### Dec. 27, 2018
 
@@ -17,6 +23,7 @@
 
 - Added the morpheme analysis feature.  
   - For instance, a search for 'Guide for Consultation' also shows results with 'Guide' only.
+  - 예를 들어 '상담안내'에 대해서 '안내'로 검색해도 '상담안내'가 검색됩니다.
 
 ### May 29, 2018
 
