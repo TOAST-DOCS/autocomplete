@@ -1,5 +1,10 @@
 ## Search > Autocomplete > Release Notes
 
+### 2020. 05, 26.
+
+- 대용량 데이터 색인(입력) 기능을 추가했습니다.
+- 색인 업데이트 기능을 추가했습니다.
+
 ### Mar. 24, 2020
 
 - Converted into Beta Service from the Alpha service.

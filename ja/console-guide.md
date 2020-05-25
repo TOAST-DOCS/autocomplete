@@ -397,6 +397,85 @@
     }
     ```
 
+### 大容量データのインデックス
+基本インデックスは、入力できるデータサイズが32MBに制限されています。
+32MBを超えるデータを入力する時はFull indexing APIを使用します。
+
+- Full indexingの開始
+    ```
+    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/begin'
+    ```
+    - 新しいindex(保存場所)が作成されます。
+    - Full indexingが反映されるまでは既存indexでサービスされます。
+- Full indexingのリクエスト
+    ```
+    curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+    ```
+    - documents-002.json, documents-003.jsonなど、複数回のインデックスをリクエストします。		
+- Full indexingの反映
+    ```
+    curl -i -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/end'
+    ```
+    - インデックスされたデータをサービスに反映します。		
+- Full indexingのキャンセル
+    ```
+    curl -i -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/cancel'
+    ```
+    - インデックスが進行中の時は動作しません。
+
+### インデックスのアップデート
+
+データを追加/修正/削除する時はIncremental indexing APIを使用します。
+
+**1. テスト用のデータを入力**
+
+```
+curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+[
+  {
+    "id": "id-1",
+    "input": "ナイキ 靴",
+    "weight": 1
+  },
+  {
+    "id": "id-2",
+    "input": "アディダス 靴",
+    "weight": 1
+  }
+]'
+```
+
+- Incremental indexingを実行するにはidを入力する必要があります。
+
+**2. Incremental indexing**
+
+```
+curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/incremental?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+[
+  {
+    "id": "id-1",
+    "action": "add",
+    "input": "ナイキ 運動靴",
+    "weight": 1
+  },
+  {
+    "id": "id-2",
+    "action": "delete"
+  },
+  {
+    "id": "id-3",
+    "action": "add",
+    "input": "ニューバランス 運動靴",
+    "weight": 1
+  }
+]'
+```
+
+- action
+    - add：既に文書が存在する場合は修正し、存在しない場合は追加されます。
+        - 上の例で"id-1"は修正、"id-3"は追加されます。
+    - delete：該当文書を削除します。
+
 ## 詳細ガイド
 
 ### 出力優先順位
