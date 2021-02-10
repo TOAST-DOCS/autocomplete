@@ -9,7 +9,7 @@
 
 まずAutocompleteサービスを有効化します。
 
-1. **TOAST Console**で**サービス選択**をクリックします。
+1. **NHN Cloud Console**で**サービス選択**をクリックします。
 
 2. **Autocomplete**をクリックします。
 
@@ -17,7 +17,7 @@
 
 サービスが有効になっているかを確認する方法は次のとおりです。
 
-1. **TOAST Console**左側のメニューで**Search**をクリックします。
+1. **NHN Cloud Console**左側のメニューで**Search**をクリックします。
 
 2. **Autocomplete**が表示されていれば、サービスが有効になっているということです。
 
