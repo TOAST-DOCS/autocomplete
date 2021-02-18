@@ -9,7 +9,7 @@
 
 먼저 Autocomplete 서비스를 활성화합니다.
 
-1. **TOAST Console**에서 **서비스 선택**을 클릭합니다.
+1. **NHN Cloud Console**에서 **서비스 선택**을 클릭합니다.
 
 2. **Autocomplete**을 클릭합니다.
 
@@ -17,7 +17,7 @@
 
 서비스가 활성화되었는지 확인하는 방법은 다음과 같습니다.
 
-1. **TOAST Console** 왼쪽 메뉴에서 **Search**를 클릭합니다.
+1. **NHN Cloud Console** 왼쪽 메뉴에서 **Search**를 클릭합니다.
 
 2. **Autocomplete**가 보이면 서비스가 활성화된 것입니다.
 

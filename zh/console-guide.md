@@ -9,7 +9,7 @@
 
 First, enable the Automcomplete Service.
 
-1. Go to **TOAST Console** and click **Select Services**.
+1. Go to **NHN Cloud Console** and click **Select Services**.
 
 2. Click **Autocomplete**.
 
@@ -17,7 +17,7 @@ First, enable the Automcomplete Service.
 
  Do as follows to check if service is enabled:
 
-1. Click **Search** on the left menu on **TOAST Console**.
+1. Click **Search** on the left menu on **NHN Cloud Console**.
 
 2. If you can find **Autocomplete**, the service has been enabled.
 
