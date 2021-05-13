@@ -13,7 +13,7 @@
 
 2. **Autocomplete**을 클릭합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/product-use-02-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/product-use-02-ko-20210506.jpg)
 
 서비스가 활성화되었는지 확인하는 방법은 다음과 같습니다.
 
@@ -21,7 +21,7 @@
 
 2. **Autocomplete**가 보이면 서비스가 활성화된 것입니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/product-use-03-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/product-use-03-ko-20210506.jpg)
 
 ## 기본 사용법
 
@@ -36,12 +36,12 @@
 
 3. **저장** 버튼을 클릭합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create_procedure-ko-20210506.jpg)
 
 생성된 서비스 결과를 확인합니다.  
 1. 생성된 서비스 ID(test)를 클릭합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/domain_create_result-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/domain_create_result-ko-20210506.jpg)
 
 ### 2. 색인
 
