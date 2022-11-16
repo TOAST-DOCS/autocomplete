@@ -2,7 +2,7 @@
 
 ## 알아두기
 
-- 문서 내의 호스트명 'api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com'는 사용자별로 다를 수 있습니다.
+- 문서 내의 호스트명 'api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com'는 사용자별로 다를 수 있습니다.
 - 문서 내의 앱키 '7IkFjTvxA8zwfL8e'는 사용자별로 다릅니다.
 
 ## 시작하기
@@ -108,13 +108,13 @@
         - 파일 업로드 방식
 
             ```
-            curl -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            curl -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
 
         - Payload 방식
 
             ```
-            curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
             [
               {
                 "input": "나이키",
@@ -144,7 +144,7 @@
     - Request
 
         ```
-        curl -i -XGET 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
+        curl -i -XGET 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
         ```
 
         - id 1은 위의 색인 API Response 의 id입니다.
@@ -188,7 +188,7 @@
   - Request
 
     ```
-    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
+    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
     ```
 
   - Response
@@ -440,7 +440,7 @@
     API 호출 시 'serviceids/brand,category'로 요청합니다.
 
     ```
-    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
+    curl -G -XGET 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/autocomplete/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
     ```
 
 - Response
@@ -469,23 +469,23 @@
 
 - Full indexing 시작
     ```
-    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/begin'
+    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/begin'
     ```
     - 새로운 index(저장소)가 생성됩니다.
     - Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.
 - Full indexing 요청
     ```
-    curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+    curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
     ```
     - documents-002.json, documents-003.json 등 여러 번 색인 요청을 합니다.		
 - Full indexing 반영
     ```
-    curl -i -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/end'
+    curl -i -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/end'
     ```
     - 색인된 데이터를 서비스에 반영합니다.		
 - Full indexing 취소
     ```
-    curl -i -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/cancel'
+    curl -i -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/cancel'
     ```
     - 색인이 진행 중일 때는 동작하지 않습니다.
 
@@ -496,7 +496,7 @@
 **1. 테스트를 위한 데이터 입력**
 
 ```
-curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
 [
   {
     "id": "id-1",
@@ -516,7 +516,7 @@ curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/
 **2. Incremental indexing**
 
 ```
-curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/incremental?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/incremental?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
 [
   {
     "id": "id-1",
@@ -575,7 +575,7 @@ curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/
 - 예제
 
     ```
-    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,0,13,12,0,0' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,16,15,0,13,12,0,0' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
     [
       {
         "input": "나이키",
@@ -707,7 +707,7 @@ public class IndexingClient {
 
 			// build http request and assign multipart upload data.
 			HttpUriRequest request = RequestBuilder
-				.post("https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false")
+				.post("https://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false")
 				.setEntity(data)
 				.build();
 
@@ -756,7 +756,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false");
+    curl_setopt($ch, CURLOPT_URL,"https://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
