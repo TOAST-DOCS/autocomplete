@@ -2,7 +2,6 @@
 
 ## 알아두기
 
-- 문서 내의 호스트명 'api-7ab1617e2df0f1d1-autocomplete.cloud.toast.com'는 사용자별로 다를 수 있습니다.
 - 문서 내의 앱키 '7IkFjTvxA8zwfL8e'는 사용자별로 다릅니다.
 
 ## 시작하기
