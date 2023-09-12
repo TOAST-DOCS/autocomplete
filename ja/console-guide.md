@@ -90,8 +90,8 @@
 
 8. インデックス結果を確認します。
 
-![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-ja-20200304.jpg)  
-![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-ja-20230905.jpg)  
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-ja-20230905.jpg)
 
 **インデックスの注意事項**
 
@@ -181,7 +181,7 @@
 
 5. オートコンプリート結果が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ja-20230905.jpg)
 
 **REST API**
 
@@ -247,7 +247,7 @@
 
 インデックスする時、**中間マッチング**を選択します。
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-ja-20230905.jpg)
 
 **オートコンプリート**
 
@@ -255,7 +255,7 @@
 
 2. 中間に**運動**がある**ナイキ運動靴**が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ja-20230905.jpg)
 
 ### 付加情報出力
 
@@ -284,7 +284,7 @@
 
 1. 入力した付加情報(イメージURL、カテゴリー)が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ja-20230905.jpg)
 
 
 
@@ -315,7 +315,7 @@
 
 2. 「Nike」が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ja-20230905.jpg)
 
 ### マルチサービス
 

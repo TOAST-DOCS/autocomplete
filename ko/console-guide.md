@@ -89,8 +89,8 @@
 
 8. 색인 결과를 확인합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-ko-20200304.jpg)  
-![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-ko-20230905.jpg)  
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-ko-20230905.jpg)
 
 **색인 주의 사항**
 
@@ -180,7 +180,7 @@
 
 5. 자동 완성 결과가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ko-20230905.jpg)
 
 **REST API**
 
@@ -246,7 +246,7 @@
 
 색인할 때 **중간 매칭**을 선택합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-ko-20230905.jpg)
 
 **자동 완성**
 
@@ -254,7 +254,7 @@
 
 2. 중간에 **운동**으로 시작되는 **나이키운동화**가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ko-20230905.jpg)
 
 
 ### 한영타 변환
@@ -278,7 +278,7 @@
 
 색인할 때 **한영타 변환**을 선택합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/koreng-indexing-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/koreng-indexing-ko-20230905.jpg)
 
 **자동 완성**
 
@@ -286,7 +286,7 @@
 
 2. '나이키'가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-ko-20230905.jpg)
 
 
 ### 초성 자동 완성
@@ -310,7 +310,7 @@
 
   - 색인할 때 **초성 자동완성**을 체크합니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/chosung-indexing-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/chosung-indexing-ko-20230905.jpg)
 
 **자동 완성**
 
@@ -318,7 +318,7 @@
 
 2. '나이키'가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/chosung-suggest-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/chosung-suggest-ko-20230905.jpg)
 
 
 ### 부가 정보 출력
@@ -348,7 +348,7 @@
 
 1. 입력한 부가 정보(이미지 URL, 카테고리)가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ko-20230905.jpg)
 
 
 
@@ -379,7 +379,7 @@
 
 2. 'Nike'가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ko-20230905.jpg)
 
 
 ### 멀티 서비스

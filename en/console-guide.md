@@ -89,8 +89,8 @@ Do as follows to create and index files.
 
 8. Check indexing results.
 
-![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-en-20200304.jpg)  
-![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-01-en-20230905.jpg)  
+![img](http://static.toastoven.net/prod_autocomplete/indexing_procedure-02-en-20230905.jpg)
 
 **Caution for Index**
 
@@ -180,7 +180,7 @@ When index is requested, previous data are all deleted and replaced by new data.
 
 5. Result of autocomplete comes out. .
 
-![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-en-20230905.jpg)
 
 **REST API**
 
@@ -246,7 +246,7 @@ To test, index data as below:
 
 Select **Middle-match** for indexing.
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/infix-indexing-en-20230905.jpg)
 
 **Autocomplete**
 
@@ -254,7 +254,7 @@ Select **Middle-match** for indexing.
 
 2. You can find in the middle **Nike Sneakers** starting with **Workout**
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-en-20230905.jpg)
 
 ### Output of Additional Information
 
@@ -283,7 +283,7 @@ Enter additional information you need as output for payload.
 
 1. The additional information input (image URL and category) comes as output.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-en-20230905.jpg)
 
 
 
@@ -314,7 +314,7 @@ To test, index data as below:
 
 2. 'Sneakers' comes as output.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-output-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-output-en-20230905.jpg)
 
 
 ### Multiple Services
