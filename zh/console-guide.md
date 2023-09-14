@@ -500,51 +500,6 @@ In the case of the following index files, when user enters 'no', the output show
 ```
 - Words starting with 'no' come in the order of higher weights.
 
-**conversion_weights**
-
-The output order can be adjusted for original, middled match autocomplete.  
-
-- Example
-
-    ```
-    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,0,0,0,13,0,0,0' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
-    [
-      {
-        "input": "nike airmax",
-        "weight": 2
-      },
-      {
-        "input": "airpods",
-        "weight": 1
-      }			
-    ]'
-    ```
-
-    - Numbers are specified by "17,0,0,0,13,0,0,0" for conversion_weights.
-
-- Significance of Each Index of conversion_weights
-
-    | Index | Description                                                  |
-    | ----- | ------------------------------------------------------------ |
-    | 0     | Original                                                     |
-    | 1     | Not available for english                                    |
-    | 2     | Not available for english                                    |
-    | 3     | Not available for english                                    |		
-    | 4     | Middle match                                                 |
-    | 5     | Not available for english                                    |		
-    | 6     | Not available for english                                    |		
-    | 7     | Not available for english                                    |		
-
-- Index results of example data  
-
-    | Key              | Relevance                              | Description                                                  |
-    | ---------------- | -------------------------------------- | ------------------------------------------------------------ |
-    | nike airmax       | 19 = 2(weight) + 17(conversion weight) | Original of "nike airmax"                                     |
-    | airmax            | 15 = 2(weight) + 13(conversion weight) | Middle match of "nike airmax"                                 |
-    | airpods           | 18 = 1(weight) + 17(conversion weight) | Original of "airpods"                                          |
-
-    - By entering 'ai', 'airpods'(relevance 18) comes before 'airmax'(relevance 15).
-
 ### ACL
 
 ACL can be set on a page like this:

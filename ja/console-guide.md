@@ -500,51 +500,6 @@ curl -XPOST 'https://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexi
 ```
 - 「ナ」で始まる単語のうち、weightが高い順に出力されます。
 
-**conversion_weights**
-
-原本、中間マッチングの出力順序を調節できます。
-
-- 例
-
-    ```
-    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-autocomplete.cloud.nhncloud.com/indexing/v1.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=true&conversion_weights=17,0,0,0,13,0,0,0' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
-    [
-      {
-        "input": "ナイキ スニーカー",
-        "weight": 2
-      },
-      {
-        "input": "スマホケース",
-        "weight": 1
-      }
-    ]'
-    ```
-
-    - conversion_weightsに "17,0,0,0,13,0,0,0"を指定しました。
-
-- conversion_weightsの各Indexの意味
-
-    | Index | Description                    |
-    | ----- | ------------------------------ |
-    | 0     | 原本                            |
-    | 1     | Not available for japanese     |
-    | 2     | Not available for japanese     |
-    | 3     | Not available for japanese     |
-    | 4     | 中間マッチング                     |
-    | 5     | Not available for japanese     |
-    | 6     | Not available for japanese     |
-    | 7     | Not available for japanese     |
-
-- サンプルデータのインデックス結果
-
-    | Key              | Relevance                              | Description                                        |
-    | ---------------- | -------------------------------------- | -------------------------------------------------- |
-    | ナイキ スニーカー     | 19 = 2(weight) + 17(conversion weight) | "ナイキ スニーカー"の原本                                   |
-    | スニーカー          | 15 = 2(weight) + 13(conversion weight) | "ナイキ スニーカー"の中間マッチング                      |
-    | スマホケース         | 18 = 1(weight) + 17(conversion weight) | "スマホケース"の原本                          |
-
-    - ユーザーが「ナ」を入力した時、「スマホケース」(relevance 18)が「スニーカー」(relevance 15)より先に出力されます。
-
 ### ACL
 
 ACLの設定画面は次のとおりです。
