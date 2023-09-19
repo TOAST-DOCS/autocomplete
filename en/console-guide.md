@@ -51,7 +51,7 @@ Do as follows to create and index files.
   - Create files encoded in UTF-8.
       - Save the file on Windows memo, by specifying UTF-8 for encoding.
   - It was created in the name of data/documents.json in the example.
-  - The maximum file size is 32 MB.
+  - The maximum file size is 10 MB.
 
 ```
 [
@@ -397,8 +397,8 @@ To test, index data as below:
     ```
 
 ### 대용량 데이터 색인
-기본 색인은 입력할 수 있는 데이터 크기가 32MB로 제한되어 있습니다.
-32MB를 초과하는 데이터를 입력할 때는 Full indexing API를 사용합니다.
+기본 색인은 입력할 수 있는 데이터 크기가 10MB로 제한되어 있습니다.
+10MB를 초과하는 데이터를 입력할 때는 Full indexing API를 사용합니다.
 
 - Full indexing 시작
     ```
