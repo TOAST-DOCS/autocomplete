@@ -106,13 +106,13 @@ When index is requested, previous data are all deleted and replaced by new data.
         - By File Uploading
 
             ```
-            curl -XPOST 'http://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
 
         - By Payload
 
             ```
-            curl -i -XPOST 'http://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
             [
               {
                 "input": "Nike",
@@ -186,7 +186,7 @@ When index is requested, previous data are all deleted and replaced by new data.
   - Request
 
     ```
-    curl -G -XGET 'http://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' -H 'Accept-Language:en' --data-urlencode query='ni'
+    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' -H 'Accept-Language:en' --data-urlencode query='ni'
     ```
 
   - Response
@@ -265,12 +265,12 @@ To test, index data as below:
 [
   {
     "input": "Nike",
-    "payload": ["http://image.nhnent.com/images/nike.jpg", "Brand>Sports"],
+    "payload": ["https://image.nhnent.com/images/nike.jpg", "Brand>Sports"],
     "weight": 2
   },
   {
     "input": "Adidas",
-    "payload": ["http://image.nhnent.com/images/adidas.jpg", "Brand>Sports"],
+    "payload": ["https://image.nhnent.com/images/adidas.jpg", "Brand>Sports"],
     "weight": 1
   }
 ]
@@ -373,7 +373,7 @@ To test, index data as below:
     Requested with 'serviceids/brand,category' to call APIs.
 
     ```
-    curl -G -XGET 'http://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:en' --data-urlencode query='a'
+    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:en' --data-urlencode query='a'
     ```		
 
 - Response
@@ -402,7 +402,7 @@ To test, index data as below:
 
 - Full indexing 시작
     ```
-    curl -i -XPOST 'http://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/begin'
+    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/begin'
     ```
     - 새로운 index(저장소)가 생성됩니다.
     - Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.

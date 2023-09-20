@@ -107,13 +107,13 @@
         - 파일 업로드 방식
 
             ```
-            curl -XPOST 'http://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
 
         - Payload 방식
 
             ```
-            curl -i -XPOST 'http://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
             [
               {
                 "input": "나이키",
@@ -187,7 +187,7 @@
   - Request
 
     ```
-    curl -G -XGET 'http://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
+    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
     ```
 
   - Response
@@ -439,7 +439,7 @@
     API 호출 시 'serviceids/brand,category'로 요청합니다.
 
     ```
-    curl -G -XGET 'http://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
+    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
     ```
 
 - Response
@@ -468,7 +468,7 @@
 
 - Full indexing 시작
     ```
-    curl -i -XPOST 'http://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/begin'
+    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/begin'
     ```
     - 새로운 index(저장소)가 생성됩니다.
     - Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.
