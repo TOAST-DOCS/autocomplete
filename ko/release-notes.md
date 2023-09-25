@@ -1,8 +1,9 @@
 ## Search > Autocomplete > 릴리스 노트
 
 ### 2023. 09. 26.
+
 - 신규 버전 출시
-	- REST API 정보 변경
+    - REST API 정보 변경
 
 ### 2020. 06. 23.
 

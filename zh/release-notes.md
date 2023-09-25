@@ -1,5 +1,10 @@
 ## Search > Autocomplete > Release Notes
 
+### 2023. 09. 26.
+
+- 신규 버전 출시
+    - REST API 정보 변경
+
 ### June 23, 2020
 
 - Converted into Official Service from the Beta version.

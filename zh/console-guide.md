@@ -93,7 +93,7 @@ Do as follows to create and index files.
 
 **Caution for Index**
 
-When index is requested, previous data are all deleted and replaced by new data.  색
+When index is requested, previous data are all deleted and replaced by new data.
 
 
 
