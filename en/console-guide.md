@@ -164,6 +164,7 @@ When index is requested, previous data are all deleted and replaced by new data.
             - 3: Progressing
             - 4: Successful  
             - 5: Failed
+			- 6: Canceled
 
 ### 3. Autocomplete
 
