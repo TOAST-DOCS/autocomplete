@@ -181,7 +181,7 @@
 
 5. 자동 완성 결과가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ko-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ko-20231030.jpg)
 
 **REST API**
 
@@ -255,7 +255,7 @@
 
 2. 중간에 **운동**으로 시작되는 **나이키운동화**가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ko-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ko-20231030.jpg)
 
 
 ### 한영타 변환
@@ -287,7 +287,7 @@
 
 2. '나이키'가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-ko-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-ko-20231030.jpg)
 
 
 ### 초성 자동 완성
@@ -349,7 +349,7 @@
 
 1. 입력한 부가 정보(이미지 URL, 카테고리)가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ko-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ko-20231030.jpg)
 
 
 
