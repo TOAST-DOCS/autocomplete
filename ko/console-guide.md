@@ -201,7 +201,7 @@
         "title" : ""
       } ],
       "query" : [ "나", "sk" ],
-      "ver" : "1.0"
+      "ver" : "2.0"
     }
     ```
 
@@ -380,7 +380,7 @@
 
 2. 'Nike'가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ko-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ko-20231030.jpg)
 
 
 ### 멀티 서비스
@@ -459,7 +459,7 @@
         "title" : ""
       } ],
       "query" : [ "나", "sk" ],
-      "ver" : "1.0"
+      "ver" : "2.0"
     }
     ```
 
