@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- The appkey, '7IkFjTvxA8zwfL8e', within document, is different for each user.
+- The appkey, 'PyVTgcSXJpA3e5U7', within document, is different for each user.
 
 ## Getting Started
 
@@ -106,13 +106,13 @@ When index is requested, previous data are all deleted and replaced by new data.
         - By File Uploading
 
             ```
-            curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
 
         - By Payload
 
             ```
-            curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
             [
               {
                 "input": "Nike",
@@ -142,7 +142,7 @@ When index is requested, previous data are all deleted and replaced by new data.
     - Request
 
         ```
-        curl -i -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1' -H 'Accept-Language:en'
+        curl -i -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing_log?id=1' -H 'Accept-Language:en'
         ```
 
         - id 1 refers to the ID for Response of Index API in the above.
@@ -180,27 +180,39 @@ When index is requested, previous data are all deleted and replaced by new data.
 
 5. Result of autocomplete comes out. .
 
-![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-en-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-en-20231030.jpg)
 
 **REST API**
 
   - Request
 
     ```
-    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' -H 'Accept-Language:en' --data-urlencode query='ni'
+    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/autocomplete?count=10' -H 'Accept-Language:en' --data-urlencode query='ni'
     ```
 
   - Response
 
     ```
     {
-      "collections" : [ {
-        "index" : 0,
-        "items" : [ [ "nikie" ], [ "nike sneakers" ] ],
-        "title" : ""
-      } ],
-      "query" : [ "ni", "ㅜㅑ" ],
-      "ver" : "1.0"
+      "collections" : [
+        {
+          "index" : 0,
+          "items" : [
+            [
+              "nikie"
+            ],
+            [
+              "nike sneakers"
+            ]
+          ],
+          "title" : ""
+        }
+      ],
+      "query" : [
+        "ni",
+        "ㅜㅑ"
+      ],
+      "ver" : "2.0"
     }
     ```
 
@@ -254,7 +266,7 @@ Select **Middle-match** for indexing.
 
 2. You can find in the middle **Nike Sneakers** starting with **Workout**
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-en-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-en-20231030.jpg)
 
 ### Output of Additional Information
 
@@ -266,12 +278,18 @@ To test, index data as below:
 [
   {
     "input": "Nike",
-    "payload": ["https://image.nhnent.com/images/nike.jpg", "Brand>Sports"],
+    "payload": [
+      "https://image.nhnent.com/images/nike.jpg",
+      "Brand>Sports"
+    ],
     "weight": 2
   },
   {
     "input": "Adidas",
-    "payload": ["https://image.nhnent.com/images/adidas.jpg", "Brand>Sports"],
+    "payload": [
+      "https://image.nhnent.com/images/adidas.jpg",
+      "Brand>Sports"
+    ],
     "weight": 1
   }
 ]
@@ -283,7 +301,7 @@ Enter additional information you need as output for payload.
 
 1. The additional information input (image URL and category) comes as output.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-en-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-en-20231030.jpg)
 
 
 
@@ -314,7 +332,7 @@ To test, index data as below:
 
 2. 'Sneakers' comes as output.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-output-en-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-output-en-20231030.jpg)
 
 
 ### Multiple Services
@@ -374,7 +392,7 @@ To test, index data as below:
     Requested with 'serviceids/brand,category' to call APIs.
 
     ```
-    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:en' --data-urlencode query='a'
+    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:en' --data-urlencode query='a'
     ```		
 
 - Response
@@ -383,17 +401,31 @@ To test, index data as below:
 
     ```
     {
-      "collections" : [ {
-        "index" : 0,
-        "items" : [ [ "adidas" ] ],
-        "title" : ""
-      }, {
-        "index" : 1,
-        "items" : [ [ "actiewear" ] ],
-        "title" : ""
-      } ],
-      "query" : [ "a", "ㅁ" ],
-      "ver" : "1.0"
+      "collections" : [
+        {
+          "index" : 0,
+          "items" : [
+            [ 
+              "adidas"
+            ]
+          ],
+          "title" : ""
+        },
+        {
+          "index" : 1,
+          "items" : [
+            [ 
+              "actiewear"
+            ]
+          ],
+          "title" : ""
+        }
+      ],
+      "query" : [
+        "a",
+        "ㅁ"
+      ],
+      "ver" : "2.0"
     }
     ```
 
@@ -403,23 +435,23 @@ To test, index data as below:
 
 - Full indexing 시작
     ```
-    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/begin'
+    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/begin'
     ```
     - 새로운 index(저장소)가 생성됩니다.
     - Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.
 - Full indexing 요청
     ```
-    curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+    curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
     ```
     - documents-002.json, documents-003.json 등 여러 번 색인 요청을 합니다.		
 - Full indexing 반영
     ```
-    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/end'
+    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/end'
     ```
     - 색인된 데이터를 서비스에 반영합니다.		
 - Full indexing 취소
     ```
-    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/cancel'
+    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/cancel'
     ```
     - 색인이 진행 중일 때는 동작하지 않습니다.
 
@@ -430,7 +462,7 @@ To test, index data as below:
 **1. 테스트를 위한 데이터 입력**
 
 ```
-curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
+curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
 [
   {
     "id": "id-1",
@@ -450,7 +482,7 @@ curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appk
 **2. Incremental indexing**
 
 ```
-curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/incremental?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
+curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/incremental?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
 [
   {
     "id": "id-1",
@@ -582,7 +614,7 @@ public class IndexingClient {
 
 			// build http request and assign multipart upload data.
 			HttpUriRequest request = RequestBuilder
-				.post("https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false")
+				.post("https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false")
 				.setEntity(data)
 				.build();
 
@@ -631,7 +663,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false");
+    curl_setopt($ch, CURLOPT_URL,"https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
