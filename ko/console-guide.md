@@ -2,7 +2,7 @@
 
 ## 알아두기
 
-- 문서 내의 앱키 '7IkFjTvxA8zwfL8e'는 사용자별로 다릅니다.
+- 문서 내의 앱키 'PyVTgcSXJpA3e5U7'는 사용자별로 다릅니다.
 
 ## 시작하기
 
@@ -107,13 +107,13 @@
         - 파일 업로드 방식
 
             ```
-            curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
 
         - Payload 방식
 
             ```
-            curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
             [
               {
                 "input": "나이키",
@@ -143,7 +143,7 @@
     - Request
 
         ```
-        curl -i -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
+        curl -i -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
         ```
 
         - id 1은 위의 색인 API Response 의 id입니다.
@@ -181,27 +181,39 @@
 
 5. 자동 완성 결과가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ko-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ko-20231030.jpg)
 
 **REST API**
 
   - Request
 
     ```
-    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
+    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
     ```
 
   - Response
 
     ```
     {
-      "collections" : [ {
-        "index" : 0,
-        "items" : [ [ "나이키" ], [ "나이키 운동화" ] ],
-        "title" : ""
-      } ],
-      "query" : [ "나", "sk" ],
-      "ver" : "1.0"
+      "collections" : [
+        {
+          "index" : 0,
+          "items" : [
+            [
+              "나이키"
+            ],
+            [
+              "나이키 운동화"
+            ]
+          ],
+          "title" : ""
+        }
+      ],
+      "query" : [
+        "나",
+        "sk"
+      ],
+      "ver" : "2.0"
     }
     ```
 
@@ -255,7 +267,7 @@
 
 2. 중간에 **운동**으로 시작되는 **나이키운동화**가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ko-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ko-20231030.jpg)
 
 
 ### 한영타 변환
@@ -287,7 +299,7 @@
 
 2. '나이키'가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-ko-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-ko-20231030.jpg)
 
 
 ### 초성 자동 완성
@@ -319,7 +331,7 @@
 
 2. '나이키'가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/chosung-suggest-ko-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/chosung-suggest-ko-20231108.jpg)
 
 
 ### 부가 정보 출력
@@ -332,12 +344,18 @@
 [
   {
     "input": "나이키",
-    "payload": ["http://image.nhnent.com/images/nike.jpg", "브랜드>스포츠"],
+    "payload": [
+      "http://image.nhnent.com/images/nike.jpg",
+      "브랜드>스포츠"
+    ],
     "weight": 2
   },
   {
     "input": "아디다스",
-    "payload": ["http://image.nhnent.com/images/adidas.jpg", "브랜드>스포츠"],
+    "payload": [
+      "http://image.nhnent.com/images/adidas.jpg",
+      "브랜드>스포츠"
+    ],
     "weight": 1
   }
 ]
@@ -349,7 +367,7 @@
 
 1. 입력한 부가 정보(이미지 URL, 카테고리)가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ko-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ko-20231030.jpg)
 
 
 
@@ -380,7 +398,7 @@
 
 2. 'Nike'가 출력됩니다.
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ko-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ko-20231030.jpg)
 
 
 ### 멀티 서비스
@@ -440,7 +458,7 @@
     API 호출 시 'serviceids/brand,category'로 요청합니다.
 
     ```
-    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
+    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ko' --data-urlencode query='나'
     ```
 
 - Response
@@ -449,17 +467,31 @@
 
     ```
     {
-      "collections" : [ {
-        "index" : 0,
-        "items" : [ [ "나이키" ] ],
-        "title" : ""
-      }, {
-        "index" : 1,
-        "items" : [ [ "남성가방" ] ],
-        "title" : ""
-      } ],
-      "query" : [ "나", "sk" ],
-      "ver" : "1.0"
+      "collections" : [
+        {
+          "index" : 0,
+          "items" : [
+            [
+              "나이키"
+            ]
+          ],
+          "title" : ""
+        },
+        {
+          "index" : 1,
+          "items" : [
+            [
+              "남성가방"
+            ]
+          ],
+          "title" : ""
+        }
+      ],
+      "query" : [
+        "나",
+        "sk"
+      ],
+      "ver" : "2.0"
     }
     ```
 
@@ -469,23 +501,23 @@
 
 - Full indexing 시작
     ```
-    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/begin'
+    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/begin'
     ```
     - 새로운 index(저장소)가 생성됩니다.
     - Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.
 - Full indexing 요청
     ```
-    curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+    curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
     ```
     - documents-002.json, documents-003.json 등 여러 번 색인 요청을 합니다.		
 - Full indexing 반영
     ```
-    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/end'
+    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/end'
     ```
     - 색인된 데이터를 서비스에 반영합니다.		
 - Full indexing 취소
     ```
-    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/cancel'
+    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/cancel'
     ```
     - 색인이 진행 중일 때는 동작하지 않습니다.
 
@@ -496,7 +528,7 @@
 **1. 테스트를 위한 데이터 입력**
 
 ```
-curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
 [
   {
     "id": "id-1",
@@ -516,7 +548,7 @@ curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appk
 **2. Incremental indexing**
 
 ```
-curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/incremental?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/incremental?split=true&koreng=true&chosung=false' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
 [
   {
     "id": "id-1",
@@ -650,7 +682,7 @@ public class IndexingClient {
 
 			// build http request and assign multipart upload data.
 			HttpUriRequest request = RequestBuilder
-				.post("https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false")
+				.post("https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false")
 				.setEntity(data)
 				.build();
 
@@ -699,7 +731,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false");
+    curl_setopt($ch, CURLOPT_URL,"https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);

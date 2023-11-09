@@ -2,7 +2,7 @@
 
 ## 注意
 
-- 文書内のアプリケーションキー「7IkFjTvxA8zwfL8e」は、ユーザーごとに異なります。
+- 文書内のアプリケーションキー「PyVTgcSXJpA3e5U7」は、ユーザーごとに異なります。
 
 ## 始める
 
@@ -107,13 +107,13 @@
         - ファイルアップロード方式
 
             ```
-            curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ja' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ja' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
 
         - Payload方式
 
             ```
-            curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
             [
               {
                 "input": "ナイキ",
@@ -143,7 +143,7 @@
     - Request
 
         ```
-        curl -i -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ja'
+        curl -i -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ja'
         ```
 
         - id 1は、上記インデックス API Responseのidです。
@@ -181,27 +181,38 @@
 
 5. オートコンプリート結果が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ja-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/autocomplete_procedure-ja-20231030.jpg)
 
 **REST API**
 
   - Request
 
     ```
-    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/autocomplete?count=10' -H 'Accept-Language:ja' --data-urlencode query='ナ'
+    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/autocomplete?count=10' -H 'Accept-Language:ja' --data-urlencode query='ナ'
     ```
 
   - Response
 
     ```
     {
-      "collections" : [ {
-        "index" : 0,
-        "items" : [ [ "ナイキ" ], [ "ナイキ 運動靴" ] ],
-        "title" : ""
-      } ],
-      "query" : [ "ナ"],
-      "ver" : "1.0"
+      "collections" : [
+        {
+          "index" : 0,
+          "items" : [
+            [
+              "ナイキ" 
+            ],
+            [
+              "ナイキ 運動靴" 
+            ]
+          ],
+          "title" : ""
+        }
+      ],
+      "query" : [
+        "ナ"
+      ],
+      "ver" : "2.0"
     }
     ```
 
@@ -255,7 +266,7 @@
 
 2. 中間に**運動**がある**ナイキ運動靴**が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ja-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ja-20231030.jpg)
 
 ### 付加情報出力
 
@@ -267,12 +278,18 @@
 [
   {
     "input": "ナイキ",
-    "payload": ["https://image.nhnent.com/images/nike.jpg", "ブランド > スポーツ"],
+    "payload": [
+      "https://image.nhnent.com/images/nike.jpg",
+      "ブランド > スポーツ"
+    ],
     "weight": 2
   },
   {
     "input": "アディダス",
-    "payload": ["https://image.nhnent.com/images/adidas.jpg", "ブランド > スポーツ"],
+    "payload": [
+      "https://image.nhnent.com/images/adidas.jpg",
+      "ブランド > スポーツ"
+    ],
     "weight": 1
   }
 ]
@@ -284,7 +301,7 @@
 
 1. 入力した付加情報(イメージURL、カテゴリー)が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ja-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-payload-ja-20231030.jpg)
 
 
 
@@ -315,7 +332,7 @@
 
 2. 「Nike」が出力されます。
 
-![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ja-20230905.jpg)
+![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ja-20231030.jpg)
 
 ### マルチサービス
 
@@ -374,26 +391,39 @@
     API呼び出し時、「serviceids/brand,category」にリクエストしました。
 
     ```
-    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ja' --data-urlencode query='ア'
+    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ja' --data-urlencode query='ア'
     ```
 - Response
 
     APIレスポンスにindex 0はbrand、index 1はcategoryオートコンプリート結果が出力されます。
 
     ```
-    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ja' --data-urlencode query='ア'
+    curl -G -XGET 'https://kr1-autocomplete.api.nhncloudservice.com/autocomplete/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/brand,category/autocomplete?count=10' -H 'Accept-Language:ja' --data-urlencode query='ア'
     {
-      "collections" : [ {
-        "index" : 0,
-        "items" : [ [ "アディダス" ] ],
-        "title" : ""
-      }, {
-        "index" : 1,
-        "items" : [ [ "アウター" ] ],
-        "title" : ""
-      } ],
-      "query" : [ "ア"],
-      "ver" : "1.0"
+      "collections" : [
+        {
+          "index" : 0,
+          "items" : [
+            [
+              "アディダス"
+            ]
+          ],
+          "title" : ""
+        },
+        {
+          "index" : 1,
+          "items" : [
+            [
+              "アウター"
+            ]
+          ],
+          "title" : ""
+        }
+      ],
+      "query" : [
+        "ア"
+      ],
+      "ver" : "2.0"
     }
     ```
 
@@ -403,23 +433,23 @@
 
 - Full indexingの開始
     ```
-    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/begin'
+    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/begin'
     ```
     - 新しいindex(保存場所)が作成されます。
     - Full indexingが反映されるまでは既存indexでサービスされます。
 - Full indexingのリクエスト
     ```
-    curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+    curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
     ```
     - documents-002.json, documents-003.jsonなど、複数回のインデックスをリクエストします。		
 - Full indexingの反映
     ```
-    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/end'
+    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/end'
     ```
     - インデックスされたデータをサービスに反映します。		
 - Full indexingのキャンセル
     ```
-    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/full/cancel'
+    curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/cancel'
     ```
     - インデックスが進行中の時は動作しません。
 
@@ -430,7 +460,7 @@
 **1. テスト用のデータを入力**
 
 ```
-curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
+curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
 [
   {
     "id": "id-1",
@@ -450,7 +480,7 @@ curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appk
 **2. Incremental indexing**
 
 ```
-curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing/incremental?split=true&koreng=true&chosung=false' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
+curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/incremental?split=true&koreng=true&chosung=false' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
 [
   {
     "id": "id-1",
@@ -582,7 +612,7 @@ public class IndexingClient {
 
 			// build http request and assign multipart upload data.
 			HttpUriRequest request = RequestBuilder
-				.post("https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false")
+				.post("https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false")
 				.setEntity(data)
 				.build();
 
@@ -631,7 +661,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/7IkFjTvxA8zwfL8e/serviceids/test/indexing?split=true&koreng=true&chosung=false");
+    curl_setopt($ch, CURLOPT_URL,"https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
