@@ -553,7 +553,11 @@ BODY 정보
             "deny"
         ],
         "allow": "all",
+<<<<<<< HEAD
+        "deny" : ["127.0.0.1"]
+=======
         "deny" : **["127.0.0.1"]**
+>>>>>>> branch 'dev-2024.03.26-autocomplete' of https://github.com/TOAST-DOCS/autocomplete
     },
     "suggest": {
         "order": [
