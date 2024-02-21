@@ -117,31 +117,31 @@ BODY 정보
 
 ```
 {
-  "analysis": {
-    "analyzer": {
-      "jaso_analyzer": {
-        "tokenizer" : "jaso_tokenizer"
-      },
-      "linguist2_analyzer": {
-        "tokenizer" : "linguist2_tokenizer"
-      }
+    "analysis": {
+        "analyzer": {
+            "jaso_analyzer": {
+                "tokenizer" : "jaso_tokenizer"
+            },
+            "linguist2_analyzer": {
+                "tokenizer" : "linguist2_tokenizer"
+            }
+        },
+        "tokenizer": {
+            "jaso_tokenizer": {
+                "type": "jaso_tokenizer"
+            },
+            "linguist2_tokenizer" : {
+                "type":"linguist2_tokenizer",
+                "method":"sgmt",
+                "hanaterm_options":"seq_loc inputenc=utf8 outputenc=utf8 +korea +japan +josacat +eomicat"
+            }
+        }
     },
-    "tokenizer": {
-      "jaso_tokenizer": {
-        "type": "jaso_tokenizer"
-      },
-      "linguist2_tokenizer" : {
-        "type":"linguist2_tokenizer",
-        "method":"sgmt",
-        "hanaterm_options":"seq_loc inputenc=utf8 outputenc=utf8 +korea +japan +josacat +eomicat"
-      }
+    "number_of_shards": "3",
+    "number_of_replicas": "1",
+    "store": {
+        "stats_refresh_interval": "-1"
     }
-  },
-  "number_of_shards": "3",
-  "number_of_replicas": "1",
-  "store": {
-    "stats_refresh_interval": "-1"
-  }
 }
 ```
 
@@ -319,16 +319,16 @@ BODY 정보 (예시)
 
 ```
 [
-  {
-    "id": "id-1",
-    "input": "나이키 신발",
-    "weight": 1
-  },
-  {
-    "id": "id-2",
-    "input": "아디다스 신발",
-    "weight": 1
-  }
+    {
+        "id": "id-1",
+        "input": "나이키 신발",
+        "weight": 1
+    },
+    {
+        "id": "id-2",
+        "input": "아디다스 신발",
+        "weight": 1
+    }
 ]
 ```
 
@@ -553,11 +553,7 @@ BODY 정보
             "deny"
         ],
         "allow": "all",
-<<<<<<< HEAD
         "deny" : ["127.0.0.1"]
-=======
-        "deny" : **["127.0.0.1"]**
->>>>>>> branch 'dev-2024.03.26-autocomplete' of https://github.com/TOAST-DOCS/autocomplete
     },
     "suggest": {
         "order": [
