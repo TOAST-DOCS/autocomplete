@@ -553,7 +553,9 @@ BODY 정보
             "deny"
         ],
         "allow": "all",
-        "deny" : ["127.0.0.1"]
+        "deny" : [
+            "127.0.0.1"
+        ]
     },
     "suggest": {
         "order": [
