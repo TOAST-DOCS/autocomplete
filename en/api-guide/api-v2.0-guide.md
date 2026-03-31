@@ -1,23 +1,28 @@
 ## Search > Autocomplete > API v2.0 Guide
 
-This document describes the Autocomplete API v2.0 provided by NHN Cloud Search.
+This document describes the Autocomplete API v2.0 provided by Cloud Search.
 
 ## Common
 
-**[Request]**
+### API Endpoint
 
-URI Information
+#### URI Information
 
 | Environment | URI                                              |
 | ---- | ------------------------------------------------ |
 | REAL | https://kr1-autocomplete.api.nhncloudservice.com |
 
-Path Parameter Information
+#### Path Parameter Information
 
 | Name      | Description                    |
 | --------- | ----------------------- |
 | appKey    | Appkey issued from the console |
 | serviceId | A random name for the user    |
+
+### Authentication and Authorization
+
+Appkey is required to use the Autocomplete API. The Appkey is included in the request URL to identify and specify a particular resource when making API calls.
+For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey).
 
 ## Full indexing
 
