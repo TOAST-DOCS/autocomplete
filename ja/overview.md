@@ -1,10 +1,14 @@
-## Search > Autocomplete > 概要
+<!-- pre-align:aligned sig=6c5319d20a1b -->
+
+<a id="search-autocomplete-overview"></a>
+## Search > Autocomplete > 概要 { #search-autocomplete-overview }
 
 - 検索ウィンドウに検索ワードを入力した時、オートコンプリート機能を提供するサービスです。
     - インデックスREST APIを利用して、オートコンプリートに使用するデータを入力します。
     - オートコンプリート REST APIを利用して、オートコンプリート結果を取得します。
 
-### オートコンプリートサービスの開発プロセス
+<a id="developing-autocomplete-service"></a>
+### オートコンプリートサービスの開発プロセス { #developing-autocomplete-service }
 
 サービスの構成図は次のとおりです。
 
