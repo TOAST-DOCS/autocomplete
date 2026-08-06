@@ -1,17 +1,24 @@
-## Search > Autocomplete > API v2.0 Guide
+<!-- pre-align:aligned sig=f2a39712547d -->
+
+<a id="search-autocomplete-api-v20-guide"></a>
+## Search > Autocomplete > API v2.0 Guide { #search-autocomplete-api-v20-guide }
 
 This document describes the Autocomplete API v2.0 provided by Cloud Search.
 
-## Common
+<a id="common"></a>
+## Common { #common }
 
-### API Endpoint
+<a id="api-endpoint"></a>
+### API Endpoint { #api-endpoint }
 
+<a id="api-endpoint-uri-information"></a>
 #### URI Information
 
 | Environment | URI                                              |
 | ---- | ------------------------------------------------ |
 | REAL | https://kr1-autocomplete.api.nhncloudservice.com |
 
+<a id="api-endpoint-path-parameter-information"></a>
 #### Path Parameter Information
 
 | Name      | Description                    |
@@ -19,18 +26,21 @@ This document describes the Autocomplete API v2.0 provided by Cloud Search.
 | appKey    | Appkey issued from the console |
 | serviceId | A random name for the user    |
 
-### Authentication and Authorization
+<a id="authentication-and-authorization"></a>
+### Authentication and Authorization { #authentication-and-authorization }
 
 Appkey is required to use the Autocomplete API. The Appkey is included in the request URL to identify and specify a particular resource when making API calls.
 For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey).
 
-## Full indexing
+<a id="full-indexing"></a>
+## Full indexing { #full-indexing }
 
 If you run full indexing, previously indexed files will disappear.
 
 You must proceed in the start-index-end order.
 
-### 1. Start
+<a id="start"></a>
+### 1. Start { #start }
 
 **[Request]**
 
@@ -48,7 +58,8 @@ Response Body
 {}
 ```
 
-### 2. Indexing
+<a id="indexing"></a>
+### 2. Indexing { #indexing }
 
 **[Request]**
 
@@ -94,7 +105,8 @@ Response Body
 }
 ```
 
-### 3. End
+<a id="end"></a>
+### 3. End { #end }
 
 **[Request]**
 
@@ -112,7 +124,8 @@ Response Body
 {}
 ```
 
-### 4. Cancel
+<a id="cancel"></a>
+### 4. Cancel { #cancel }
 
 **[Request]**
 
@@ -130,7 +143,8 @@ Response Body
 {}
 ```
 
-## Update the index
+<a id="update-the-index"></a>
+## Update the index { #update-the-index }
 
 The ID is required to update the index.
 
@@ -138,7 +152,8 @@ add modifies the document if it already exists, or add it if it doesn't.
 
 delete deletes the document.
 
-### 1. Update the index
+<a id="update-the-index-2"></a>
+### 1. Update the index { #update-the-index-2 }
 
 **[Request]**
 
@@ -181,9 +196,11 @@ Response Body
 }
 ```
 
-## Index log
+<a id="index-log"></a>
+## Index log { #index-log }
 
-### 1. View the index log
+<a id="view-the-index-log"></a>
+### 1. View the index log { #view-the-index-log }
 
 **[Request]**
 
@@ -212,11 +229,13 @@ Response body (example)
 }
 ```
 
-## Search
+<a id="search"></a>
+## Search { #search }
 
 You can search for input.
 
-### 1. Search
+<a id="search-2"></a>
+### 1. Search { #search-2 }
 
 **[Request]**
 

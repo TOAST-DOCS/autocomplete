@@ -1,10 +1,15 @@
-## Search > Autocomplete > コンソール使用ガイド
+<!-- pre-align:aligned sig=cacea07b4609 -->
 
-## 注意
+<a id="search-autocomplete-console-user-guide"></a>
+## Search > Autocomplete > コンソール使用ガイド { #search-autocomplete-console-user-guide }
+
+<a id="prerequisites"></a>
+## 注意 { #prerequisites }
 
 - 文書内のアプリケーションキー「PyVTgcSXJpA3e5U7」は、ユーザーごとに異なります。
 
-## 始める
+<a id="getting-started"></a>
+## 始める { #getting-started }
 
 まずAutocompleteサービスを有効化します。
 
@@ -22,9 +27,11 @@
 
 ![img](http://static.toastoven.net/prod_autocomplete/product-use-03-ja-20210506.jpg)
 
-## 基本使用方法
+<a id="basic-usage"></a>
+## 基本使用方法 { #basic-usage }
 
-### 1. サービスの作成
+<a id="creating-services"></a>
+### 1. サービスの作成 { #creating-services }
 1. **サービス作成**ボタンをクリックします。
 
 2. **サービス作成**ウィンドウでサービスIDを入力します。
@@ -42,7 +49,8 @@
 
 ![img](http://static.toastoven.net/prod_autocomplete/domain_create_result-ja-20210506.jpg)
 
-### 2. インデックス
+<a id="indexing"></a>
+### 2. インデックス { #indexing }
 
 インデックスするファイルを作成してインデックスする方法は次のとおりです。
 
@@ -167,7 +175,8 @@
             - 5 :失敗
             - 6 :キャンセル
 
-### 3. オートコンプリート
+<a id="autocomplete"></a>
+### 3. オートコンプリート { #autocomplete }
 
 **オートコンプリート方法**
 
@@ -216,7 +225,8 @@
     }
     ```
 
-### 4. ACL
+<a id="acl"></a>
+### 4. ACL { #acl }
 
 インデックス およびオートコンプリートREST APIを呼び出すことができる端末のIPを制限できます。
 コンソールでテストする場合、ACL設定と関係ありません。
@@ -235,9 +245,11 @@
 
 
 
-## 機能詳細説明
+<a id="feature-details"></a>
+## 機能詳細説明 { #feature-details }
 
-### 中間マッチング
+<a id="middle-match"></a>
+### 中間マッチング { #middle-match }
 
 **インデックス**
 
@@ -268,7 +280,18 @@
 
 ![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ja-20231030.jpg)
 
-### 付加情報出力
+<a id="koreanenglish-keyboard-conversion"></a>
+### 韓英入力変換 { #koreanenglish-keyboard-conversion }
+
+<!-- TODO: translate body -->
+
+<a id="initial-consonant-autocomplete"></a>
+### 初声オートコンプリート { #initial-consonant-autocomplete }
+
+<!-- TODO: translate body -->
+
+<a id="output-of-additional-information"></a>
+### 付加情報出力 { #output-of-additional-information }
 
 **インデックス**
 
@@ -305,7 +328,8 @@
 
 
 
-### Input/Outputを別々に設定
+<a id="different-settings-for-inputoutput"></a>
+### Input/Outputを別々に設定 { #different-settings-for-inputoutput }
 
 **インデックス**
 
@@ -334,7 +358,8 @@
 
 ![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ja-20231030.jpg)
 
-### マルチサービス
+<a id="multiple-services"></a>
+### マルチサービス { #multiple-services }
 
 2個以上のサービスのオートコンプリート結果を1回のオートコンプリートAPIリクエストで出力する機能です。例えば、ブランドとカテゴリーのオートコンプリートを1回のAPIリクエストで出力する時に使用します。
 
@@ -427,7 +452,8 @@
     }
     ```
 
-### 大容量データのインデックス
+<a id="feature-details-1"></a>
+### 大容量データのインデックス { #feature-details-1 }
 基本インデックスは、入力できるデータサイズが10MBに制限されています。
 10MBを超えるデータを入力する時はFull indexing APIを使用します。
 
@@ -453,7 +479,8 @@
     ```
     - インデックスが進行中の時は動作しません。
 
-### インデックスのアップデート
+<a id="feature-details-2"></a>
+### インデックスのアップデート { #feature-details-2 }
 
 データを追加/修正/削除する時はIncremental indexing APIを使用します。
 
@@ -506,9 +533,11 @@ curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appk
         - 上の例で"id-1"は修正、"id-3"は追加されます。
     - delete：該当文書を削除します。
 
-## 詳細ガイド
+<a id="guide-details"></a>
+## 詳細ガイド { #guide-details }
 
-### 出力優先順位
+<a id="priority-of-output"></a>
+### 出力優先順位 { #priority-of-output }
 
 インデックスファイルが下記のような場合、ユーザーが「ナ」を入力すると「スニーカー」、「スイッチ」、「スマホケース」の順に出力されます。
 
@@ -530,7 +559,8 @@ curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appk
 ```
 - 「ナ」で始まる単語のうち、weightが高い順に出力されます。
 
-### ACL
+<a id="guide-details-acl"></a>
+### ACL { #guide-details-acl }
 
 ACLの設定画面は次のとおりです。
 
@@ -549,11 +579,13 @@ ACLの設定画面は次のとおりです。
 - 許可、拒否のどちらにもマッチングされる場合、拒否されます。
 - 許可、拒否のどちらにもマッチングされない場合、拒否されます。
 
-## クライアントサンプルコード
+<a id="client-example-codes"></a>
+## クライアントサンプルコード { #client-example-codes }
 
 次はファイルアップロード方式のインデックスサンプルコードです。
 
-### java
+<a id="java"></a>
+### java { #java }
 
 - dependency
 
@@ -635,7 +667,8 @@ public class IndexingClient {
 }
 ```
 
-### php
+<a id="php"></a>
+### php { #php }
 
 - インデックス(ファイルアップロード方式)
 
