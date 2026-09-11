@@ -362,7 +362,7 @@ To test, index data as below:
 ]
 ```
 
-**Creating Category Services **
+**Creating Category Services**
 
 Click **Create Services** , enter ID on a popup for **Create Services**, and click **Create**.
 
