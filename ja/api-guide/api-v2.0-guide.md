@@ -1,17 +1,24 @@
-## Search > Autocomplete > API v2.0ガイド
+<!-- pre-align:aligned sig=f2a39712547d -->
+
+<a id="search-autocomplete-api-v20-guide"></a>
+## Search > Autocomplete > API v2.0ガイド { #search-autocomplete-api-v20-guide }
 
 Cloud Searchで提供するAutocomplete API v2.0を説明します。
 
-## 共通
+<a id="common"></a>
+## 共通 { #common }
 
-### APIエンドポイント
+<a id="api-endpoint"></a>
+### APIエンドポイント { #api-endpoint }
 
+<a id="api-endpoint-uri-information"></a>
 #### URI情報
 
 | 環境 | URI                                              |
 | ---- | ------------------------------------------------ |
 | REAL | https://kr1-autocomplete.api.nhncloudservice.com |
 
+<a id="api-endpoint-path-parameter-information"></a>
 #### Pathパラメータ情報
 
 | 名前     | 説明                   |
@@ -19,18 +26,21 @@ Cloud Searchで提供するAutocomplete API v2.0を説明します。
 | appKey    | コンソールで発行されたアプリケーションキー |
 | serviceId | ユーザーの任意の名前   |
 
-### 認証及び権限
+<a id="authentication-and-authorization"></a>
+### 認証及び権限 { #authentication-and-authorization }
 
 Autocomplete APIを使用するには、Appkeyが必要です。Appkeyは、API呼び出し時にリクエストURLに含めて特定のリソースを指定し、識別するために使用されます。
 Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。
 
-## 全体インデックス
+<a id="full-indexing"></a>
+## 全体インデックス { #full-indexing }
 
 全体インデックスを実行すると、以前にインデックスしたファイルは消えます。
 
 必ず開始-インデックス-終了の順番で実行する必要があります。
 
-### 1. 開始
+<a id="start"></a>
+### 1. 開始 { #start }
 
 **[リクエスト]**
 
@@ -48,7 +58,8 @@ URI情報
 {}
 ```
 
-### 2. インデックス
+<a id="indexing"></a>
+### 2. インデックス { #indexing }
 
 **[リクエスト]**
 
@@ -94,7 +105,8 @@ BODY情報(例)
 }
 ```
 
-### 3. 終了
+<a id="end"></a>
+### 3. 終了 { #end }
 
 **[リクエスト]**
 
@@ -112,7 +124,8 @@ URI情報
 {}
 ```
 
-### 4. キャンセル
+<a id="cancel"></a>
+### 4. キャンセル { #cancel }
 
 **[リクエスト]**
 
@@ -130,7 +143,8 @@ URI情報
 {}
 ```
 
-## インデックスのアップデート
+<a id="update-the-index"></a>
+## インデックスのアップデート { #update-the-index }
 
 インデックスをアップデートするにはidが必ず必要です。
 
@@ -138,7 +152,8 @@ addは既に文書が存在する場合は修正、存在しない場合は追�
 
 deleteは該当文書を削除します。
 
-### 1. インデックスのアップデート
+<a id="update-the-index-2"></a>
+### 1. インデックスのアップデート { #update-the-index-2 }
 
 **[リクエスト]**
 
@@ -181,9 +196,11 @@ BODY情報(例)
 }
 ```
 
-## インデックスログ
+<a id="index-log"></a>
+## インデックスログ { #index-log }
 
-### 1. インデックスログ照会
+<a id="view-the-index-log"></a>
+### 1. インデックスログ照会 { #view-the-index-log }
 
 **[リクエスト]**
 
@@ -212,11 +229,13 @@ URI情報(例)
 }
 ```
 
-## 検索
+<a id="search"></a>
+## 検索 { #search }
 
 inputを検索できます。
 
-### 1. 検索
+<a id="search-2"></a>
+### 1. 検索 { #search-2 }
 
 **[リクエスト]**
 

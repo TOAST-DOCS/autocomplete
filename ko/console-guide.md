@@ -1,10 +1,15 @@
-## Search > Autocomplete > 콘솔 사용 가이드
+<!-- pre-align:aligned sig=cacea07b4609 -->
 
-## 알아두기
+<a id="search-autocomplete-console-user-guide"></a>
+## Search > Autocomplete > 콘솔 사용 가이드 { #search-autocomplete-console-user-guide }
+
+<a id="prerequisites"></a>
+## 알아두기 { #prerequisites }
 
 - 문서 내의 앱키 'PyVTgcSXJpA3e5U7'는 사용자별로 다릅니다.
 
-## 시작하기
+<a id="getting-started"></a>
+## 시작하기 { #getting-started }
 
 먼저 Autocomplete 서비스를 활성화합니다.
 
@@ -22,9 +27,11 @@
 
 ![img](http://static.toastoven.net/prod_autocomplete/product-use-03-ko-20210506.jpg)
 
-## 기본 사용법
+<a id="basic-usage"></a>
+## 기본 사용법 { #basic-usage }
 
-### 1. 서비스 생성
+<a id="creating-services"></a>
+### 1. 서비스 생성 { #creating-services }
 1. **서비스 생성** 버튼을 클릭합니다.
 
 2. **서비스 생성** 창에서 서비스 ID를 입력합니다.
@@ -42,7 +49,8 @@
 
 ![img](http://static.toastoven.net/prod_autocomplete/domain_create_result-ko-20210506.jpg)
 
-### 2. 색인
+<a id="indexing"></a>
+### 2. 색인 { #indexing }
 
 색인할 파일을 생성하고 색인하는 방법은 다음과 같습니다.
 
@@ -167,7 +175,8 @@
             - 5 : 실패
             - 6 : 취소
 
-### 3. 자동 완성
+<a id="autocomplete"></a>
+### 3. 자동 완성 { #autocomplete }
 
 **자동 완성 방법**
 
@@ -217,7 +226,8 @@
     }
     ```
 
-### 4. ACL
+<a id="acl"></a>
+### 4. ACL { #acl }
 
 색인 및 자동완성 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
@@ -236,9 +246,11 @@
 
 
 
-## 기능 상세 설명
+<a id="feature-details"></a>
+## 기능 상세 설명 { #feature-details }
 
-### 중간 매칭
+<a id="middle-match"></a>
+### 중간 매칭 { #middle-match }
 
 **색인**
 
@@ -270,7 +282,8 @@
 ![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-ko-20231030.jpg)
 
 
-### 한영타 변환
+<a id="koreanenglish-keyboard-conversion"></a>
+### 한영타 변환 { #koreanenglish-keyboard-conversion }
 
 **색인**
 
@@ -302,7 +315,8 @@
 ![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-ko-20231030.jpg)
 
 
-### 초성 자동 완성
+<a id="initial-consonant-autocomplete"></a>
+### 초성 자동 완성 { #initial-consonant-autocomplete }
 
 **색인**
 
@@ -334,7 +348,8 @@
 ![img](http://static.toastoven.net/prod_autocomplete/chosung-suggest-ko-20231108.jpg)
 
 
-### 부가 정보 출력
+<a id="output-of-additional-information"></a>
+### 부가 정보 출력 { #output-of-additional-information }
 
 **색인**
 
@@ -371,7 +386,8 @@
 
 
 
-### Input/Output을 다르게 설정
+<a id="different-settings-for-inputoutput"></a>
+### Input/Output을 다르게 설정 { #different-settings-for-inputoutput }
 
 **색인**
 
@@ -401,7 +417,8 @@
 ![img](http://static.toastoven.net/prod_autocomplete/suggest-output-ko-20231030.jpg)
 
 
-### 멀티 서비스
+<a id="multiple-services"></a>
+### 멀티 서비스 { #multiple-services }
 
 2개 이상 서비스의 자동 완성 결과를 한 번의 자동 완성 API 요청으로 출력하는 기능입니다. 예를 들어 브랜드와 카테고리 자동 완성을 한 번의 API 요청으로 출력할 때 사용합니다.
 
@@ -495,7 +512,8 @@
     }
     ```
 
-### 대용량 데이터 색인
+<a id="feature-details-1"></a>
+### 대용량 데이터 색인 { #feature-details-1 }
 기본 색인은 입력할 수 있는 데이터 크기가 10MB로 제한되어 있습니다.
 10MB를 초과하는 데이터를 입력할 때는 Full indexing API를 사용합니다.
 
@@ -521,7 +539,8 @@
     ```
     - 색인이 진행 중일 때는 동작하지 않습니다.
 
-### 색인 업데이트
+<a id="feature-details-2"></a>
+### 색인 업데이트 { #feature-details-2 }
 
 데이터를 추가/수정/삭제할 때는 Incremental indexing API를 사용합니다.
 
@@ -574,9 +593,11 @@ curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appk
         - 위의 예제에서 "id-1"은 수정, "id-3"은 추가됩니다.
     - delete: 해당 문서를 삭제합니다.
 
-## 상세 가이드
+<a id="guide-details"></a>
+## 상세 가이드 { #guide-details }
 
-### 출력 우선 순위
+<a id="priority-of-output"></a>
+### 출력 우선 순위 { #priority-of-output }
 
 **설정 방법**
 
@@ -600,7 +621,8 @@ curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appk
 ```  
 - 'ㄴ'으로 시작하는 단어 중 weight가 높은 순서대로 출력됩니다.
 
-### ACL
+<a id="guide-details-acl"></a>
+### ACL { #guide-details-acl }
 
 ACL 설정 화면은 다음과 같습니다.
 
@@ -619,11 +641,13 @@ ACL 설정 화면은 다음과 같습니다.
 - 허용, 거부 둘 다에 해당되면 거부됩니다.
 - 허용, 거부 둘 다에 해당되지 않으면 거부됩니다.
 
-## 클라이언트 예제 코드
+<a id="client-example-codes"></a>
+## 클라이언트 예제 코드 { #client-example-codes }
 
 다음은 파일 업로드 방식의 색인 예제 코드입니다.
 
-### java
+<a id="java"></a>
+### java { #java }
 
 - dependency
 
@@ -705,7 +729,8 @@ public class IndexingClient {
 }
 ```
 
-### php
+<a id="php"></a>
+### php { #php }
 
 - 색인(파일 업로드 방식)
 

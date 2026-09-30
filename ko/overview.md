@@ -1,10 +1,14 @@
-## Search > Autocomplete > 개요
+<!-- pre-align:aligned sig=6c5319d20a1b -->
+
+<a id="search-autocomplete-overview"></a>
+## Search > Autocomplete > 개요 { #search-autocomplete-overview }
 
 - 검색 창에 검색어를 입력할 때 자동 완성 기능을 제공하는 서비스입니다.
     - 색인 REST API를 이용해서 자동 완성에 사용할 데이터를 입력합니다.
     - 자동 완성 REST API를 이용해서 자동 완성 결과를 받아옵니다.
 
-### 자동 완성 서비스 개발 과정
+<a id="developing-autocomplete-service"></a>
+### 자동 완성 서비스 개발 과정 { #developing-autocomplete-service }
 
 서비스 구성도는 다음과 같습니다.
 

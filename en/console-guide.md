@@ -1,10 +1,15 @@
-## Search > Autocomplete > Console User Guide
+<!-- pre-align:aligned sig=cacea07b4609 -->
 
-## Prerequisites
+<a id="search-autocomplete-console-user-guide"></a>
+## Search > Autocomplete > Console User Guide { #search-autocomplete-console-user-guide }
+
+<a id="prerequisites"></a>
+## Prerequisites { #prerequisites }
 
 - The appkey, 'PyVTgcSXJpA3e5U7', within document, is different for each user.
 
-## Getting Started
+<a id="getting-started"></a>
+## Getting Started { #getting-started }
 
 First, enable the Automcomplete Service.
 
@@ -22,9 +27,11 @@ First, enable the Automcomplete Service.
 
 ![img](http://static.toastoven.net/prod_autocomplete/product-use-03-en-20210506.jpg)
 
-## Basic Usage
+<a id="basic-usage"></a>
+## Basic Usage { #basic-usage }
 
-### 1. Creating Services
+<a id="creating-services"></a>
+### 1. Creating Services { #creating-services }
 1. Click **Create Services**.
 
 2. Enter Service ID on **Create Services**.
@@ -41,7 +48,8 @@ Check the result of service creation.
 
 ![img](http://static.toastoven.net/prod_autocomplete/domain_create_result-en-20210506.jpg)
 
-### 2. Indexing
+<a id="indexing"></a>
+### 2. Indexing { #indexing }
 
 Do as follows to create and index files.
 
@@ -166,7 +174,8 @@ When index is requested, previous data are all deleted and replaced by new data.
             - 5: Failed
 			- 6: Canceled
 
-### 3. Autocomplete
+<a id="autocomplete"></a>
+### 3. Autocomplete { #autocomplete }
 
 **How to Autocomplete**
 
@@ -216,7 +225,8 @@ When index is requested, previous data are all deleted and replaced by new data.
     }
     ```
 
-### 4. ACL
+<a id="acl"></a>
+### 4. ACL { #acl }
 
 IPs may be restricted for equipment which may call indexing and autocomplete REST APIs.
 Testing on console does not require ACL setting.
@@ -235,9 +245,11 @@ Testing on console does not require ACL setting.
 
 
 
-## Feature Details  
+<a id="feature-details"></a>
+## Feature Details { #feature-details }
 
-### Middle Match
+<a id="middle-match"></a>
+### Middle Match { #middle-match }
 
 **Index**
 
@@ -268,7 +280,18 @@ Select **Middle-match** for indexing.
 
 ![img](http://static.toastoven.net/prod_autocomplete/infix-suggest-en-20231030.jpg)
 
-### Output of Additional Information
+<a id="koreanenglish-keyboard-conversion"></a>
+### Korean/English Keyboard Conversion { #koreanenglish-keyboard-conversion }
+
+<!-- TODO: translate body -->
+
+<a id="initial-consonant-autocomplete"></a>
+### Initial Consonant Autocomplete { #initial-consonant-autocomplete }
+
+<!-- TODO: translate body -->
+
+<a id="output-of-additional-information"></a>
+### Output of Additional Information { #output-of-additional-information }
 
 **Index**
 
@@ -305,7 +328,8 @@ Enter additional information you need as output for payload.
 
 
 
-### Different Settings for Input/Output
+<a id="different-settings-for-inputoutput"></a>
+### Different Settings for Input/Output { #different-settings-for-inputoutput }
 
 **Index**
 
@@ -335,7 +359,8 @@ To test, index data as below:
 ![img](http://static.toastoven.net/prod_autocomplete/suggest-output-en-20231030.jpg)
 
 
-### Multiple Services
+<a id="multiple-services"></a>
+### Multiple Services { #multiple-services }
 
 Autocomplete results of more than two services come with one-time request for autocomplete API. For instance, the autocomplete for brand and category can be made available with one-time API request.    
 
@@ -429,7 +454,8 @@ To test, index data as below:
     }
     ```
 
-### 대용량 데이터 색인
+<a id="feature-details-1"></a>
+### 대용량 데이터 색인 { #feature-details-1 }
 기본 색인은 입력할 수 있는 데이터 크기가 10MB로 제한되어 있습니다.
 10MB를 초과하는 데이터를 입력할 때는 Full indexing API를 사용합니다.
 
@@ -455,7 +481,8 @@ To test, index data as below:
     ```
     - 색인이 진행 중일 때는 동작하지 않습니다.
 
-### 색인 업데이트
+<a id="feature-details-2"></a>
+### 색인 업데이트 { #feature-details-2 }
 
 데이터를 추가/수정/삭제할 때는 Incremental indexing API를 사용합니다.
 
@@ -508,9 +535,11 @@ curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appk
         - 위의 예제에서 "id-1"은 수정, "id-3"은 추가됩니다.
     - delete: 해당 문서를 삭제합니다.
 
-## Guide Details
+<a id="guide-details"></a>
+## Guide Details { #guide-details }
 
-### Priority of Output
+<a id="priority-of-output"></a>
+### Priority of Output { #priority-of-output }
 
 In the case of the following index files, when user enters 'no', the output shows in the order of 'notebook', 'notepad', 'note cards'.
 
@@ -532,7 +561,8 @@ In the case of the following index files, when user enters 'no', the output show
 ```
 - Words starting with 'no' come in the order of higher weights.
 
-### ACL
+<a id="guide-details-acl"></a>
+### ACL { #guide-details-acl }
 
 ACL can be set on a page like this:
 
@@ -551,11 +581,13 @@ ACL can be set on a page like this:
 - Rejected if applied both to Allow and Reject.
 - Rejected if not applied either to Allow or Reject.  
 
-## Client Example Codes
+<a id="client-example-codes"></a>
+## Client Example Codes { #client-example-codes }
 
 Following shows the file-uploading type index example codes.   
 
-### java
+<a id="java"></a>
+### java { #java }
 
 - dependency
 
@@ -637,7 +669,8 @@ public class IndexingClient {
 }
 ```
 
-### php
+<a id="php"></a>
+### php { #php }
 
 - Index (by file uploading)
 
