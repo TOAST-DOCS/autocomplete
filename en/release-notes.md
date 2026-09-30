@@ -6,8 +6,8 @@
 <a id="2023-09-26"></a>
 ### 2023. 09. 26. { #2023-09-26 }
 
-- 신규 버전 출시
-    - REST API 정보 변경
+- New Version Release
+    - Changed REST API Information
 
 <a id="june-23-2020"></a>
 ### June 23, 2020 { #june-23-2020 }
