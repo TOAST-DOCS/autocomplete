@@ -283,12 +283,66 @@
 <a id="koreanenglish-keyboard-conversion"></a>
 ### 韓英入力変換 { #koreanenglish-keyboard-conversion }
 
-<!-- TODO: translate body -->
+**インデックス**
+
+テストのために、以下のデータをインデックスします。
+
+```
+[
+  {
+    "input": "나이키",
+    "weight": 2
+  },
+  {
+    "input": "아디다스",
+    "weight": 1
+  }
+]
+```
+
+インデックスする際に、**韓英キー変換**を選択します。
+
+![img](http://static.toastoven.net/prod_autocomplete/koreng-indexing-ko-20230905.jpg)
+
+**オートコンプリート**
+
+1. 「나이」の英字入力「skdl」を入力します。
+
+2. 「나이키」が表示されます。
+
+![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-ko-20231030.jpg)
 
 <a id="initial-consonant-autocomplete"></a>
 ### 初声オートコンプリート { #initial-consonant-autocomplete }
 
-<!-- TODO: translate body -->
+**インデックス**
+
+テスト用に以下のデータをインデックスします。
+
+```
+[
+  {
+    "input": "나이키",
+    "weight": 2
+  },
+  {
+    "input": "아디다스",
+    "weight": 1
+  }
+]
+```
+
+  - インデックス時に **[初声オートコンプリート]** をチェックします。
+
+![img](http://static.toastoven.net/prod_autocomplete/chosung-indexing-ko-20230905.jpg)
+
+**オートコンプリート**
+
+1. 'ㄴㅇㅋ' を入力します。
+
+2. '나이키' が表示されます。
+
+![img](http://static.toastoven.net/prod_autocomplete/chosung-suggest-ko-20231108.jpg)
 
 <a id="output-of-additional-information"></a>
 ### 付加情報出力 { #output-of-additional-information }

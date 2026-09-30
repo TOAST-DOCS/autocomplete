@@ -283,12 +283,66 @@ Select **Middle-match** for indexing.
 <a id="koreanenglish-keyboard-conversion"></a>
 ### Korean/English Keyboard Conversion { #koreanenglish-keyboard-conversion }
 
-<!-- TODO: translate body -->
+**Indexing**
+
+Index the following data for testing.
+
+```
+[
+  {
+    "input": "나이키",
+    "weight": 2
+  },
+  {
+    "input": "아디다스",
+    "weight": 1
+  }
+]
+```
+
+When indexing, select **Korean-to-English Typing Conversion**.
+
+![img](http://static.toastoven.net/prod_autocomplete/koreng-indexing-ko-20230905.jpg)
+
+**Autocomplete**
+
+1. Enter 'skdl', the English keyboard equivalent of '나이'.
+
+2. '나이키' is displayed.
+
+![img](http://static.toastoven.net/prod_autocomplete/koreng-suggest-ko-20231030.jpg)
 
 <a id="initial-consonant-autocomplete"></a>
 ### Initial Consonant Autocomplete { #initial-consonant-autocomplete }
 
-<!-- TODO: translate body -->
+**Indexing**
+
+Index the following data for testing.
+
+```
+[
+  {
+    "input": "나이키",
+    "weight": 2
+  },
+  {
+    "input": "아디다스",
+    "weight": 1
+  }
+]
+```
+
+  - When indexing, select **Initial Consonant Autocomplete**.
+
+![img](http://static.toastoven.net/prod_autocomplete/chosung-indexing-ko-20230905.jpg)
+
+**Autocomplete**
+
+1. Enter 'ㄴㅇㅋ'.
+
+2. '나이키' is displayed.
+
+![img](http://static.toastoven.net/prod_autocomplete/chosung-suggest-ko-20231108.jpg)
 
 <a id="output-of-additional-information"></a>
 ### Output of Additional Information { #output-of-additional-information }
