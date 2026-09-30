@@ -290,11 +290,11 @@ Index the following data for testing.
 ```
 [
   {
-    "input": "Nike",
+    "input": "나이키",
     "weight": 2
   },
   {
-    "input": "Adidas",
+    "input": "아디다스",
     "weight": 1
   }
 ]
@@ -322,11 +322,11 @@ Index the following data for testing.
 ```
 [
   {
-    "input": "Nike",
+    "input": "나이키",
     "weight": 2
   },
   {
-    "input": "Adidas",
+    "input": "아디다스",
     "weight": 1
   }
 ]
