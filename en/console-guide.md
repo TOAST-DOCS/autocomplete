@@ -455,26 +455,26 @@ To test, index data as below:
     ```
 
 <a id="feature-details-1"></a>
-### Large data Indexing { #feature-details-1 }
+### Large Data Indexing { #feature-details-1 }
 The default indexing has a data size limit of 10 MB per input.
 When entering data that exceeds 10 MB, use the Full indexing API.
 
-- Full indexing started
+- Start full indexing
     ```
     curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/begin'
     ```
     - A new index (Repository) is created.
     - Until full indexing is complete, the service is provided using the existing index.
-- Full indexing request
+- Request full indexing
     ```
     curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
     ```
-    - Makes multiple indexing requests, such as documents-002.json and documents-003.json.
-- Full indexing applied
+    - Make multiple indexing requests, such as documents-002.json and documents-003.json.
+- Apply full indexing
     ```
     curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/end'
     ```
-    - Reflect the indexed data to the service.
+    - Applies the indexed data to the service.
 - Cancel full indexing
     ```
     curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/cancel'
