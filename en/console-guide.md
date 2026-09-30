@@ -455,38 +455,38 @@ To test, index data as below:
     ```
 
 <a id="feature-details-1"></a>
-### 대용량 데이터 색인 { #feature-details-1 }
-기본 색인은 입력할 수 있는 데이터 크기가 10MB로 제한되어 있습니다.
-10MB를 초과하는 데이터를 입력할 때는 Full indexing API를 사용합니다.
+### Large data Indexing { #feature-details-1 }
+The default indexing has a data size limit of 10 MB per input.
+When entering data that exceeds 10 MB, use the Full indexing API.
 
-- Full indexing 시작
+- Full indexing started
     ```
     curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/begin'
     ```
-    - 새로운 index(저장소)가 생성됩니다.
-    - Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.
-- Full indexing 요청
+    - A new index (Repository) is created.
+    - Until full indexing is complete, the service is provided using the existing index.
+- Full indexing request
     ```
     curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full?split=true&koreng=true&chosung=true' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
     ```
-    - documents-002.json, documents-003.json 등 여러 번 색인 요청을 합니다.		
-- Full indexing 반영
+    - Makes multiple indexing requests, such as documents-002.json and documents-003.json.
+- Full indexing applied
     ```
     curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/end'
     ```
-    - 색인된 데이터를 서비스에 반영합니다.		
-- Full indexing 취소
+    - Reflect the indexed data to the service.
+- Cancel full indexing
     ```
     curl -i -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing/full/cancel'
     ```
-    - 색인이 진행 중일 때는 동작하지 않습니다.
+    - Does not operate while indexing is in progress.
 
 <a id="feature-details-2"></a>
-### 색인 업데이트 { #feature-details-2 }
+### Update the index { #feature-details-2 }
 
-데이터를 추가/수정/삭제할 때는 Incremental indexing API를 사용합니다.
+Use the Incremental indexing API to add, modify, or delete data.
 
-**1. 테스트를 위한 데이터 입력**
+**1. Input Data for Testing**
 
 ```
 curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appkeys/PyVTgcSXJpA3e5U7/serviceids/test/indexing?split=true&koreng=true&chosung=false' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
@@ -504,7 +504,7 @@ curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appk
 ]'
 ```
 
-- Incremental indexing을 수행하기 위해서는 id를 반드시 입력해야 합니다.
+- To perform incremental indexing, you must enter an id.
 
 **2. Incremental indexing**
 
@@ -531,9 +531,9 @@ curl -XPOST 'https://kr1-autocomplete.api.nhncloudservice.com/indexing/v2.0/appk
 ```
 
 - action
-    - add: 기존에 문서가 존재하면 수정, 존재하지 않으면 추가됩니다.
-        - 위의 예제에서 "id-1"은 수정, "id-3"은 추가됩니다.
-    - delete: 해당 문서를 삭제합니다.
+    - add: modifies the document if it already exists, or adds it if it doesn't.
+        - In the example above, "id-1" is modified and "id-3" is added.
+    - delete: deletes the document.
 
 <a id="guide-details"></a>
 ## Guide Details { #guide-details }
